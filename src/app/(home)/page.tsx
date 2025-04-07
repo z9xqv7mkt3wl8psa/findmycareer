@@ -1,12 +1,14 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/footer';
-import NoticeBoard from '@/components/NoticeBoard'; // NEW
 
+
+  
 export default function HomePage() {
+  const scrollRef = useRef(null); //
   const images = ['/img1.jpg', '/img2.jpg', '/img3.jpg'];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -228,22 +230,22 @@ export default function HomePage() {
             }}
           >
             {[
-              '/logos/sbi.png',
-              '/logos/lg.png',
-              '/logos/kotak.png',
-              '/logos/hdfc.png',
-              '/logos/infosys.png',
-              '/logos/tata.png',
-              '/logos/colgate.png',
-              '/logos/aditya.png',
-              '/logos/dxc.png',
-              '/logos/virtusa.png',
-              '/logos/schaeffler.png',
-              '/logos/loreal.png',
-              '/logos/mahindra.png',
-              '/logos/gsk.png',
-              '/logos/legrand.png',
-              '/logos/reliance.png',
+              '/scholarship2.jpg',
+              '/scholarship2.jpg',
+              '/scholarship2.jpg',
+              '/scholarship2.jpg',
+              '/scholarship2.jpg',
+              '/scholarship2.jpg',
+              '/scholarship2.jpg',
+              '/scholarship2.jpg',
+              '/scholarship2.jpg',
+              '/scholarship2.jpg',
+              '/scholarship2.jpg',
+              '/scholarship2.jpg',
+              '/scholarship2.jpg',
+              '/scholarship2.jpg',
+              '/scholarship2.jpg',
+              
             ].map((src, index) => (
               <img
                 key={index}
@@ -279,50 +281,341 @@ export default function HomePage() {
           </button>
         </div>
       </section>
+     
 
-      {/* Steps Section */}
-      <section className="bg-gray-100 py-12">
-        <h2 className="text-2xl font-bold text-center mb-10">
-          Steps To Follow For Getting <span className="text-blue-700">A SCHOLARSHIP</span>
-        </h2>
+{/* Featured Scholarships Section */}
+<section style={{ padding: '3rem 2rem', backgroundColor: '#fff' }}>
+  <h2 style={{ textAlign: 'center', fontSize: '2rem', color: '#333', marginBottom: '2rem' }}>
+    Featured <strong>Scholarships</strong>
+  </h2>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
-          {[
-            {
-              icon: '/icons/book.png',
-              title: 'Register and Create Your Profile on Buddy4Study',
-              desc: 'Share a few quick details and register instantly! Unlock personalized loan options, expert guidance, and education support.',
-            },
-            {
-              icon: '/icons/bell.png',
-              title: 'Search Scholarship',
-              desc: 'Get alerts tailored to your profile and never miss a chance that matches your academic goals!',
-            },
-            {
-              icon: '/icons/join.png',
-              title: 'Apply for Scholarships',
-              desc: 'Explore over 10,000 scholarships that match your eligibility and financial situation.',
-            },
-          ].map((step, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow text-center">
-              <img src={step.icon} alt={step.title} className="w-10 h-10 mx-auto mb-4" />
-              <h3 className="font-semibold mb-2">{step.title}</h3>
-              <p className="text-sm text-gray-600">{step.desc}</p>
-            </div>
-          ))}
+  <div
+    ref={scrollRef} //
+    className="scroll-container"
+    style={{
+      display: 'flex',
+      overflowX: 'auto',
+      gap: '1.5rem',
+      paddingBottom: '1rem',
+      scrollBehavior: 'smooth',
+    }}
+  >
+    <style jsx>{`
+      .scholarship-card {
+        transition: background-color 0.3s, color 0.3s, transform 0.3s;
+        flex: 0 0 260px;
+      }
+      .scholarship-card:hover {
+        background-color: #f97316 !important;
+        color: white !important;
+        transform: translateY(-5px);
+      }
+      .scholarship-card:hover .view-btn {
+        background-color: white !important;
+        color: #f97316 !important;
+      }
+      .scroll-container::-webkit-scrollbar {
+        display: none;
+      }
+    `}</style>
+
+    {[
+      {
+        logo: '/scholarship1.png',
+        title: 'KIND CIRCLE SCHOLARSHIP FOR MERITORIOUS STUDENTS 2025–26',
+        deadline: '2025-12-31',
+      },
+      {
+        logo: '/scholarship2.jpg',
+        title: 'COLLEGE BOARD 90% FEE WAIVER PROGRAM',
+        deadline: '2025-04-16',
+      },
+      {
+        logo: '/scholarship3.jpg',
+        title: 'COLLEGE BOARD 50% FEE WAIVER PROGRAM',
+        deadline: '2025-04-16',
+      },
+      {
+        logo: '/scholarship4.jpg',
+        title: 'COLLEGE BOARD 50% FEE WAIVER PROGRAM',
+        deadline: '2025-04-16',
+      },
+      {
+        logo: '/scholarship5.jpg',
+        title: 'FLIPKART FOUNDATION SCHOLARSHIP PROGRAM 2024–25',
+        deadline: '2025-04-16',
+      },
+    ].map((scholarship, index) => (
+      <div
+        key={index}
+        className="scholarship-card"
+        style={{
+          backgroundColor: '#fff',
+          borderRadius: '1rem',
+          padding: '1.5rem',
+          boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+          color: '#333',
+        }}
+      >
+        <div style={{ marginBottom: '1rem' }}>
+          <img src={scholarship.logo} alt="Logo" style={{ maxHeight: '30px' }} />
         </div>
+        <p style={{ fontWeight: 'bold', marginBottom: '1rem' }}>{scholarship.title}</p>
+        <p style={{ fontSize: '0.85rem', marginBottom: '1rem' }}>
+          Deadline Date <strong>{scholarship.deadline}</strong>
+        </p>
+        <button
+          className="view-btn"
+          style={{
+            backgroundColor: '#f97316',
+            color: '#fff',
+            border: 'none',
+            padding: '0.5rem 1rem',
+            borderRadius: '0.5rem',
+            fontWeight: 'bold',
+            cursor: 'pointer',
+            transition: 'all 0.3s',
+          }}
+        >
+          View Detail
+        </button>
+      </div>
+    ))}
+  </div>
+</section>
+<section style={{ backgroundColor: '#f9f9f9', padding: '3rem 1rem' }}>
+  <h2 style={{ textAlign: 'center', fontSize: '2rem', fontWeight: '600', marginBottom: '2.5rem' }}>
+    Steps To Follow For Getting <strong style={{ color: '#000' }}>A SCHOLARSHIP</strong>
+  </h2>
 
-        <div className="flex justify-center mt-10">
-          <button className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">
-            Register Now
-          </button>
-        </div>
-      </section>
+  <div
+    style={{
+      display: 'flex',
+      justifyContent: 'center',
+      flexWrap: 'wrap',
+      gap: '2rem',
+      maxWidth: '1200px',
+      margin: '0 auto',
+    }}
+  >
+    {/* Step 1 */}
+    <div
+      style={{
+        flex: '0 0 300px',
+        background: '#fff',
+        borderRadius: '1rem',
+        boxShadow: '0 8px 20px rgba(0,0,0,0.1)',
+        padding: '2rem',
+        textAlign: 'center',
+      }}
+    >
+      <img src="/book.gif" alt="Register" style={{ height: '60px', marginBottom: '1rem' }} />
+      <h3 style={{ fontSize: '1.1rem', fontWeight: '600', marginBottom: '1rem' }}>
+        Register and Create Your Profile<br />on Buddy4Study
+      </h3>
+      <p style={{ fontSize: '0.9rem', color: '#555' }}>
+        Share a few quick details and register instantly! Unlock personalized loan options, expert guidance, and education support.
+      </p>
+    </div>
+
+    {/* Step 2 */}
+    <div
+      style={{
+        flex: '0 0 300px',
+        background: '#fff',
+        borderRadius: '1rem',
+        boxShadow: '0 8px 20px rgba(0,0,0,0.1)',
+        padding: '2rem',
+        textAlign: 'center',
+      }}
+    >
+      <img src="/ring.gif" alt="Search" style={{ height: '60px', marginBottom: '1rem' }} />
+      <h3 style={{ fontSize: '1.1rem', fontWeight: '600', marginBottom: '1rem' }}>
+        Search Scholarship
+      </h3>
+      <p style={{ fontSize: '0.9rem', color: '#555' }}>
+        Sign up for personalized scholarship alerts tailored to your profile and never miss an opportunity that matches your academic goals!
+      </p>
+    </div>
+
+    {/* Step 3 */}
+    <div
+      style={{
+        flex: '0 0 300px',
+        background: '#fff',
+        borderRadius: '1rem',
+        boxShadow: '0 8px 20px rgba(0,0,0,0.1)',
+        padding: '2rem',
+        textAlign: 'center',
+      }}
+    >
+      <img src="/join.gif" alt="Apply" style={{ height: '60px', marginBottom: '1rem' }} />
+      <h3 style={{ fontSize: '1.1rem', fontWeight: '600', marginBottom: '1rem' }}>
+        Apply for Scholarships
+      </h3>
+      <p style={{ fontSize: '0.9rem', color: '#555' }}>
+        Explore over 10,000 scholarships tailored to your needs and eligibility. Find options that match your academic goals and financial situation.
+      </p>
+      <button
+        style={{
+          marginTop: '1.5rem',
+          backgroundColor: '#3b82f6',
+          color: '#fff',
+          border: 'none',
+          padding: '0.6rem 1.5rem',
+          borderRadius: '0.5rem',
+          fontWeight: 'bold',
+          cursor: 'pointer',
+        }}
+      >
+        Register Now
+      </button>
+    </div>
+  </div>
+</section>
+
+<section style={{ padding: '3rem 1rem', backgroundColor: '#f9f9f9' }}>
+  <div
+    style={{
+      maxWidth: '900px',
+      margin: '0 auto',
+      borderRadius: '1rem',
+      overflow: 'hidden',
+      boxShadow: '0 8px 20px rgba(0,0,0,0.1)',
+      backgroundColor: '#fff',
+    }}
+  >
+    {/* Header */}
+    <div style={{ backgroundColor: '#c0c6cd', padding: '1rem 2rem' }}>
+      <h2 style={{ fontSize: '1.25rem', fontWeight: '700', color: '#2c2c2c' }}>
+        Notice Board – <span style={{ fontWeight: '500' }}>For Students</span>
+      </h2>
+    </div>
+
+    {/* Content */}
+    <div style={{ padding: '1.5rem 2rem', maxHeight: '260px', overflowY: 'auto' }}>
+      {/* Notice 1 */}
+      <div style={{ marginBottom: '1.5rem' }}>
+        <p style={{ fontWeight: '700', marginBottom: '0.25rem' }}>31 May, 2025</p>
+        <p style={{ fontSize: '0.95rem', lineHeight: '1.5' }}>
+          <span style={{ color: '#000' }}>
+            Apply to India’s top UGC-approved universities through Buddy4Study’s Online Degree Scholarship Support Programme
+          </span>{' '}
+          and get up to <strong>15% scholarship</strong> on your first-semester fee.
+        </p>
+      </div>
+
+      {/* Notice 2 */}
+      <div style={{ marginBottom: '1.5rem' }}>
+        <p style={{ fontWeight: '700', marginBottom: '0.25rem' }}>4 May, 2025</p>
+        <p style={{ fontSize: '0.95rem', lineHeight: '1.5' }}>
+          Applications are open for Alstom India Scholarship 2024–25: Phase-III. Students pursuing ITI/Diploma,
+          general graduation, or professional graduation in STEM can apply by May 4, 2025!
+        </p>
+      </div>
+
+      {/* Notice 3 */}
+      <div>
+        <p style={{ fontWeight: '700', marginBottom: '0.25rem', color: '#8b00cc' }}>16 April, 2025</p>
+        <p style={{ fontSize: '0.95rem', lineHeight: '1.5', color: '#5c17bd' }}>
+          Applications are open for Flipkart Foundation Scholarship 2024-25!
+          Children of Kirana Store Owners pursuing 1st-year UG STEM at government colleges in India can apply by 16 April 2025.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+{/* Our Scholars Section */}
+<section style={{ backgroundColor: '#fff', padding: '3rem 2rem' }}>
+  <h2 style={{ textAlign: 'center', fontSize: '2rem', color: '#003366', marginBottom: '2rem' }}>
+    Meet <strong>Our Scholars</strong>
+  </h2>
+
+  <div
+    className="scroll-container"
+    style={{
+      display: 'flex',
+      overflowX: 'auto',
+      gap: '1.5rem',
+      paddingBottom: '1rem',
+      scrollBehavior: 'smooth',
+    }}
+  >
+    <style jsx>{`
+      .scholar-card {
+        flex: 0 0 260px;
+        background-color: #f0f8ff;
+        border-radius: 1rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        padding: 1.5rem;
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+
+      .scholar-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .scroll-container::-webkit-scrollbar {
+        display: none;
+      }
+    `}</style>
+
+    {[
+      {
+        name: 'Riya Sharma',
+        course: 'B.Tech Computer Science',
+        university: 'IIT Delhi',
+        photo: '/boyimage.jpg',
+      },
+      {
+        name: 'Arjun Mehta',
+        course: 'MBBS',
+        university: 'AIIMS Delhi',
+        photo: '/boyimage.jpg',
+      },
+      {
+        name: 'Meena Patel',
+        course: 'BA Economics',
+        university: 'Delhi University',
+        photo: '/boyimage.jpg',
+      },
+      {
+        name: 'Sahil Khan',
+        course: 'B.Sc Physics',
+        university: 'IISc Bangalore',
+        photo: '/boyimage.jpg',
+      },
+      {
+        name: 'Nikita Roy',
+        course: 'MCA',
+        university: 'NIT Trichy',
+        photo: '/boyimage.jpg',
+      },
+    ].map((scholar, index) => (
+      <div key={index} className="scholar-card">
+        <img
+          src={scholar.photo}
+          alt={scholar.name}
+          style={{
+            width: '80px',
+            height: '80px',
+            borderRadius: '50%',
+            objectFit: 'cover',
+            marginBottom: '1rem',
+            border: '2px solid #0070f3',
+          }}
+        />
+        <h3 style={{ fontSize: '1.1rem', color: '#003366', marginBottom: '0.5rem' }}>{scholar.name}</h3>
+        <p style={{ fontSize: '0.95rem', color: '#444', marginBottom: '0.25rem' }}>{scholar.course}</p>
+        <p style={{ fontSize: '0.85rem', color: '#666' }}>{scholar.university}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
 
       
-  <NoticeBoard />
-
-
       <Footer />
     </>
   );
