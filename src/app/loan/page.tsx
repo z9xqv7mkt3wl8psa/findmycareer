@@ -4,94 +4,94 @@ import Layout from '@/components/Layout';
 import Link from 'next/link';
 import { useState } from 'react';
 
-const internships = [
+const educationalLoans = [
   {
-    title: 'Software Engineering Intern - Google',
-    description: 'As a Software Engineering Intern at Google, you’ll work on challenging projects that impact millions of users worldwide.',
-    duration: '12 weeks',
-    stipend: '₹80,000/month',
-    lastDate: 'May 31, 2025',
-    link: 'https://careers.google.com/jobs/results/12345678-software-engineering-intern/',
+    title: 'SBI Education Loan - Engineering',
+    description: 'State Bank of India offers loans for engineering students with flexible repayment terms and competitive interest rates.',
+    amount: 'Up to ₹20 lakhs',
+    interestRate: '8.5% p.a.',
+    eligibility: 'Indian students, Engineering courses',
+    lastDate: 'Open throughout the year',
+    link: 'https://www.sbi.co.in/web/personal-banking/education-loan',
     type: 'Full-Time',
-    isRemote: true,
   },
   {
-    title: 'Data Science Intern - Microsoft',
-    description: 'Join Microsoft’s Data Science team and help solve real-world problems using data-driven insights.',
-    duration: '6 months',
-    stipend: '₹60,000/month',
-    lastDate: 'April 30, 2025',
-    link: 'https://careers.microsoft.com/us/en/job/123456789/data-science-intern',
+    title: 'HDFC Bank Education Loan - Bachelors',
+    description: 'HDFC provides education loans for bachelors with minimal documentation and low processing fees.',
+    amount: 'Up to ₹40 lakhs',
+    interestRate: '9.5% p.a.',
+    eligibility: 'Indian students, Undergraduate courses',
+    lastDate: 'Open throughout the year',
+    link: 'https://www.hdfcbank.com/personal/borrow/popular-loans/education-loans',
     type: 'Full-Time',
-    isRemote: false,
   },
   {
-    title: 'Product Management Intern - Meta',
-    description: 'Work on Meta’s flagship products and contribute to their product strategy and development.',
-    duration: '10 weeks',
-    stipend: '₹70,000/month',
-    lastDate: 'June 15, 2025',
-    link: 'https://www.metacareers.com/job/12345678/product-management-intern/',
+    title: 'Punjab National Bank Education Loan - Masters',
+    description: 'PNB offers education loans for Masters courses, including MBA, MS, and more, with a special scheme for women.',
+    amount: 'Up to ₹30 lakhs',
+    interestRate: '9.25% p.a.',
+    eligibility: 'Indian students, Postgraduate courses',
+    lastDate: 'Open throughout the year',
+    link: 'https://www.pnbindia.in/education-loan-scheme.html',
     type: 'Full-Time',
-    isRemote: true,
   },
   {
-    title: 'UX Design Intern - Apple',
-    description: 'Join Apple’s UX design team to help create intuitive, user-friendly designs for innovative products.',
-    duration: '3 months',
-    stipend: '₹50,000/month',
-    lastDate: 'May 20, 2025',
-    link: 'https://jobs.apple.com/us/en-us/details/12345678/ux-design-intern',
+    title: 'Bank of Baroda Education Loan - Engineering',
+    description: 'Bank of Baroda provides loans for engineering students at competitive interest rates with flexible repayment options.',
+    amount: 'Up to ₹15 lakhs',
+    interestRate: '8.75% p.a.',
+    eligibility: 'Indian students, Engineering courses',
+    lastDate: 'Open throughout the year',
+    link: 'https://www.bankofbaroda.in/education-loan.htm',
     type: 'Full-Time',
-    isRemote: false,
   },
   {
-    title: 'Business Development Intern - Amazon',
-    description: 'Help Amazon expand its customer base by analyzing market trends and supporting the business development team.',
-    duration: '3 months',
-    stipend: '₹40,000/month',
-    lastDate: 'May 5, 2025',
-    link: 'https://www.amazon.jobs/en/jobs/12345678/business-development-intern',
-    type: 'Part-Time',
-    isRemote: true,
+    title: 'ICICI Bank Education Loan - Bachelors',
+    description: 'ICICI offers a wide range of education loans for bachelors with quick disbursal and competitive interest rates.',
+    amount: 'Up to ₹25 lakhs',
+    interestRate: '10.5% p.a.',
+    eligibility: 'Indian students, Undergraduate courses',
+    lastDate: 'Open throughout the year',
+    link: 'https://www.icicibank.com/loans/education-loan.page',
+    type: 'Full-Time',
   },
   {
-    title: 'Marketing Intern - Deloitte',
-    description: 'Assist Deloitte’s marketing team in research, strategy development, and campaign execution.',
-    duration: '4 months',
-    stipend: '₹35,000/month',
-    lastDate: 'June 10, 2025',
-    link: 'https://www2.deloitte.com/us/en/pages/careers/jobs/marketing-internship.html',
-    type: 'Part-Time',
-    isRemote: true,
+    title: 'Axis Bank Education Loan - Masters',
+    description: 'Axis Bank provides education loans for students pursuing a master’s degree with attractive features and flexible repayment plans.',
+    amount: 'Up to ₹40 lakhs',
+    interestRate: '8.9% p.a.',
+    eligibility: 'Indian students, Postgraduate courses',
+    lastDate: 'Open throughout the year',
+    link: 'https://www.axisbank.com/education-loan',
+    type: 'Full-Time',
   },
 ];
 
-const internshipCategories = [
-  'Top Internships for Engineering',
-  'Top Internships for Bachelors',
-  'Top Internships for Masters',
+const loanCategories = [
+  'Top Educational Loan for Engineering',
+  'Top Educational Loan for Bachelors',
+  'Top Educational Loan for Masters',
 ];
 
-export default function InternshipHub() {
+export default function EducationalLoanHub() {
   const [searchTerm, setSearchTerm] = useState('');
-  const [durationFilter, setDurationFilter] = useState('');
-  const [remoteFilter, setRemoteFilter] = useState('');
+  const [amountFilter, setAmountFilter] = useState('');
+  const [interestRateFilter, setInterestRateFilter] = useState('');
   const [visibleCount, setVisibleCount] = useState(6);
 
-  const filteredInternships = internships.filter((internship) => {
-    const matchesSearchTerm = internship.title.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesDuration = !durationFilter || internship.duration.includes(durationFilter);
-    const matchesRemote = remoteFilter === '' || (remoteFilter === 'Remote' ? internship.isRemote : !internship.isRemote);
+  const filteredLoans = educationalLoans.filter((loan) => {
+    const matchesSearchTerm = loan.title.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesAmount = !amountFilter || loan.amount.includes(amountFilter);
+    const matchesInterestRate = !interestRateFilter || loan.interestRate.includes(interestRateFilter);
 
-    return matchesSearchTerm && matchesDuration && matchesRemote;
+    return matchesSearchTerm && matchesAmount && matchesInterestRate;
   });
 
   const loadMore = () => {
     setVisibleCount((prev) => prev + 5);
   };
 
-  const shouldShowLoadMore = filteredInternships.length > visibleCount;
+  const shouldShowLoadMore = filteredLoans.length > visibleCount;
 
   return (
     <Layout>
@@ -104,7 +104,7 @@ export default function InternshipHub() {
           marginBottom: '2rem'
         }}>
           <h1 style={{ fontSize: '2.7rem', fontWeight: 'bold', color: '#1a1a1a', textAlign: 'center' }}>
-            Discover Top Internships for Every Field
+            Discover Top Educational Loans for Every Course
           </h1>
         </div>
 
@@ -117,7 +117,7 @@ export default function InternshipHub() {
           marginLeft: 'auto',
           marginRight: 'auto'
         }}>
-          Explore exciting internship opportunities across various fields like engineering, business, design, and more.
+          Explore the best educational loan options across engineering, bachelors, and masters programs.
         </p>
 
         <div style={{
@@ -129,29 +129,29 @@ export default function InternshipHub() {
         }}>
           <select
             style={selectStyle}
-            onChange={(e) => setDurationFilter(e.target.value)}
-            value={durationFilter}
+            onChange={(e) => setAmountFilter(e.target.value)}
+            value={amountFilter}
           >
-            <option value="">Select Duration</option>
-            <option value="3 months">3 months</option>
-            <option value="6 months">6 months</option>
-            <option value="12 weeks">12 weeks</option>
-            <option value="4 months">4 months</option>
+            <option value="">Select Loan Amount</option>
+            <option value="Up to ₹20 lakhs">Up to ₹20 lakhs</option>
+            <option value="Up to ₹30 lakhs">Up to ₹30 lakhs</option>
+            <option value="Up to ₹40 lakhs">Up to ₹40 lakhs</option>
           </select>
 
           <select
             style={selectStyle}
-            onChange={(e) => setRemoteFilter(e.target.value)}
-            value={remoteFilter}
+            onChange={(e) => setInterestRateFilter(e.target.value)}
+            value={interestRateFilter}
           >
-            <option value="">Remote or On-site</option>
-            <option value="Remote">Remote</option>
-            <option value="On-site">On-site</option>
+            <option value="">Select Interest Rate</option>
+            <option value="8.5%">8.5% p.a.</option>
+            <option value="9.25%">9.25% p.a.</option>
+            <option value="10.5%">10.5% p.a.</option>
           </select>
 
           <input
             type="text"
-            placeholder="Search Internships"
+            placeholder="Search Loans"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             style={selectStyle}
@@ -163,7 +163,7 @@ export default function InternshipHub() {
           gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
           gap: '2rem',
         }}>
-          {filteredInternships.slice(0, visibleCount).map((internship, index) => (
+          {filteredLoans.slice(0, visibleCount).map((loan, index) => (
             <div
               key={index}
               style={{
@@ -178,19 +178,19 @@ export default function InternshipHub() {
               onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')}
             >
               <h3 style={{ fontSize: '1.3rem', marginBottom: '0.7rem', fontWeight: '600', color: '#1a1a1a' }}>
-                {internship.title}
+                {loan.title}
               </h3>
               <p style={{ fontSize: '1rem', marginBottom: '1rem', lineHeight: '1.5', color: '#444' }}>
-                {internship.description}
+                {loan.description}
               </p>
               <p style={{ fontSize: '0.95rem', marginBottom: '0.4rem', color: '#0070f3' }}>
-                <strong>Stipend:</strong> {internship.stipend}
+                <strong>Loan Amount:</strong> {loan.amount}
               </p>
               <p style={{ fontSize: '0.9rem', marginBottom: '1rem', color: '#333' }}>
-                <strong>Duration:</strong> {internship.duration} | <strong>Last Date:</strong> {internship.lastDate}
+                <strong>Interest Rate:</strong> {loan.interestRate} | <strong>Eligibility:</strong> {loan.eligibility}
               </p>
               <Link
-                href={internship.link}
+                href={loan.link}
                 target="_blank"
                 style={{
                   display: 'inline-block',
@@ -203,7 +203,7 @@ export default function InternshipHub() {
                   fontWeight: '500',
                 }}
               >
-                View Details →
+                View Details → 
               </Link>
             </div>
           ))}
@@ -243,10 +243,10 @@ export default function InternshipHub() {
         )}
 
         <div style={{ marginTop: '3rem', textAlign: 'center' }}>
-          {internshipCategories.map((category, idx) => (
+          {loanCategories.map((category, idx) => (
             <Link
               key={idx}
-              href={`/internship/${category.toLowerCase().replace(/\s+/g, '-')}`}
+              href={`/loan/${category.toLowerCase().replace(/\s+/g, '-')}`}
               style={{
                 display: 'inline-block',
                 margin: '0.4rem 0.8rem',

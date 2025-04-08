@@ -89,7 +89,7 @@ const engineeringInternships = [
 ];
 
 export default function EngineeringInternships() {
-  const [visibleCount, setVisibleCount] = useState(5); // Initial internships shown (5)
+  const [visibleCount, setVisibleCount] = useState(6); // Initial internships shown (5)
   const [filterType, setFilterType] = useState(''); // Remote or Onsite filter
   const [filterStipendRange, setFilterStipendRange] = useState(''); // Stipend range filter
   const [filteredInternships, setFilteredInternships] = useState(engineeringInternships);
