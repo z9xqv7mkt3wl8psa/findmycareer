@@ -281,8 +281,6 @@ export default function HomePage() {
           </button>
         </div>
       </section>
-     
-
 {/* Featured Scholarships Section */}
 <section style={{ padding: '3rem 2rem', backgroundColor: '#fff' }}>
   <h2 style={{ textAlign: 'center', fontSize: '2rem', color: '#333', marginBottom: '2rem' }}>
@@ -316,21 +314,17 @@ export default function HomePage() {
         background-color: white !important;
         color: #f97316 !important;
       }
-
       .scroll-container::-webkit-scrollbar {
         height: 6px;
       }
-
       .scroll-container::-webkit-scrollbar-thumb {
         background: rgba(0, 0, 0, 0.2);
         border-radius: 3px;
         transition: opacity 0.3s;
       }
-
       .scroll-container::-webkit-scrollbar-track {
         background: transparent;
       }
-
       .scroll-container.hide-scrollbar::-webkit-scrollbar-thumb {
         background: transparent;
       }
@@ -366,10 +360,79 @@ export default function HomePage() {
         logo: '/scholarship6.jpg',
         title: 'GOOGLE GIRLS SCHOLARSHIP 2025',
         deadline: '2025-11-01',
-      },
+      }
     ].map((scholarship, index) => (
       <div
         key={index}
+        className="scholarship-card"
+        style={{
+          backgroundColor: '#fff',
+          borderRadius: '1rem',
+          padding: '1.5rem',
+          boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+          color: '#333',
+        }}
+      >
+        <div style={{ marginBottom: '1rem' }}>
+          <img src={scholarship.logo} alt="Logo" style={{ maxHeight: '30px' }} />
+        </div>
+        <p style={{ fontWeight: 'bold', marginBottom: '1rem' }}>{scholarship.title}</p>
+        <p style={{ fontSize: '0.85rem', marginBottom: '1rem' }}>
+          Deadline Date <strong>{scholarship.deadline}</strong>
+        </p>
+        <button
+          className="view-btn"
+          style={{
+            backgroundColor: '#f97316',
+            color: '#fff',
+            border: 'none',
+            padding: '0.5rem 1rem',
+            borderRadius: '0.5rem',
+            fontWeight: 'bold',
+            cursor: 'pointer',
+            transition: 'all 0.3s',
+          }}
+        >
+          View Detail
+        </button>
+      </div>
+    ))}
+
+    {/* Add cloned items for seamless looping */}
+    {[
+      {
+        logo: '/scholarship1.png',
+        title: 'KIND CIRCLE SCHOLARSHIP FOR MERITORIOUS STUDENTS 2025–26',
+        deadline: '2025-12-31',
+      },
+      {
+        logo: '/scholarship2.jpg',
+        title: 'COLLEGE BOARD 90% FEE WAIVER PROGRAM',
+        deadline: '2025-04-16',
+      },
+      {
+        logo: '/scholarship3.jpg',
+        title: 'COLLEGE BOARD 50% FEE WAIVER PROGRAM',
+        deadline: '2025-04-16',
+      },
+      {
+        logo: '/scholarship4.jpg',
+        title: 'INTERNATIONAL MERIT SCHOLARSHIP',
+        deadline: '2025-06-10',
+      },
+      {
+        logo: '/scholarship5.jpg',
+        title: 'FLIPKART FOUNDATION SCHOLARSHIP PROGRAM 2024–25',
+        deadline: '2025-09-30',
+      },
+      {
+        logo: '/scholarship6.jpg',
+        title: 'GOOGLE GIRLS SCHOLARSHIP 2025',
+        deadline: '2025-11-01',
+      }
+    ].map((scholarship, index) => (
+      <div
+        key={`clone-${index}`}
         className="scholarship-card"
         style={{
           backgroundColor: '#fff',
@@ -409,33 +472,59 @@ export default function HomePage() {
   <script dangerouslySetInnerHTML={{
     __html: `
       const container = document.getElementById('scrollable-scholarships');
-      let scrollSpeed = 0.4;
+      let scrollSpeed = 1;
       let isPaused = false;
       let isDown = false;
       let startX;
       let scrollLeft;
+      let animationId;
+      let scrollDirection = 1; // 1 for right, -1 for left
+
+      // Get the full scrollable width
+      const getScrollWidth = () => {
+        return container.scrollWidth - container.clientWidth;
+      };
 
       const smoothScroll = () => {
-        if (!isPaused) {
-          container.scrollLeft += scrollSpeed;
+        if (isPaused || isDown) {
+          animationId = requestAnimationFrame(smoothScroll);
+          return;
         }
-        requestAnimationFrame(smoothScroll);
+
+        const maxScroll = getScrollWidth();
+        const currentScroll = container.scrollLeft;
+        
+        // Reverse direction when reaching either end
+        if (currentScroll >= maxScroll) {
+          // When reaching the end, instantly (but invisibly) jump back to start
+          container.scrollLeft = 0;
+        } else if (currentScroll <= 0 && scrollDirection < 0) {
+          // When scrolling left and reaching start, jump to near end
+          container.scrollLeft = maxScroll - 1;
+        }
+        
+        container.scrollLeft += scrollSpeed * scrollDirection;
+        animationId = requestAnimationFrame(smoothScroll);
       };
-      requestAnimationFrame(smoothScroll);
+
+      // Start auto scroll when the page loads
+      animationId = requestAnimationFrame(smoothScroll);
 
       // Pause on hover
       container.addEventListener('mouseenter', () => isPaused = true);
       container.addEventListener('mouseleave', () => isPaused = false);
 
-      // Drag scroll
+      // Drag Scroll
       container.addEventListener('mousedown', (e) => {
         isDown = true;
         container.classList.add('active');
         startX = e.pageX - container.offsetLeft;
         scrollLeft = container.scrollLeft;
       });
+      
       container.addEventListener('mouseleave', () => isDown = false);
       container.addEventListener('mouseup', () => isDown = false);
+      
       container.addEventListener('mousemove', (e) => {
         if (!isDown) return;
         e.preventDefault();
@@ -453,11 +542,14 @@ export default function HomePage() {
           container.classList.add('hide-scrollbar');
         }, 800);
       });
-    `
-  }} />
+
+      // Clean up animation frame when component unmounts
+      window.addEventListener('beforeunload', () => {
+        cancelAnimationFrame(animationId);
+      });
+    `}}
+  />
 </section>
-
-
 <section style={{ backgroundColor: '#f9f9f9', padding: '3rem 1rem' }}>
   <h2 style={{ textAlign: 'center', fontSize: '2rem', fontWeight: '600', marginBottom: '2.5rem' }}>
     Steps To Follow For Getting <strong style={{ color: '#000' }}>A SCHOLARSHIP</strong>
@@ -600,13 +692,14 @@ export default function HomePage() {
     </div>
   </div>
 </section>
-{/* Our Scholars Section */}
+{/* Meet Our Scholars Section */}
 <section style={{ backgroundColor: '#fff', padding: '3rem 2rem' }}>
   <h2 style={{ textAlign: 'center', fontSize: '2rem', color: '#003366', marginBottom: '2rem' }}>
     Meet <strong>Our Scholars</strong>
   </h2>
 
   <div
+    id="scrollable-scholars"
     className="scroll-container"
     style={{
       display: 'flex',
@@ -614,6 +707,8 @@ export default function HomePage() {
       gap: '1.5rem',
       paddingBottom: '1rem',
       scrollBehavior: 'smooth',
+      cursor: 'grab',
+      position: 'relative',
     }}
   >
     <style jsx>{`
@@ -624,15 +719,30 @@ export default function HomePage() {
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
         padding: 1.5rem;
         text-align: center;
-        transition: transform 0.3s ease;
+        transition: transform 0.3s ease, background-color 0.3s;
       }
 
       .scholar-card:hover {
         transform: translateY(-5px);
+        background-color: #d1e7ff !important;
       }
 
       .scroll-container::-webkit-scrollbar {
-        display: none;
+        height: 6px;
+      }
+
+      .scroll-container::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+        transition: opacity 0.3s;
+      }
+
+      .scroll-container::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      .scroll-container.hide-scrollbar::-webkit-scrollbar-thumb {
+        background: transparent;
       }
     `}</style>
 
@@ -666,7 +776,7 @@ export default function HomePage() {
         course: 'MCA',
         university: 'NIT Trichy',
         photo: '/boyimage.jpg',
-      },
+      }
     ].map((scholar, index) => (
       <div key={index} className="scholar-card">
         <img
@@ -686,11 +796,142 @@ export default function HomePage() {
         <p style={{ fontSize: '0.85rem', color: '#666' }}>{scholar.university}</p>
       </div>
     ))}
+
+    {/* Add cloned items for seamless looping */}
+    {[
+      {
+        name: 'Riya Sharma',
+        course: 'B.Tech Computer Science',
+        university: 'IIT Delhi',
+        photo: '/boyimage.jpg',
+      },
+      {
+        name: 'Arjun Mehta',
+        course: 'MBBS',
+        university: 'AIIMS Delhi',
+        photo: '/boyimage.jpg',
+      },
+      {
+        name: 'Meena Patel',
+        course: 'BA Economics',
+        university: 'Delhi University',
+        photo: '/boyimage.jpg',
+      },
+      {
+        name: 'Sahil Khan',
+        course: 'B.Sc Physics',
+        university: 'IISc Bangalore',
+        photo: '/boyimage.jpg',
+      },
+      {
+        name: 'Nikita Roy',
+        course: 'MCA',
+        university: 'NIT Trichy',
+        photo: '/boyimage.jpg',
+      }
+    ].map((scholar, index) => (
+      <div key={`clone-${index}`} className="scholar-card">
+        <img
+          src={scholar.photo}
+          alt={scholar.name}
+          style={{
+            width: '80px',
+            height: '80px',
+            borderRadius: '50%',
+            objectFit: 'cover',
+            marginBottom: '1rem',
+            border: '2px solid #0070f3',
+          }}
+        />
+        <h3 style={{ fontSize: '1.1rem', color: '#003366', marginBottom: '0.5rem' }}>{scholar.name}</h3>
+        <p style={{ fontSize: '0.95rem', color: '#444', marginBottom: '0.25rem' }}>{scholar.course}</p>
+        <p style={{ fontSize: '0.85rem', color: '#666' }}>{scholar.university}</p>
+      </div>
+    ))}
   </div>
-</section>
 
+  {/* ✅ Smooth Auto Scroll + Drag Scroll + Fade Scrollbar Script */}
+  <script dangerouslySetInnerHTML={{
+    __html: `
+      const scholarsContainer = document.getElementById('scrollable-scholars');
+      let scrollSpeedScholars = 1;
+      let isPausedScholars = false;
+      let isDownScholars = false;
+      let startXScholars;
+      let scrollLeftScholars;
+      let animationIdScholars;
+      let scrollDirectionScholars = 1;
 
+      // Get the full scrollable width
+      const getScrollWidthScholars = () => {
+        return scholarsContainer.scrollWidth - scholarsContainer.clientWidth;
+      };
+
+      const smoothScrollScholars = () => {
+        if (isPausedScholars || isDownScholars) {
+          animationIdScholars = requestAnimationFrame(smoothScrollScholars);
+          return;
+        }
+
+        const maxScroll = getScrollWidthScholars();
+        const currentScroll = scholarsContainer.scrollLeft;
+        
+        // Reverse direction when reaching either end
+        if (currentScroll >= maxScroll) {
+          // When reaching the end, instantly (but invisibly) jump back to start
+          scholarsContainer.scrollLeft = 0;
+        } else if (currentScroll <= 0 && scrollDirectionScholars < 0) {
+          // When scrolling left and reaching start, jump to near end
+          scholarsContainer.scrollLeft = maxScroll - 1;
+        }
+        
+        scholarsContainer.scrollLeft += scrollSpeedScholars * scrollDirectionScholars;
+        animationIdScholars = requestAnimationFrame(smoothScrollScholars);
+      };
+
+      // Start auto scroll when the page loads
+      animationIdScholars = requestAnimationFrame(smoothScrollScholars);
+
+      // Pause on hover
+      scholarsContainer.addEventListener('mouseenter', () => isPausedScholars = true);
+      scholarsContainer.addEventListener('mouseleave', () => isPausedScholars = false);
+
+      // Drag Scroll
+      scholarsContainer.addEventListener('mousedown', (e) => {
+        isDownScholars = true;
+        scholarsContainer.classList.add('active');
+        startXScholars = e.pageX - scholarsContainer.offsetLeft;
+        scrollLeftScholars = scholarsContainer.scrollLeft;
+      });
       
+      scholarsContainer.addEventListener('mouseleave', () => isDownScholars = false);
+      scholarsContainer.addEventListener('mouseup', () => isDownScholars = false);
+      
+      scholarsContainer.addEventListener('mousemove', (e) => {
+        if (!isDownScholars) return;
+        e.preventDefault();
+        const x = e.pageX - scholarsContainer.offsetLeft;
+        const walk = (x - startXScholars) * 2;
+        scholarsContainer.scrollLeft = scrollLeftScholars - walk;
+      });
+
+      // Show/hide scrollbar on scroll
+      let scrollTimeoutScholars;
+      scholarsContainer.addEventListener('scroll', () => {
+        scholarsContainer.classList.remove('hide-scrollbar');
+        clearTimeout(scrollTimeoutScholars);
+        scrollTimeoutScholars = setTimeout(() => {
+          scholarsContainer.classList.add('hide-scrollbar');
+        }, 800);
+      });
+
+      // Clean up animation frame when component unmounts
+      window.addEventListener('beforeunload', () => {
+        cancelAnimationFrame(animationIdScholars);
+      });
+    `}}
+  />
+</section>
       <Footer />
     </>
   );
