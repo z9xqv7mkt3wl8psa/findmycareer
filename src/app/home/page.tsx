@@ -467,88 +467,6 @@ export default function HomePage() {
       </div>
     ))}
   </div>
-
-  {/* ✅ Smooth Auto Scroll + Drag Scroll + Fade Scrollbar Script */}
-  <script dangerouslySetInnerHTML={{
-    __html: `
-      const container = document.getElementById('scrollable-scholarships');
-      let scrollSpeed = 1;
-      let isPaused = false;
-      let isDown = false;
-      let startX;
-      let scrollLeft;
-      let animationId;
-      let scrollDirection = 1; // 1 for right, -1 for left
-
-      // Get the full scrollable width
-      const getScrollWidth = () => {
-        return container.scrollWidth - container.clientWidth;
-      };
-
-      const smoothScroll = () => {
-        if (isPaused || isDown) {
-          animationId = requestAnimationFrame(smoothScroll);
-          return;
-        }
-
-        const maxScroll = getScrollWidth();
-        const currentScroll = container.scrollLeft;
-        
-        // Reverse direction when reaching either end
-        if (currentScroll >= maxScroll) {
-          // When reaching the end, instantly (but invisibly) jump back to start
-          container.scrollLeft = 0;
-        } else if (currentScroll <= 0 && scrollDirection < 0) {
-          // When scrolling left and reaching start, jump to near end
-          container.scrollLeft = maxScroll - 1;
-        }
-        
-        container.scrollLeft += scrollSpeed * scrollDirection;
-        animationId = requestAnimationFrame(smoothScroll);
-      };
-
-      // Start auto scroll when the page loads
-      animationId = requestAnimationFrame(smoothScroll);
-
-      // Pause on hover
-      container.addEventListener('mouseenter', () => isPaused = true);
-      container.addEventListener('mouseleave', () => isPaused = false);
-
-      // Drag Scroll
-      container.addEventListener('mousedown', (e) => {
-        isDown = true;
-        container.classList.add('active');
-        startX = e.pageX - container.offsetLeft;
-        scrollLeft = container.scrollLeft;
-      });
-      
-      container.addEventListener('mouseleave', () => isDown = false);
-      container.addEventListener('mouseup', () => isDown = false);
-      
-      container.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - container.offsetLeft;
-        const walk = (x - startX) * 2;
-        container.scrollLeft = scrollLeft - walk;
-      });
-
-      // Show/hide scrollbar on scroll
-      let scrollTimeout;
-      container.addEventListener('scroll', () => {
-        container.classList.remove('hide-scrollbar');
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(() => {
-          container.classList.add('hide-scrollbar');
-        }, 800);
-      });
-
-      // Clean up animation frame when component unmounts
-      window.addEventListener('beforeunload', () => {
-        cancelAnimationFrame(animationId);
-      });
-    `}}
-  />
 </section>
 <section style={{ backgroundColor: '#f9f9f9', padding: '3rem 1rem' }}>
   <h2 style={{ textAlign: 'center', fontSize: '2rem', fontWeight: '600', marginBottom: '2.5rem' }}>
@@ -692,6 +610,7 @@ export default function HomePage() {
     </div>
   </div>
 </section>
+
 {/* Meet Our Scholars Section */}
 <section style={{ backgroundColor: '#fff', padding: '3rem 2rem' }}>
   <h2 style={{ textAlign: 'center', fontSize: '2rem', color: '#003366', marginBottom: '2rem' }}>
@@ -849,89 +768,165 @@ export default function HomePage() {
       </div>
     ))}
   </div>
+</section>
 
-  {/* ✅ Smooth Auto Scroll + Drag Scroll + Fade Scrollbar Script */}
-  <script dangerouslySetInnerHTML={{
-    __html: `
-      const scholarsContainer = document.getElementById('scrollable-scholars');
-      let scrollSpeedScholars = 1;
-      let isPausedScholars = false;
-      let isDownScholars = false;
-      let startXScholars;
-      let scrollLeftScholars;
-      let animationIdScholars;
-      let scrollDirectionScholars = 1;
-
-      // Get the full scrollable width
-      const getScrollWidthScholars = () => {
-        return scholarsContainer.scrollWidth - scholarsContainer.clientWidth;
+{/* Combined Scroll Control Script */}
+<script dangerouslySetInnerHTML={{
+  __html: `
+    // Track scroll state
+    const scrollStates = new Map();
+    
+    // Initialize all scrollable sections
+    function initAutoScroll() {
+      initScrollSection('scrollable-scholarships');
+      initScrollSection('scrollable-scholars');
+    }
+    
+    // Clean up all scroll animations
+    function cleanupAutoScroll() {
+      scrollStates.forEach(state => {
+        cancelAnimationFrame(state.animationId);
+      });
+      scrollStates.clear();
+    }
+    
+    // Initialize a scrollable section
+    function initScrollSection(containerId) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      
+      const state = {
+        scrollSpeed: 1,
+        isAutoScrolling: true,
+        isUserScrolling: false,
+        lastScrollTime: 0,
+        animationId: null,
+        scrollDirection: 1,
+        touchStartX: 0,
+        scrollLeft: 0
       };
-
-      const smoothScrollScholars = () => {
-        if (isPausedScholars || isDownScholars) {
-          animationIdScholars = requestAnimationFrame(smoothScrollScholars);
+      
+      scrollStates.set(containerId, state);
+      
+      const getScrollWidth = () => container.scrollWidth - container.clientWidth;
+      
+      const autoScroll = () => {
+        if (!state.isAutoScrolling || state.isUserScrolling) {
+          state.animationId = requestAnimationFrame(autoScroll);
           return;
         }
-
-        const maxScroll = getScrollWidthScholars();
-        const currentScroll = scholarsContainer.scrollLeft;
         
-        // Reverse direction when reaching either end
+        const maxScroll = getScrollWidth();
+        const currentScroll = container.scrollLeft;
+        
         if (currentScroll >= maxScroll) {
-          // When reaching the end, instantly (but invisibly) jump back to start
-          scholarsContainer.scrollLeft = 0;
-        } else if (currentScroll <= 0 && scrollDirectionScholars < 0) {
-          // When scrolling left and reaching start, jump to near end
-          scholarsContainer.scrollLeft = maxScroll - 1;
+          container.scrollLeft = 0;
+        } else if (currentScroll <= 0 && state.scrollDirection < 0) {
+          container.scrollLeft = maxScroll - 1;
         }
         
-        scholarsContainer.scrollLeft += scrollSpeedScholars * scrollDirectionScholars;
-        animationIdScholars = requestAnimationFrame(smoothScrollScholars);
+        container.scrollLeft += state.scrollSpeed * state.scrollDirection;
+        state.animationId = requestAnimationFrame(autoScroll);
       };
-
-      // Start auto scroll when the page loads
-      animationIdScholars = requestAnimationFrame(smoothScrollScholars);
-
-      // Pause on hover
-      scholarsContainer.addEventListener('mouseenter', () => isPausedScholars = true);
-      scholarsContainer.addEventListener('mouseleave', () => isPausedScholars = false);
-
-      // Drag Scroll
-      scholarsContainer.addEventListener('mousedown', (e) => {
-        isDownScholars = true;
-        scholarsContainer.classList.add('active');
-        startXScholars = e.pageX - scholarsContainer.offsetLeft;
-        scrollLeftScholars = scholarsContainer.scrollLeft;
-      });
       
-      scholarsContainer.addEventListener('mouseleave', () => isDownScholars = false);
-      scholarsContainer.addEventListener('mouseup', () => isDownScholars = false);
+      // Start auto scroll
+      state.animationId = requestAnimationFrame(autoScroll);
       
-      scholarsContainer.addEventListener('mousemove', (e) => {
-        if (!isDownScholars) return;
+      // Touch event handlers
+      container.addEventListener('touchstart', (e) => {
+        state.isUserScrolling = true;
+        state.isAutoScrolling = false;
+        state.touchStartX = e.touches[0].pageX;
+        state.scrollLeft = container.scrollLeft;
+      }, { passive: false });
+      
+      container.addEventListener('touchend', () => {
+        state.isUserScrolling = false;
+        // Resume auto-scroll after 2 seconds of inactivity
+        setTimeout(() => {
+          if (!state.isUserScrolling) {
+            state.isAutoScrolling = true;
+          }
+        }, 2000);
+      }, { passive: true });
+      
+      container.addEventListener('touchmove', (e) => {
+        if (!state.isUserScrolling) return;
         e.preventDefault();
-        const x = e.pageX - scholarsContainer.offsetLeft;
-        const walk = (x - startXScholars) * 2;
-        scholarsContainer.scrollLeft = scrollLeftScholars - walk;
+        const touchX = e.touches[0].pageX;
+        const walk = (touchX - state.touchStartX) * 1.5;
+        container.scrollLeft = state.scrollLeft - walk;
+      }, { passive: false });
+      
+      // Mouse event handlers
+      container.addEventListener('mousedown', (e) => {
+        state.isUserScrolling = true;
+        state.isAutoScrolling = false;
+        state.touchStartX = e.pageX;
+        state.scrollLeft = container.scrollLeft;
       });
-
-      // Show/hide scrollbar on scroll
-      let scrollTimeoutScholars;
-      scholarsContainer.addEventListener('scroll', () => {
-        scholarsContainer.classList.remove('hide-scrollbar');
-        clearTimeout(scrollTimeoutScholars);
-        scrollTimeoutScholars = setTimeout(() => {
-          scholarsContainer.classList.add('hide-scrollbar');
-        }, 800);
+      
+      container.addEventListener('mouseleave', () => {
+        state.isUserScrolling = false;
+        setTimeout(() => {
+          if (!state.isUserScrolling) {
+            state.isAutoScrolling = true;
+          }
+        }, 2000);
       });
-
-      // Clean up animation frame when component unmounts
-      window.addEventListener('beforeunload', () => {
-        cancelAnimationFrame(animationIdScholars);
+      
+      container.addEventListener('mouseup', () => {
+        state.isUserScrolling = false;
+        setTimeout(() => {
+          if (!state.isUserScrolling) {
+            state.isAutoScrolling = true;
+          }
+        }, 2000);
       });
-    `}}
-  />
-</section>
+      
+      container.addEventListener('mousemove', (e) => {
+        if (!state.isUserScrolling) return;
+        e.preventDefault();
+        const x = e.pageX;
+        const walk = (x - state.touchStartX) * 2;
+        container.scrollLeft = state.scrollLeft - walk;
+      });
+      
+      // Wheel event (for trackpads)
+      container.addEventListener('wheel', (e) => {
+        state.isUserScrolling = true;
+        state.isAutoScrolling = false;
+        clearTimeout(state.scrollTimeout);
+        state.scrollTimeout = setTimeout(() => {
+          state.isUserScrolling = false;
+          state.isAutoScrolling = true;
+        }, 2000);
+      }, { passive: true });
+    }
+    
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', initAutoScroll);
+    
+    // Handle page visibility changes
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') {
+        cleanupAutoScroll();
+      } else {
+        initAutoScroll();
+      }
+    });
+    
+    // Handle SPA navigation
+    let currentURL = window.location.href;
+    setInterval(() => {
+      if (window.location.href !== currentURL) {
+        currentURL = window.location.href;
+        cleanupAutoScroll();
+        setTimeout(initAutoScroll, 500);
+      }
+    }, 200);
+  `
+}} />
       <Footer />
     </>
   );
