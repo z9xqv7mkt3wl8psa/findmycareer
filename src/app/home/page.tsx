@@ -42,7 +42,7 @@ export default function HomePage() {
           <p style={{ fontSize: '1.2rem', color: '#333', maxWidth: '500px', marginBottom: '1.5rem' }}>
             Empower your academic journey with personalized scholarships, curated career guides, and global learning programs.
           </p>
-          <Link href="/guide">
+          <Link href="/">
             <button
               style={{
                 padding: '0.75rem 1.5rem',
@@ -290,7 +290,7 @@ export default function HomePage() {
   </h2>
 
   <div
-    ref={scrollRef} //
+    id="scrollable-scholarships"
     className="scroll-container"
     style={{
       display: 'flex',
@@ -298,6 +298,8 @@ export default function HomePage() {
       gap: '1.5rem',
       paddingBottom: '1rem',
       scrollBehavior: 'smooth',
+      cursor: 'grab',
+      position: 'relative',
     }}
   >
     <style jsx>{`
@@ -314,8 +316,23 @@ export default function HomePage() {
         background-color: white !important;
         color: #f97316 !important;
       }
+
       .scroll-container::-webkit-scrollbar {
-        display: none;
+        height: 6px;
+      }
+
+      .scroll-container::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+        transition: opacity 0.3s;
+      }
+
+      .scroll-container::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      .scroll-container.hide-scrollbar::-webkit-scrollbar-thumb {
+        background: transparent;
       }
     `}</style>
 
@@ -337,13 +354,18 @@ export default function HomePage() {
       },
       {
         logo: '/scholarship4.jpg',
-        title: 'COLLEGE BOARD 50% FEE WAIVER PROGRAM',
-        deadline: '2025-04-16',
+        title: 'INTERNATIONAL MERIT SCHOLARSHIP',
+        deadline: '2025-06-10',
       },
       {
         logo: '/scholarship5.jpg',
         title: 'FLIPKART FOUNDATION SCHOLARSHIP PROGRAM 2024–25',
-        deadline: '2025-04-16',
+        deadline: '2025-09-30',
+      },
+      {
+        logo: '/scholarship6.jpg',
+        title: 'GOOGLE GIRLS SCHOLARSHIP 2025',
+        deadline: '2025-11-01',
       },
     ].map((scholarship, index) => (
       <div
@@ -382,7 +404,60 @@ export default function HomePage() {
       </div>
     ))}
   </div>
+
+  {/* ✅ Smooth Auto Scroll + Drag Scroll + Fade Scrollbar Script */}
+  <script dangerouslySetInnerHTML={{
+    __html: `
+      const container = document.getElementById('scrollable-scholarships');
+      let scrollSpeed = 0.4;
+      let isPaused = false;
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      const smoothScroll = () => {
+        if (!isPaused) {
+          container.scrollLeft += scrollSpeed;
+        }
+        requestAnimationFrame(smoothScroll);
+      };
+      requestAnimationFrame(smoothScroll);
+
+      // Pause on hover
+      container.addEventListener('mouseenter', () => isPaused = true);
+      container.addEventListener('mouseleave', () => isPaused = false);
+
+      // Drag scroll
+      container.addEventListener('mousedown', (e) => {
+        isDown = true;
+        container.classList.add('active');
+        startX = e.pageX - container.offsetLeft;
+        scrollLeft = container.scrollLeft;
+      });
+      container.addEventListener('mouseleave', () => isDown = false);
+      container.addEventListener('mouseup', () => isDown = false);
+      container.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - container.offsetLeft;
+        const walk = (x - startX) * 2;
+        container.scrollLeft = scrollLeft - walk;
+      });
+
+      // Show/hide scrollbar on scroll
+      let scrollTimeout;
+      container.addEventListener('scroll', () => {
+        container.classList.remove('hide-scrollbar');
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          container.classList.add('hide-scrollbar');
+        }, 800);
+      });
+    `
+  }} />
 </section>
+
+
 <section style={{ backgroundColor: '#f9f9f9', padding: '3rem 1rem' }}>
   <h2 style={{ textAlign: 'center', fontSize: '2rem', fontWeight: '600', marginBottom: '2.5rem' }}>
     Steps To Follow For Getting <strong style={{ color: '#000' }}>A SCHOLARSHIP</strong>

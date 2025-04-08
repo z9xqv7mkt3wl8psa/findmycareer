@@ -91,7 +91,7 @@ export default function Navbar() {
       }))
     },
     
-    { label: 'Guide Me', path: '/guide' },
+    { label: 'Guide Me', path: '/' },
   ];
 
   return (
