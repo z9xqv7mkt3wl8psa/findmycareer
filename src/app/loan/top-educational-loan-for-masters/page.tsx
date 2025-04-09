@@ -1,6 +1,8 @@
 'use client';
 
 import Layout from '@/components/Layout';
+
+import Navbar from '@/components/Navbar';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -22,6 +24,33 @@ const mastersLoans = [
     repaymentPeriod: 'Up to 15 years',
     eligibility: 'Indian citizens, age between 18-40 years',
     link: 'https://www.sbi.co.in/education-loan',
+  },
+  {
+    title: 'ICICI Bank Education Loan for Masters',
+    description: 'ICICI provides loans for students pursuing a master’s degree with fast approval, flexible terms, and attractive interest rates.',
+    loanAmount: 'Up to ₹20,00,000',
+    interestRate: '10.25% - 12.75% p.a.',
+    repaymentPeriod: 'Up to 15 years',
+    eligibility: 'Indian citizens, age between 18-40 years',
+    link: 'https://www.icicibank.com/education-loan/masters',
+  },
+  {
+    title: 'ICICI Bank Education Loan for Masters',
+    description: 'ICICI provides loans for students pursuing a master’s degree with fast approval, flexible terms, and attractive interest rates.',
+    loanAmount: 'Up to ₹20,00,000',
+    interestRate: '10.25% - 12.75% p.a.',
+    repaymentPeriod: 'Up to 15 years',
+    eligibility: 'Indian citizens, age between 18-40 years',
+    link: 'https://www.icicibank.com/education-loan/masters',
+  },
+  {
+    title: 'ICICI Bank Education Loan for Masters',
+    description: 'ICICI provides loans for students pursuing a master’s degree with fast approval, flexible terms, and attractive interest rates.',
+    loanAmount: 'Up to ₹20,00,000',
+    interestRate: '10.25% - 12.75% p.a.',
+    repaymentPeriod: 'Up to 15 years',
+    eligibility: 'Indian citizens, age between 18-40 years',
+    link: 'https://www.icicibank.com/education-loan/masters',
   },
   {
     title: 'ICICI Bank Education Loan for Masters',
@@ -112,6 +141,8 @@ export default function MastersLoans() {
   const shouldShowLoadMore = mastersLoans.length > visibleCount;
 
   return (
+    <> 
+    <Navbar />
     <Layout>
       <div style={{ padding: '3rem 1.5rem', maxWidth: '1200px', margin: '0 auto' }}>
         <h1 style={{ fontSize: '2.5rem', textAlign: 'center', marginBottom: '1rem', fontWeight: 'bold', color: '#222' }}>
@@ -199,6 +230,7 @@ export default function MastersLoans() {
         )}
       </div>
     </Layout>
+    </>
   );
 }
 

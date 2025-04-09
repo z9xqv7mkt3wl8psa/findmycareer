@@ -1,5 +1,6 @@
 'use client';
 import Layout from '@/components/Layout';
+import Navbar from '@/components/Navbar';
 import { useState } from 'react';
 
 type College = {
@@ -74,6 +75,8 @@ export default function CollegesPage() {
   const allStreams = ['All', 'Science', 'Commerce', 'Arts'];
 
   return (
+    <> 
+    <Navbar />
     <Layout>
       <section style={{ padding: '2rem' }}>
         <h1 style={{ textAlign: 'center' }}>Top Indian Colleges</h1>
@@ -106,5 +109,6 @@ export default function CollegesPage() {
         </div>
       </section>
     </Layout>
+    </>
   );
 }

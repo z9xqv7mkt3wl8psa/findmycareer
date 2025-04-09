@@ -1,6 +1,7 @@
 'use client';
 
 import Layout from '@/components/Layout';
+import Navbar from '@/components/Navbar';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -33,6 +34,36 @@ const educationalLoans = [
     eligibility: 'Indian students, Postgraduate courses',
     lastDate: 'Open throughout the year',
     link: 'https://www.pnbindia.in/education-loan-scheme.html',
+    type: 'Full-Time',
+  },
+  {
+    title: 'Bank of Baroda Education Loan - Engineering',
+    description: 'Bank of Baroda provides loans for engineering students at competitive interest rates with flexible repayment options.',
+    amount: 'Up to ₹15 lakhs',
+    interestRate: '8.75% p.a.',
+    eligibility: 'Indian students, Engineering courses',
+    lastDate: 'Open throughout the year',
+    link: 'https://www.bankofbaroda.in/education-loan.htm',
+    type: 'Full-Time',
+  },
+  {
+    title: 'Bank of Baroda Education Loan - Engineering',
+    description: 'Bank of Baroda provides loans for engineering students at competitive interest rates with flexible repayment options.',
+    amount: 'Up to ₹15 lakhs',
+    interestRate: '8.75% p.a.',
+    eligibility: 'Indian students, Engineering courses',
+    lastDate: 'Open throughout the year',
+    link: 'https://www.bankofbaroda.in/education-loan.htm',
+    type: 'Full-Time',
+  },
+  {
+    title: 'Bank of Baroda Education Loan - Engineering',
+    description: 'Bank of Baroda provides loans for engineering students at competitive interest rates with flexible repayment options.',
+    amount: 'Up to ₹15 lakhs',
+    interestRate: '8.75% p.a.',
+    eligibility: 'Indian students, Engineering courses',
+    lastDate: 'Open throughout the year',
+    link: 'https://www.bankofbaroda.in/education-loan.htm',
     type: 'Full-Time',
   },
   {
@@ -94,6 +125,8 @@ export default function EducationalLoanHub() {
   const shouldShowLoadMore = filteredLoans.length > visibleCount;
 
   return (
+    <> 
+    <Navbar />
     <Layout>
       <div style={{ padding: '3rem 1.5rem', maxWidth: '1200px', margin: '0 auto' }}>
         <div style={{
@@ -263,6 +296,7 @@ export default function EducationalLoanHub() {
         </div>
       </div>
     </Layout>
+    </>
   );
 }
 

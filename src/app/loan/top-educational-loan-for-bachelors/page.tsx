@@ -1,6 +1,7 @@
 'use client';
 
 import Layout from '@/components/Layout';
+import Navbar from '@/components/Navbar';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -40,6 +41,24 @@ const bachelorsLoans = [
     repaymentPeriod: 'Up to 15 years',
     eligibility: 'Indian citizens, age between 18-35 years',
     link: 'https://www.axisbank.com/education-loan',
+  },
+  {
+    title: 'Punjab National Bank (PNB) Education Loan for Bachelors',
+    description: 'PNB offers low-interest education loans for bachelor students with easy documentation and fast processing.',
+    loanAmount: 'Up to ₹8,00,000',
+    interestRate: '9.65% - 10.75% p.a.',
+    repaymentPeriod: 'Up to 15 years',
+    eligibility: 'Indian citizens, age between 18-35 years',
+    link: 'https://www.pnbindia.in/education-loans.html',
+  },
+  {
+    title: 'Punjab National Bank (PNB) Education Loan for Bachelors',
+    description: 'PNB offers low-interest education loans for bachelor students with easy documentation and fast processing.',
+    loanAmount: 'Up to ₹8,00,000',
+    interestRate: '9.65% - 10.75% p.a.',
+    repaymentPeriod: 'Up to 15 years',
+    eligibility: 'Indian citizens, age between 18-35 years',
+    link: 'https://www.pnbindia.in/education-loans.html',
   },
   {
     title: 'Punjab National Bank (PNB) Education Loan for Bachelors',
@@ -112,6 +131,8 @@ export default function BachelorsLoans() {
   const shouldShowLoadMore = bachelorsLoans.length > visibleCount;
 
   return (
+    <> 
+    <Navbar />
     <Layout>
       <div style={{ padding: '3rem 1.5rem', maxWidth: '1200px', margin: '0 auto' }}>
         <h1 style={{ fontSize: '2.5rem', textAlign: 'center', marginBottom: '1rem', fontWeight: 'bold', color: '#222' }}>
@@ -199,6 +220,7 @@ export default function BachelorsLoans() {
         )}
       </div>
     </Layout>
+    </>
   );
 }
 

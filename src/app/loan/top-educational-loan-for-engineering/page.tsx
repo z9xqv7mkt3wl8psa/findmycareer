@@ -1,6 +1,7 @@
 'use client';
 
 import Layout from '@/components/Layout';
+import Navbar from '@/components/Navbar';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -31,6 +32,33 @@ const engineeringLoans = [
     repaymentPeriod: 'Up to 15 years',
     eligibility: 'Indian citizens, age between 18-35 years',
     link: 'https://www.icicibank.com/education-loan/engineering',
+  },
+  {
+    title: 'Axis Bank Education Loan for Engineering',
+    description: 'Axis Bank provides educational loans for engineering students with competitive rates and flexible repayment options.',
+    loanAmount: 'Up to ₹25,00,000',
+    interestRate: '10.5% - 12% p.a.',
+    repaymentPeriod: 'Up to 15 years',
+    eligibility: 'Indian citizens, age between 18-35 years',
+    link: 'https://www.axisbank.com/education-loan',
+  },
+  {
+    title: 'Axis Bank Education Loan for Engineering',
+    description: 'Axis Bank provides educational loans for engineering students with competitive rates and flexible repayment options.',
+    loanAmount: 'Up to ₹25,00,000',
+    interestRate: '10.5% - 12% p.a.',
+    repaymentPeriod: 'Up to 15 years',
+    eligibility: 'Indian citizens, age between 18-35 years',
+    link: 'https://www.axisbank.com/education-loan',
+  },
+  {
+    title: 'Axis Bank Education Loan for Engineering',
+    description: 'Axis Bank provides educational loans for engineering students with competitive rates and flexible repayment options.',
+    loanAmount: 'Up to ₹25,00,000',
+    interestRate: '10.5% - 12% p.a.',
+    repaymentPeriod: 'Up to 15 years',
+    eligibility: 'Indian citizens, age between 18-35 years',
+    link: 'https://www.axisbank.com/education-loan',
   },
   {
     title: 'Axis Bank Education Loan for Engineering',
@@ -112,6 +140,8 @@ export default function EngineeringLoans() {
   const shouldShowLoadMore = engineeringLoans.length > visibleCount;
 
   return (
+    <> 
+    <Navbar />
     <Layout>
       <div style={{ padding: '3rem 1.5rem', maxWidth: '1200px', margin: '0 auto' }}>
         <h1 style={{ fontSize: '2.5rem', textAlign: 'center', marginBottom: '1rem', fontWeight: 'bold', color: '#222' }}>
@@ -199,6 +229,7 @@ export default function EngineeringLoans() {
         )}
       </div>
     </Layout>
+    </>
   );
 }
 

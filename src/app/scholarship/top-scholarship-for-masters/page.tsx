@@ -1,6 +1,7 @@
 'use client';
 
 import Layout from '@/components/Layout';
+import Navbar from '@/components/Navbar';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -92,6 +93,8 @@ export default function MastersScholarships() {
   const shouldShowLoadMore = scholarships.length > visibleCount;
 
   return (
+    <> 
+    <Navbar />
     <Layout>
       <div style={{ padding: '3rem 1.5rem', maxWidth: '1200px', margin: '0 auto' }}>
         <h1
@@ -226,6 +229,7 @@ export default function MastersScholarships() {
         )}
       </div>
     </Layout>
+    </>
   );
 }
 

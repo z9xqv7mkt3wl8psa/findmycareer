@@ -1,6 +1,7 @@
 'use client';
 
 import Layout from '@/components/Layout';
+import Navbar from '@/components/Navbar';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -135,6 +136,8 @@ export default function EngineeringInternships() {
   const shouldShowLoadMore = engineeringInternships.length > visibleCount;
 
   return (
+    <> 
+    <Navbar />
     <Layout>
       <div style={{ padding: '3rem 1.5rem', maxWidth: '1200px', margin: '0 auto' }}>
         <h1 style={{ fontSize: '2.5rem', textAlign: 'center', marginBottom: '1rem', fontWeight: 'bold', color: '#222' }}>
@@ -218,6 +221,7 @@ export default function EngineeringInternships() {
         )}
       </div>
     </Layout>
+    </>
   );
 }
 
