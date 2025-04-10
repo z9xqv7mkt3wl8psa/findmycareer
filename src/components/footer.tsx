@@ -21,22 +21,11 @@ export default function Footer() {
       }}>
         {/* Quick Links */}
         <div>
-          <h3 style={headingStyle}>
-            <span>🔗</span> Quick Links
-          </h3>
+          <h3 style={headingStyle}>Quick Links</h3>
           <ul style={listStyle}>
-            {[
-              { label: 'Home', icon: '🏠' },
-              { label: 'Scholarships', icon: '🎓' },
-              { label: 'Courses', icon: '📚' },
-              { label: 'Education Loans', icon: '💰' },
-              { label: 'Competitions', icon: '🏆' },
-              { label: 'About Us', icon: 'ℹ️' }
-            ].map((item, i) => (
+            {['Home', 'Scholarships', 'Courses', 'Education Loans', 'Competitions', 'About Us'].map((label, i) => (
               <li key={i} style={itemStyle}>
-                <Link href="/" style={linkStyle}>
-                  <span>{item.icon}</span> {item.label}
-                </Link>
+                <Link href="/" style={linkStyle}>{label}</Link>
               </li>
             ))}
           </ul>
@@ -44,21 +33,11 @@ export default function Footer() {
 
         {/* Resources */}
         <div>
-          <h3 style={headingStyle}>
-            <span>📂</span> Resources
-          </h3>
+          <h3 style={headingStyle}>Resources</h3>
           <ul style={listStyle}>
-            {[
-              { label: 'Blog', icon: '✍️' },
-              { label: 'FAQs', icon: '❓' },
-              { label: 'Testimonials', icon: '🌟' },
-              { label: 'Success Stories', icon: '🏅' },
-              { label: 'Application Tips', icon: '💡' }
-            ].map((item, i) => (
+            {['Blog', 'FAQs', 'Testimonials', 'Success Stories', 'Application Tips'].map((label, i) => (
               <li key={i} style={itemStyle}>
-                <Link href="/" style={linkStyle}>
-                  <span>{item.icon}</span> {item.label}
-                </Link>
+                <Link href="/" style={linkStyle}>{label}</Link>
               </li>
             ))}
           </ul>
@@ -66,21 +45,11 @@ export default function Footer() {
 
         {/* Legal */}
         <div>
-          <h3 style={headingStyle}>
-            <span>⚖️</span> Legal
-          </h3>
+          <h3 style={headingStyle}>Legal</h3>
           <ul style={listStyle}>
-            {[
-              { label: 'Privacy Policy', icon: '🔒' },
-              { label: 'Terms & Conditions', icon: '📝' },
-              { label: 'Disclaimer', icon: '⚠️' },
-              { label: 'Refund Policy', icon: '↩️' },
-              { label: 'Sitemap', icon: '🗺️' }
-            ].map((item, i) => (
+            {['Privacy Policy', 'Terms & Conditions', 'Disclaimer', 'Refund Policy', 'Sitemap'].map((label, i) => (
               <li key={i} style={itemStyle}>
-                <Link href="/" style={linkStyle}>
-                  <span>{item.icon}</span> {item.label}
-                </Link>
+                <Link href="/" style={linkStyle}>{label}</Link>
               </li>
             ))}
           </ul>
@@ -88,25 +57,21 @@ export default function Footer() {
 
         {/* Contact & Social */}
         <div>
-          <h3 style={headingStyle}>
-            <span>📞</span> Contact Us
-          </h3>
+          <h3 style={headingStyle}>Contact Us</h3>
           <ul style={listStyle}>
-            <li style={itemStyle}><span>📧</span> support@prasunet.com</li>
-            <li style={itemStyle}><span>🌐</span> www.prasunet.com</li>
-            <li style={itemStyle}><span>🏢</span> Prasunet Pvt. Ltd. Co.</li>
+            <li style={itemStyle}>support@prasunet.com</li>
+            <li style={itemStyle}>www.prasunet.com</li>
+            <li style={itemStyle}>Prasunet Pvt. Ltd. Co.</li>
           </ul>
 
-          <h3 style={{ ...headingStyle, margin: '2rem 0 1.5rem' }}>
-            <span>👥</span> Follow Us
-          </h3>
+          <h3 style={{ ...headingStyle, margin: '2rem 0 1.5rem' }}>Follow Us</h3>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             {[
-              { name: 'Facebook', icon: '👍', color: '#4267B2' },
-              { name: 'Twitter', icon: '🐦', color: '#1DA1F2' },
-              { name: 'Instagram', icon: '📷', color: '#E1306C' },
-              { name: 'LinkedIn', icon: '💼', color: '#0077B5' },
-              { name: 'YouTube', icon: '▶️', color: '#FF0000' }
+              { name: 'Facebook', color: '#4267B2' },
+              { name: 'Twitter', color: '#1DA1F2' },
+              { name: 'Instagram', color: '#E1306C' },
+              { name: 'LinkedIn', color: '#0077B5' },
+              { name: 'YouTube', color: '#FF0000' }
             ].map((social, i) => (
               <Link
                 key={i}
@@ -117,13 +82,10 @@ export default function Footer() {
                   backgroundColor: social.color,
                   padding: '0.5rem 1rem',
                   borderRadius: '4px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
                   transition: 'transform 0.2s'
                 }}
               >
-                <span>{social.icon}</span> {social.name}
+                {social.name}
               </Link>
             ))}
           </div>
@@ -143,7 +105,7 @@ export default function Footer() {
           © {new Date().getFullYear()} Student Grow | Prasunet Pvt. Ltd. Co. | All rights reserved.
         </p>
         <p style={{ marginTop: '0.5rem' }}>
-          Empowering students worldwide to achieve their educational dreams 🌍✨
+          Empowering students worldwide to achieve their educational dreams
         </p>
       </div>
     </footer>
@@ -154,10 +116,7 @@ const headingStyle = {
   marginBottom: '1.5rem',
   fontSize: '1.2rem',
   borderBottom: '2px solid #4299e1',
-  paddingBottom: '0.5rem',
-  display: 'flex',
-  alignItems: 'center',
-  gap: '0.5rem'
+  paddingBottom: '0.5rem'
 };
 
 const listStyle = {
@@ -167,17 +126,11 @@ const listStyle = {
 };
 
 const itemStyle = {
-  margin: '0.8rem 0',
-  display: 'flex',
-  alignItems: 'center',
-  gap: '0.5rem'
+  margin: '0.8rem 0'
 };
 
 const linkStyle = {
   color: '#ebf8ff',
   textDecoration: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  gap: '0.5rem',
   transition: 'color 0.2s'
 };
