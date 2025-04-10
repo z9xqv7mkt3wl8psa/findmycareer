@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import { useState } from 'react';
+import { CSSProperties } from 'react';
 
 export default function Navbar() {
-  const [hovered, setHovered] = useState<string | null>(null);
-  const [submenuVisible, setSubmenuVisible] = useState<string | null>(null);
+  const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+  const [hoveredSubmenuItem, setHoveredSubmenuItem] = useState<string | null>(null);
 
   const navItems = [
     {
@@ -64,7 +65,7 @@ export default function Navbar() {
         path: `/courses/${title.toLowerCase().replace(/\s+/g, '-')}`
       }))
     },
-    
+
     {
       label: 'Competition',
       path: '/competition',
@@ -90,9 +91,52 @@ export default function Navbar() {
         path: `/colleges/${title.toLowerCase().replace(/\s+/g, '-')}`
       }))
     },
-    
+
     { label: 'Guide Me', path: '/' },
   ];
+
+  const handleSubmenuToggle = (path: string | null) => {
+    setActiveSubmenu(activeSubmenu === path ? null : path);
+  };
+
+  const handleSubmenuItemMouseEnter = (path: string) => {
+    setHoveredSubmenuItem(path);
+  };
+
+  const handleSubmenuItemMouseLeave = () => {
+    setHoveredSubmenuItem(null);
+  };
+
+  const dropdownButtonStyles = (isActive: boolean): CSSProperties => ({
+    background: 'none',
+    border: 'none',
+    padding: '0.25rem 0.5rem',
+    marginLeft: '0.5rem',
+    cursor: 'pointer',
+    outline: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    transform: isActive ? 'rotate(180deg)' : 'rotate(0deg)',
+    transition: 'transform 0.2s ease-in-out',
+  });
+
+  const dropdownIconStyles = (isActive: boolean): CSSProperties => ({
+    fontSize: '0.8rem',
+    width: '1em',
+    height: '1em',
+    pointerEvents: 'none',
+  });
+
+  const submenuItemStyles = (path: string): CSSProperties => ({
+    display: 'block',
+    padding: '0.8rem 1.75rem',
+    color: '#333',
+    textDecoration: 'none',
+    whiteSpace: 'nowrap',
+    transition: 'background-color 0.15s ease-in-out',
+    backgroundColor: hoveredSubmenuItem === path ? '#f9f9f9' : 'transparent', // Conditional background color
+  });
 
   return (
     <nav style={styles.nav}>
@@ -105,26 +149,35 @@ export default function Navbar() {
           <li
             key={path}
             style={{ position: 'relative' }}
-            onMouseEnter={() => setSubmenuVisible(path)}
-            onMouseLeave={() => setSubmenuVisible(null)}
           >
-            <Link
-              href={path}
-              style={{
-                ...styles.link,
-                color: hovered === path ? '#0070f3' : '#34495e'
-              }}
-              onMouseEnter={() => setHovered(path)}
-              onMouseLeave={() => setHovered(null)}
-            >
-              {label}
-            </Link>
+            <div style={styles.navItemWrapper}>
+              <Link
+                href={path}
+                style={styles.link}
+              >
+                {label}
+              </Link>
+              {subItems && (
+                <button
+                  onClick={() => handleSubmenuToggle(path)}
+                  style={dropdownButtonStyles(activeSubmenu === path)}
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor" style={dropdownIconStyles(activeSubmenu === path)}>
+                    <path fillRule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 011.06 1.06l-7.5 7.5z" clipRule="evenodd" />
+                  </svg>
+                </button>
+              )}
+            </div>
 
-            {subItems && submenuVisible === path && (
+            {subItems && activeSubmenu === path && (
               <ul style={styles.submenu}>
                 {subItems.map((sub) => (
-                  <li key={sub.path}>
-                    <Link href={sub.path} style={styles.submenuItem}>
+                  <li
+                    key={sub.path}
+                    onMouseEnter={() => handleSubmenuItemMouseEnter(sub.path)}
+                    onMouseLeave={handleSubmenuItemMouseLeave}
+                  >
+                    <Link href={sub.path} style={submenuItemStyles(sub.path)}>
                       {sub.label}
                     </Link>
                   </li>
@@ -138,7 +191,7 @@ export default function Navbar() {
   );
 }
 
-const styles: { [key: string]: React.CSSProperties } = {
+const styles: { [key: string]: CSSProperties } = {
   nav: {
     display: 'flex',
     justifyContent: 'space-between',
@@ -160,31 +213,32 @@ const styles: { [key: string]: React.CSSProperties } = {
   menu: {
     display: 'flex',
     listStyle: 'none',
-    gap: '2rem',
+    gap: '1.5rem',
     margin: 0,
     padding: 0
+  },
+  navItemWrapper: {
+    display: 'flex',
+    alignItems: 'center',
   },
   link: {
     textDecoration: 'none',
     fontWeight: 500,
-    transition: 'color 0.3s'
+    color: '#34495e',
+    padding: '0.5rem 0',
+    display: 'block',
   },
   submenu: {
     position: 'absolute',
-    top: '100%',
+    top: 'calc(100% + 0.25rem)',
     left: 0,
     backgroundColor: '#fff',
-    boxShadow: '0px 4px 12px rgba(0,0,0,0.1)',
+    boxShadow: '0px 8px 16px rgba(0,0,0,0.15)',
     borderRadius: '0.4rem',
-    padding: '0.5rem 0',
+    padding: '0.75rem 0',
     zIndex: 1001,
-    minWidth: '240px'
+    minWidth: '260px',
+    border: '1px solid #e5e5e5',
+    marginTop: '0.2rem',
   },
-  submenuItem: {
-    display: 'block',
-    padding: '0.5rem 1rem',
-    color: '#333',
-    textDecoration: 'none',
-    whiteSpace: 'nowrap'
-  }
 };
