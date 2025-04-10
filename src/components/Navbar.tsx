@@ -87,7 +87,7 @@ export default function Navbar() {
       path: '/competition',
       subItems: [
         'Hackathon',
-        'Quizez',
+        'Quizes',
       ].map(title => ({
         label: title,
         path: `/competition/${title.toLowerCase().replace(/\s+/g, '-')}`
