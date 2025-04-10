@@ -124,88 +124,116 @@ export default function HomePage() {
         ))}
       </section>
 
-      {/* Categories Section */}
-      <section style={{ backgroundColor: '#eef6ff', padding: '2rem' }}>
-        <h2 style={{ textAlign: 'center', fontSize: '1.8rem', marginBottom: '1.5rem', color: '#003366' }}>
-          Popular Scholarship <strong>Categories</strong>
-        </h2>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
-            gap: '1rem',
-            maxWidth: '900px',
-            margin: '0 auto',
-          }}
-        >
-          {[
-            'For Girls',
-            'Sports Talent',
-            'College Level',
-            'SC/ST/OBC/DNT',
-            'International',
-            'Talent Based',
-            'Minorities',
-            'Merit Based',
-            'School Level',
-          ].map((category, index) => (
-            <div
-              key={index}
-              style={{
-                backgroundColor: '#fff',
-                padding: '1rem',
-                borderRadius: '0.75rem',
-                textAlign: 'center',
-                boxShadow: '0 2px 6px rgba(0,0,0,0.05)',
-                fontWeight: '500',
-              }}
-            >
-              {category}
-            </div>
-          ))}
-        </div>
-      </section>
+  
 
-      {/* More Opportunities Section */}
-      <section style={{ backgroundColor: '#f9f9ff', padding: '2rem' }}>
-        <h2 style={{ textAlign: 'center', fontSize: '1.8rem', marginBottom: '1.5rem', color: '#333' }}>
-          More <strong>Opportunities</strong>
-        </h2>
+{/* Categories Section */}
+<section style={{ backgroundColor: '#eef6ff', padding: '2rem' }}>
+  <h2 style={{ textAlign: 'center', fontSize: '1.8rem', marginBottom: '1.5rem', color: '#003366' }}>
+    Popular Scholarship <strong>Categories</strong>
+  </h2>
+  <div
+    style={{
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
+      gap: '1rem',
+      maxWidth: '900px',
+      margin: '0 auto',
+    }}
+  >
+    {[
+      { label: 'For Girls', path: '/categories/for-girls' },
+      { label: 'Sports Talent', path: '/categories/sports-talent' },
+      { label: 'College Level', path: '/categories/college-level' },
+      { label: 'SC/ST/OBC/DNT', path: '/categories/reserved' },
+      { label: 'International', path: '/categories/international' },
+      { label: 'Talent Based', path: '/categories/talent-based' },
+      { label: 'Minorities', path: '/categories/minorities' },
+      { label: 'Merit Based', path: '/categories/merit-based' },
+      { label: 'School Level', path: '/categories/school-level' },
+    ].map((category, index) => (
+      <Link key={index} href={category.path} style={{ textDecoration: 'none', color: 'inherit' }}>
         <div
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '1rem',
-            maxWidth: '1000px',
-            margin: '0 auto',
+            backgroundColor: '#fff',
+            padding: '1rem',
+            borderRadius: '0.75rem',
+            textAlign: 'center',
+            boxShadow: '0 2px 6px rgba(0,0,0,0.05)',
+            fontWeight: '500',
+            cursor: 'pointer',
+            transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+          }}
+          onMouseEnter={e => {
+            e.currentTarget.style.transform = 'scale(1.05)';
+            e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+          }}
+          onMouseLeave={e => {
+            e.currentTarget.style.transform = 'scale(1)';
+            e.currentTarget.style.boxShadow = '0 2px 6px rgba(0,0,0,0.05)';
           }}
         >
-          {[
-            'Education Loan',
-            'Student Funding Solution',
-            'Expert Talk Series',
-            'Career Guidance',
-            'Online Degree',
-            'Scholarship Services',
-            'College Board',
-            'Scholarship Bulletins',
-          ].map((item, index) => (
-            <div
-              key={index}
-              style={{
-                backgroundColor: '#fff',
-                padding: '1rem',
-                borderRadius: '0.75rem',
-                textAlign: 'center',
-                boxShadow: '0 2px 6px rgba(0,0,0,0.05)',
-                fontWeight: '500',
-              }}
-            >
-              {item}
-            </div>
-          ))}
+          {category.label}
         </div>
-      </section>
+      </Link>
+    ))}
+  </div>
+</section>
+
+
+
+{/* More Opportunities Section */}
+<section style={{ backgroundColor: '#f9f9ff', padding: '2rem' }}>
+  <h2 style={{ textAlign: 'center', fontSize: '1.8rem', marginBottom: '1.5rem', color: '#333' }}>
+    More <strong>Opportunities</strong>
+  </h2>
+  <div
+    style={{
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+      gap: '1rem',
+      maxWidth: '1000px',
+      margin: '0 auto',
+    }}
+  >
+    {[
+      { label: 'Education Loan', path: '/opportunities/education-loan' },
+      { label: 'Student Funding Solution', path: '/opportunities/student-funding' },
+      { label: 'Expert Talk Series', path: '/opportunities/expert-talk' },
+      { label: 'Career Guidance', path: '/opportunities/career-guidance' },
+      { label: 'Online Degree', path: '/opportunities/online-degree' },
+      { label: 'Scholarship Services', path: '/opportunities/scholarship-services' },
+      { label: 'College Board', path: '/opportunities/college-board' },
+      { label: 'Scholarship Bulletins', path: '/opportunities/scholarship-bulletins' },
+    ].map((item, index) => (
+      <Link href={item.path} key={index} style={{ textDecoration: 'none', color: 'inherit' }}>
+        <div
+          style={{
+            backgroundColor: '#fff',
+            padding: '1rem',
+            borderRadius: '0.75rem',
+            textAlign: 'center',
+            boxShadow: '0 2px 6px rgba(0,0,0,0.05)',
+            fontWeight: '500',
+            cursor: 'pointer',
+            transition: 'all 0.3s ease-in-out',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'scale(1.05)';
+            e.currentTarget.style.boxShadow = '0 6px 15px rgba(0, 128, 255, 0.3)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'scale(1)';
+            e.currentTarget.style.boxShadow = '0 2px 6px rgba(0,0,0,0.05)';
+          }}
+        >
+          {item.label}
+        </div>
+      </Link>
+    ))}
+  </div>
+</section>
+
+
 
       {/* Partners Section */}
       <section
@@ -928,6 +956,8 @@ export default function HomePage() {
   `
 }} />
       <Footer />
+
+
     </>
   );
 }
