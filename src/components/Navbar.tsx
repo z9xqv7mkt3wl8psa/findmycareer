@@ -96,7 +96,7 @@ export default function Navbar() {
 
   return (
     <nav style={styles.nav}>
-      <Link href="/" style={styles.logo}>
+      <Link href="/home" style={styles.logo}>
         Student Grow
       </Link>
 
