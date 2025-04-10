@@ -1,10 +1,11 @@
+'use client';
+
 import Link from 'next/link';
 import { useState } from 'react';
-import { CSSProperties } from 'react';
 
 export default function Navbar() {
-  const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
-  const [hoveredSubmenuItem, setHoveredSubmenuItem] = useState<string | null>(null);
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [hoveredSubItem, setHoveredSubItem] = useState<string | null>(null);
 
   const navItems = [
     {
@@ -57,28 +58,41 @@ export default function Navbar() {
       label: 'Courses',
       path: '/courses',
       subItems: [
-        'Top Courses for Engineering',
-        'Top Courses for Bachelors',
-        'Top Courses for Masters',
-      ].map(title => ({
-        label: title,
-        path: `/courses/${title.toLowerCase().replace(/\s+/g, '-')}`
-      }))
+        {
+          label: 'Top Courses for Engineering',
+          path: '/courses/top-courses-for-engineering',
+          subItems: [
+            {
+              label: 'DSA',
+              path: '/courses/top-courses-for-engineering/dsa'
+            },
+            {
+              label: 'Core Courses',
+              path: '/courses/top-courses-for-engineering/core-courses'
+            }
+          ]
+        },
+        {
+          label: 'Top Courses for Bachelors',
+          path: '/courses/top-courses-for-bachelors'
+        },
+        {
+          label: 'Top Courses for Masters',
+          path: '/courses/top-courses-for-masters'
+        }
+      ]
     },
-
     {
       label: 'Competition',
       path: '/competition',
       subItems: [
         'Hackathon',
-        'Quizes',
+        'Quizez',
       ].map(title => ({
         label: title,
         path: `/competition/${title.toLowerCase().replace(/\s+/g, '-')}`
       }))
     },
-
-
     { label: 'Careers', path: '/careers' },
     {
       label: 'Colleges',
@@ -91,95 +105,53 @@ export default function Navbar() {
         path: `/colleges/${title.toLowerCase().replace(/\s+/g, '-')}`
       }))
     },
-
-    { label: 'Guide Me', path: '/' },
   ];
-
-  const handleSubmenuToggle = (path: string | null) => {
-    setActiveSubmenu(activeSubmenu === path ? null : path);
-  };
-
-  const handleSubmenuItemMouseEnter = (path: string) => {
-    setHoveredSubmenuItem(path);
-  };
-
-  const handleSubmenuItemMouseLeave = () => {
-    setHoveredSubmenuItem(null);
-  };
-
-  const dropdownButtonStyles = (isActive: boolean): CSSProperties => ({
-    background: 'none',
-    border: 'none',
-    padding: '0.25rem 0.5rem',
-    marginLeft: '0.5rem',
-    cursor: 'pointer',
-    outline: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    transform: isActive ? 'rotate(180deg)' : 'rotate(0deg)',
-    transition: 'transform 0.2s ease-in-out',
-  });
-
-  const dropdownIconStyles = (isActive: boolean): CSSProperties => ({
-    fontSize: '0.8rem',
-    width: '1em',
-    height: '1em',
-    pointerEvents: 'none',
-  });
-
-  const submenuItemStyles = (path: string): CSSProperties => ({
-    display: 'block',
-    padding: '0.8rem 1.75rem',
-    color: '#333',
-    textDecoration: 'none',
-    whiteSpace: 'nowrap',
-    transition: 'background-color 0.15s ease-in-out',
-    backgroundColor: hoveredSubmenuItem === path ? '#f9f9f9' : 'transparent', // Conditional background color
-  });
 
   return (
     <nav style={styles.nav}>
-      <Link href="/home" style={styles.logo}>
-        Student Grow
-      </Link>
-
+      <Link href="/" style={styles.logo}>Student Grow</Link>
       <ul style={styles.menu}>
         {navItems.map(({ label, path, subItems }) => (
           <li
             key={path}
-            style={{ position: 'relative' }}
+            style={styles.menuItem}
+            onMouseEnter={() => setActiveMenu(path)}
+            onMouseLeave={(e) => {
+              const related = e.relatedTarget as HTMLElement;
+              if (!e.currentTarget.contains(related)) setActiveMenu(null);
+            }}
           >
-            <div style={styles.navItemWrapper}>
-              <Link
-                href={path}
-                style={styles.link}
-              >
-                {label}
-              </Link>
-              {subItems && (
-                <button
-                  onClick={() => handleSubmenuToggle(path)}
-                  style={dropdownButtonStyles(activeSubmenu === path)}
-                >
-                  <svg viewBox="0 0 24 24" fill="currentColor" style={dropdownIconStyles(activeSubmenu === path)}>
-                    <path fillRule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 011.06 1.06l-7.5 7.5z" clipRule="evenodd" />
-                  </svg>
-                </button>
-              )}
-            </div>
+            <Link href={path} style={styles.link}>{label}</Link>
 
-            {subItems && activeSubmenu === path && (
-              <ul style={styles.submenu}>
+            {subItems && activeMenu === path && (
+              <ul style={{
+                ...styles.submenu,
+                left: label === 'Colleges' ? 'auto' : 0,
+                right: label === 'Colleges' ? 0 : 'auto'
+              }}>
                 {subItems.map((sub) => (
                   <li
-                    key={sub.path}
-                    onMouseEnter={() => handleSubmenuItemMouseEnter(sub.path)}
-                    onMouseLeave={handleSubmenuItemMouseLeave}
+                    key={sub.path || sub.label}
+                    style={{ position: 'relative' }}
+                    onMouseEnter={() => setHoveredSubItem(sub.label)}
+                    onMouseLeave={() => setHoveredSubItem(null)}
                   >
-                    <Link href={sub.path} style={submenuItemStyles(sub.path)}>
+                    <Link href={sub.path} style={styles.submenuItem}>
                       {sub.label}
                     </Link>
+
+                    {/* Show nested submenu only when hovered */}
+                    {sub.subItems && hoveredSubItem === sub.label && (
+                      <ul style={{ ...styles.submenu, top: 0, left: '100%' }}>
+                        {sub.subItems.map((nested) => (
+                          <li key={nested.path}>
+                            <Link href={nested.path} style={styles.submenuItem}>
+                              {nested.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -187,11 +159,18 @@ export default function Navbar() {
           </li>
         ))}
       </ul>
+
+      {/* Global style for hover effect */}
+      <style jsx global>{`
+        a:hover {
+          background-color: #f5f5f5 !important;
+        }
+      `}</style>
     </nav>
   );
 }
 
-const styles: { [key: string]: CSSProperties } = {
+const styles: { [key: string]: React.CSSProperties } = {
   nav: {
     display: 'flex',
     justifyContent: 'space-between',
@@ -202,24 +181,23 @@ const styles: { [key: string]: CSSProperties } = {
     position: 'sticky',
     top: 0,
     zIndex: 1000,
-    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)'
+    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)',
   },
   logo: {
     fontWeight: 'bold',
     fontSize: '1.8rem',
     color: '#2c3e50',
-    textDecoration: 'none'
+    textDecoration: 'none',
   },
   menu: {
     display: 'flex',
     listStyle: 'none',
-    gap: '1.5rem',
+    gap: '2rem',
     margin: 0,
-    padding: 0
+    padding: 0,
   },
-  navItemWrapper: {
-    display: 'flex',
-    alignItems: 'center',
+  menuItem: {
+    position: 'relative',
   },
   link: {
     textDecoration: 'none',
@@ -230,15 +208,24 @@ const styles: { [key: string]: CSSProperties } = {
   },
   submenu: {
     position: 'absolute',
-    top: 'calc(100% + 0.25rem)',
-    left: 0,
+    top: '100%',
     backgroundColor: '#fff',
     boxShadow: '0px 8px 16px rgba(0,0,0,0.15)',
     borderRadius: '0.4rem',
-    padding: '0.75rem 0',
+    padding: '0.5rem 0',
     zIndex: 1001,
-    minWidth: '260px',
+    minWidth: '240px',
+    listStyle: 'none',
     border: '1px solid #e5e5e5',
-    marginTop: '0.2rem',
+  },
+  submenuItem: {
+    display: 'block',
+    padding: '0.6rem 1rem',
+    color: '#333',
+    textDecoration: 'none',
+    whiteSpace: 'nowrap',
+    transition: 'all 0.2s ease-in-out',
+    borderRadius: '4px',
+    cursor: 'pointer',
   },
 };
