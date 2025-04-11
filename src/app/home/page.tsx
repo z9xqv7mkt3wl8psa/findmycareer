@@ -138,6 +138,7 @@ export default function HomePage() {
       gap: '1rem',
       maxWidth: '900px',
       margin: '0 auto',
+      minHeight: '50vh',
     }}
   >
     {[
@@ -158,18 +159,18 @@ export default function HomePage() {
             padding: '1rem',
             borderRadius: '0.75rem',
             textAlign: 'center',
-            boxShadow: '0 2px 6px rgba(0,0,0,0.05)',
+            
             fontWeight: '500',
             cursor: 'pointer',
-            transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+            
           }}
           onMouseEnter={e => {
             e.currentTarget.style.transform = 'scale(1.05)';
-            e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+           
           }}
           onMouseLeave={e => {
             e.currentTarget.style.transform = 'scale(1)';
-            e.currentTarget.style.boxShadow = '0 2px 6px rgba(0,0,0,0.05)';
+           
           }}
         >
           {category.label}
@@ -182,10 +183,33 @@ export default function HomePage() {
 
 
 {/* More Opportunities Section */}
-<section style={{ backgroundColor: '#f9f9ff', padding: '2rem' }}>
-  <h2 style={{ textAlign: 'center', fontSize: '1.8rem', marginBottom: '1.5rem', color: '#333' }}>
-    More <strong>Opportunities</strong>
+<section
+  style={{
+    backgroundImage: 'url("/oppurtunitiesbackground2.jpg")', // make sure the image is inside your public folder
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    padding: '2rem',
+    minHeight: '80vh',
+  }}
+>
+<div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.5rem' }}>
+  <h2
+    style={{
+      fontSize: '2rem',
+      fontWeight: 'bold',
+      color: '#fff',
+      background: 'linear-gradient(90deg, #e91e63, #2196f3)',
+      padding: '0.6rem 1.2rem',
+      borderRadius: '12px',
+      boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
+    }}
+  >
+    More Opportunities
   </h2>
+</div>
+
+
   <div
     style={{
       display: 'grid',
@@ -205,25 +229,15 @@ export default function HomePage() {
       { label: 'College Board', path: '/opportunities/college-board' },
       { label: 'Scholarship Bulletins', path: '/opportunities/scholarship-bulletins' },
     ].map((item, index) => (
-      <Link href={item.path} key={index} style={{ textDecoration: 'none', color: 'inherit' }}>
+      <Link key={index} href={item.path}>
         <div
           style={{
-            backgroundColor: '#fff',
             padding: '1rem',
-            borderRadius: '0.75rem',
+            backgroundColor: '#ffffffcc',
+            borderRadius: '8px',
             textAlign: 'center',
-            boxShadow: '0 2px 6px rgba(0,0,0,0.05)',
-            fontWeight: '500',
             cursor: 'pointer',
-            transition: 'all 0.3s ease-in-out',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = 'scale(1.05)';
-            e.currentTarget.style.boxShadow = '0 6px 15px rgba(0, 128, 255, 0.3)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = 'scale(1)';
-            e.currentTarget.style.boxShadow = '0 2px 6px rgba(0,0,0,0.05)';
+            fontWeight: 'bold',
           }}
         >
           {item.label}
@@ -232,6 +246,7 @@ export default function HomePage() {
     ))}
   </div>
 </section>
+
 
 
 
@@ -258,29 +273,38 @@ export default function HomePage() {
             }}
           >
             {[
-              '/scholarship2.jpg',
-              '/scholarship2.jpg',
-              '/scholarship2.jpg',
-              '/scholarship2.jpg',
-              '/scholarship2.jpg',
-              '/scholarship2.jpg',
-              '/scholarship2.jpg',
-              '/scholarship2.jpg',
-              '/scholarship2.jpg',
-              '/scholarship2.jpg',
-              '/scholarship2.jpg',
-              '/scholarship2.jpg',
-              '/scholarship2.jpg',
-              '/scholarship2.jpg',
-              '/scholarship2.jpg',
+              '/Partnerzivame.png',
+'/Partnervistara.png',
+'/Partnerunacademy.png',
+'/Partnermicromax.jpg',
+'/Partnerlic.png',
+'/Partnerhdfc.jpg',
+'/Partnerhcltech.jpg',
+'/Partnerforcemotors.png',
+'/Partnerflipkart.jpg',
+'/Partnerclovia.png',
+'/Partnerbyjus.png',
+'/Partnerbob.jpg',
+'/Partnerairindia.jpg',
+
               
             ].map((src, index) => (
               <img
-                key={index}
-                src={src}
-                alt={`Partner ${index + 1}`}
-                style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
-              />
+  key={index}
+  src={src}
+  alt={`Partner logo ${index + 1}`}
+  style={{
+    width: '100%',
+    maxWidth: '80px',
+    height: 'auto',
+    objectFit: 'contain',
+    padding: '0.5rem',
+    backgroundColor: '#fff',
+    borderRadius: '8px',
+    boxShadow: '0 2px 6px rgba(0, 0, 0, 0.1)',
+  }}
+/>
+
             ))}
           </div>
         </div>
@@ -360,34 +384,34 @@ export default function HomePage() {
 
     {[
       {
-        logo: '/scholarship1.png',
-        title: 'KIND CIRCLE SCHOLARSHIP FOR MERITORIOUS STUDENTS 2025–26',
-        deadline: '2025-12-31',
+        logo: '/scholarshipkindcircle.png',
+        title: 'KIND CIRCLE SCHOLARSHIP FOR MERITORIOUS STUDENTS ',
+        deadline: '31-Dec-2025',
       },
       {
-        logo: '/scholarship2.jpg',
+        logo: '/scholarshipcollegeboard.jpg',
         title: 'COLLEGE BOARD 90% FEE WAIVER PROGRAM',
-        deadline: '2025-04-16',
+        deadline: '16-Apr-2025',
       },
       {
-        logo: '/scholarship3.jpg',
-        title: 'COLLEGE BOARD 50% FEE WAIVER PROGRAM',
-        deadline: '2025-04-16',
+        logo: '/scholarshipiet.png',
+        title: 'Institution of Engineering and Technology (IET) India Scholarship  ',
+        deadline: '31-May-2025',
       },
       {
-        logo: '/scholarship4.jpg',
-        title: 'INTERNATIONAL MERIT SCHOLARSHIP',
-        deadline: '2025-06-10',
+        logo: '/scholarshipsbi.jpg',
+        title: 'SBIF Asha Scholarship Program for Overseas Education ',
+        deadline: '30-Apr-2025',
       },
       {
-        logo: '/scholarship5.jpg',
-        title: 'FLIPKART FOUNDATION SCHOLARSHIP PROGRAM 2024–25',
-        deadline: '2025-09-30',
+        logo: '/scholarshipflipkart.jpg',
+        title: 'FLIPKART FOUNDATION SCHOLARSHIP PROGRAM ',
+        deadline: '16-Apr-2025',
       },
       {
-        logo: '/scholarship6.jpg',
-        title: 'GOOGLE GIRLS SCHOLARSHIP 2025',
-        deadline: '2025-11-01',
+        logo: '/scholarshipalstom.jpg',
+        title: 'Alstom India Scholarship Award 2024-25',
+        deadline: '04-May-2025',
       }
     ].map((scholarship, index) => (
       <div
@@ -428,35 +452,35 @@ export default function HomePage() {
 
     {/* Add cloned items for seamless looping */}
     {[
-      {
-        logo: '/scholarship1.png',
-        title: 'KIND CIRCLE SCHOLARSHIP FOR MERITORIOUS STUDENTS 2025–26',
-        deadline: '2025-12-31',
+       {
+        logo: '/scholarshipkindcircle.png',
+        title: 'KIND CIRCLE SCHOLARSHIP FOR MERITORIOUS STUDENTS ',
+        deadline: '31-Dec-2025',
       },
       {
-        logo: '/scholarship2.jpg',
+        logo: '/scholarshipcollegeboard.jpg',
         title: 'COLLEGE BOARD 90% FEE WAIVER PROGRAM',
-        deadline: '2025-04-16',
+        deadline: '16-Apr-2025',
       },
       {
-        logo: '/scholarship3.jpg',
-        title: 'COLLEGE BOARD 50% FEE WAIVER PROGRAM',
-        deadline: '2025-04-16',
+        logo: '/scholarshipiet.png',
+        title: 'Institution of Engineering and Technology (IET) India Scholarship  ',
+        deadline: '31-May-2025',
       },
       {
-        logo: '/scholarship4.jpg',
-        title: 'INTERNATIONAL MERIT SCHOLARSHIP',
-        deadline: '2025-06-10',
+        logo: '/scholarshipsbi.jpg',
+        title: 'SBIF Asha Scholarship Program for Overseas Education ',
+        deadline: '30-Apr-2025',
       },
       {
-        logo: '/scholarship5.jpg',
-        title: 'FLIPKART FOUNDATION SCHOLARSHIP PROGRAM 2024–25',
-        deadline: '2025-09-30',
+        logo: '/scholarshipflipkart.jpg',
+        title: 'FLIPKART FOUNDATION SCHOLARSHIP PROGRAM ',
+        deadline: '16-Apr-2025',
       },
       {
-        logo: '/scholarship6.jpg',
-        title: 'GOOGLE GIRLS SCHOLARSHIP 2025',
-        deadline: '2025-11-01',
+        logo: '/scholarshipalstom.jpg',
+        title: 'Alstom India Scholarship Award 2024-25',
+        deadline: '04-May-2025',
       }
     ].map((scholarship, index) => (
       <div
@@ -524,7 +548,7 @@ export default function HomePage() {
     >
       <img src="/book.gif" alt="Register" style={{ height: '60px', marginBottom: '1rem' }} />
       <h3 style={{ fontSize: '1.1rem', fontWeight: '600', marginBottom: '1rem' }}>
-        Register and Create Your Profile<br />on Buddy4Study
+        Register and Create Your Profile<br />on Student Grow
       </h3>
       <p style={{ fontSize: '0.9rem', color: '#555' }}>
         Share a few quick details and register instantly! Unlock personalized loan options, expert guidance, and education support.
@@ -599,45 +623,71 @@ export default function HomePage() {
     }}
   >
     {/* Header */}
-    <div style={{ backgroundColor: '#c0c6cd', padding: '1rem 2rem' }}>
-      <h2 style={{ fontSize: '1.25rem', fontWeight: '700', color: '#2c2c2c' }}>
-        Notice Board – <span style={{ fontWeight: '500' }}>For Students</span>
-      </h2>
-    </div>
+    <div style={{ backgroundColor: '#e0f0ff', padding: '1rem 2rem' }}>
+  <h2 style={{ fontSize: '1.25rem', fontWeight: '700', color: '#2c2c2c' }}>
+    Notice Board – <span style={{ fontWeight: '500' }}>For Students</span>
+  </h2>
+</div>
 
-    {/* Content */}
+
+    {/* Notice List */}
     <div style={{ padding: '1.5rem 2rem', maxHeight: '260px', overflowY: 'auto' }}>
-      {/* Notice 1 */}
-      <div style={{ marginBottom: '1.5rem' }}>
-        <p style={{ fontWeight: '700', marginBottom: '0.25rem' }}>31 May, 2025</p>
-        <p style={{ fontSize: '0.95rem', lineHeight: '1.5' }}>
-          <span style={{ color: '#000' }}>
-            Apply to India’s top UGC-approved universities through Buddy4Study’s Online Degree Scholarship Support Programme
-          </span>{' '}
-          and get up to <strong>15% scholarship</strong> on your first-semester fee.
-        </p>
-      </div>
+      {[
+        {
+          date: '31 May, 2025',
+          text: 'Apply now for the prestigious Institution of Engineering and Technology (IET) India Scholarship Awards 2025 – empowering future engineers with merit-based financial support.',
+          link: 'https://www.buddy4study.com/scholarship/iet-india-scholarship-awards',
+        },
+        {
+          date: '4 May, 2025',
+          text: "Applications are open for Alstom India Scholarship 2024–25: Phase-III. Students pursuing ITI/Diploma, general graduation, or professional graduation in STEM can apply by May 4, 2025!",
+          link: 'https://www.buddy4study.com/page/alstom-india-scholarship',
+        },
+        {
+          date: '16 April, 2025',
+          text: "Applications are open for Flipkart Foundation Scholarship 2024–25! Children of Kirana Store Owners pursuing 1st-year UG STEM at government colleges in India can apply by 16 April 2025.",
+          link: 'https://www.buddy4study.com/page/flipkart-foundation-scholarship',
+        },
+      ].map((notice, index) => (
+        <div key={index} style={{ marginBottom: '1.5rem' }}>
+          {/* Date + Icon */}
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '0.25rem' }}>
+            <div
+              style={{
+                width: '12px',
+                height: '12px',
+                backgroundColor: '#007bff',
+                transform: 'rotate(45deg)',
+                marginRight: '10px',
+              }}
+            ></div>
+            <p style={{ fontWeight: '600', margin: 0 }}>{notice.date}</p>
+          </div>
 
-      {/* Notice 2 */}
-      <div style={{ marginBottom: '1.5rem' }}>
-        <p style={{ fontWeight: '700', marginBottom: '0.25rem' }}>4 May, 2025</p>
-        <p style={{ fontSize: '0.95rem', lineHeight: '1.5' }}>
-          Applications are open for Alstom India Scholarship 2024–25: Phase-III. Students pursuing ITI/Diploma,
-          general graduation, or professional graduation in STEM can apply by May 4, 2025!
-        </p>
-      </div>
-
-      {/* Notice 3 */}
-      <div>
-        <p style={{ fontWeight: '700', marginBottom: '0.25rem', color: '#8b00cc' }}>16 April, 2025</p>
-        <p style={{ fontSize: '0.95rem', lineHeight: '1.5', color: '#5c17bd' }}>
-          Applications are open for Flipkart Foundation Scholarship 2024-25!
-          Children of Kirana Store Owners pursuing 1st-year UG STEM at government colleges in India can apply by 16 April 2025.
-        </p>
-      </div>
+          {/* Notice Text */}
+          <p style={{ margin: 0, lineHeight: '1.5' }}>
+            <a
+              href={notice.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: '#333',
+                textDecoration: 'none',
+                transition: 'color 0.3s',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#007bff')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#333')}
+            >
+              {notice.text}
+            </a>
+          </p>
+        </div>
+      ))}
     </div>
   </div>
 </section>
+
+
 
 {/* Meet Our Scholars Section */}
 <section style={{ backgroundColor: '#fff', padding: '3rem 2rem' }}>
