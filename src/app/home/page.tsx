@@ -384,34 +384,40 @@ export default function HomePage() {
 
     {[
       {
-        logo: '/scholarshipkindcircle.png',
+        logo: '/scholarshipietkindcircle.png',
         title: 'KIND CIRCLE SCHOLARSHIP FOR MERITORIOUS STUDENTS ',
         deadline: '31-Dec-2025',
+        link: '/featurescholarship/KINDCIRCLE'
       },
       {
         logo: '/scholarshipcollegeboard.jpg',
         title: 'COLLEGE BOARD 90% FEE WAIVER PROGRAM',
         deadline: '16-Apr-2025',
+        link: '/featurescholarship/Collegeboard'
       },
       {
         logo: '/scholarshipiet.png',
         title: 'Institution of Engineering and Technology (IET) India Scholarship  ',
         deadline: '31-May-2025',
+        link: '/featurescholarship/IET'
       },
       {
         logo: '/scholarshipsbi.jpg',
         title: 'SBIF Asha Scholarship Program for Overseas Education ',
         deadline: '30-Apr-2025',
+        link: '/featurescholarship/SBIFAshaScholarship'
       },
       {
         logo: '/scholarshipflipkart.jpg',
         title: 'FLIPKART FOUNDATION SCHOLARSHIP PROGRAM ',
         deadline: '16-Apr-2025',
+        link: '/featurescholarship/FLIPKARTFOUNDATION'
       },
       {
         logo: '/scholarshipalstom.jpg',
         title: 'Alstom India Scholarship Award 2024-25',
         deadline: '04-May-2025',
+        link: '/featurescholarship/Alstom'
       }
     ].map((scholarship, index) => (
       <div
@@ -432,55 +438,63 @@ export default function HomePage() {
         <p style={{ fontSize: '0.85rem', marginBottom: '1rem' }}>
           Deadline Date <strong>{scholarship.deadline}</strong>
         </p>
-        <button
-          className="view-btn"
-          style={{
-            backgroundColor: '#f97316',
-            color: '#fff',
-            border: 'none',
-            padding: '0.5rem 1rem',
-            borderRadius: '0.5rem',
-            fontWeight: 'bold',
-            cursor: 'pointer',
-            transition: 'all 0.3s',
-          }}
-        >
-          View Detail
-        </button>
+        <a href={scholarship.link}>
+          <button
+            className="view-btn"
+            style={{
+              backgroundColor: '#f97316',
+              color: '#fff',
+              border: 'none',
+              padding: '0.5rem 1rem',
+              borderRadius: '0.5rem',
+              fontWeight: 'bold',
+              cursor: 'pointer',
+              transition: 'all 0.3s',
+            }}
+          >
+            View Detail
+          </button>
+        </a>
       </div>
     ))}
 
-    {/* Add cloned items for seamless looping */}
+    {/* Cloned items for seamless loop */}
     {[
-       {
-        logo: '/scholarshipkindcircle.png',
+      {
+        logo: '/scholarshipietkindcircle.png',
         title: 'KIND CIRCLE SCHOLARSHIP FOR MERITORIOUS STUDENTS ',
         deadline: '31-Dec-2025',
+        link: '/featurescholarship/KINDCIRCLE'
       },
       {
         logo: '/scholarshipcollegeboard.jpg',
         title: 'COLLEGE BOARD 90% FEE WAIVER PROGRAM',
         deadline: '16-Apr-2025',
+        link: '/featurescholarship/Collegeboard'
       },
       {
         logo: '/scholarshipiet.png',
         title: 'Institution of Engineering and Technology (IET) India Scholarship  ',
         deadline: '31-May-2025',
+        link: '/featurescholarship/IET'
       },
       {
         logo: '/scholarshipsbi.jpg',
         title: 'SBIF Asha Scholarship Program for Overseas Education ',
         deadline: '30-Apr-2025',
+        link: '/featurescholarship/SBIFAshaScholarship'
       },
       {
         logo: '/scholarshipflipkart.jpg',
         title: 'FLIPKART FOUNDATION SCHOLARSHIP PROGRAM ',
         deadline: '16-Apr-2025',
+        link: '/featurescholarship/FLIPKARTFOUNDATION'
       },
       {
         logo: '/scholarshipalstom.jpg',
         title: 'Alstom India Scholarship Award 2024-25',
         deadline: '04-May-2025',
+        link: '/featurescholarship/Alstom'
       }
     ].map((scholarship, index) => (
       <div
@@ -490,7 +504,7 @@ export default function HomePage() {
           backgroundColor: '#fff',
           borderRadius: '1rem',
           padding: '1.5rem',
-          boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+          boxShadow: '0 4px 12px rgba(116, 104, 104, 0.1)',
           color: '#333',
         }}
       >
@@ -501,25 +515,28 @@ export default function HomePage() {
         <p style={{ fontSize: '0.85rem', marginBottom: '1rem' }}>
           Deadline Date <strong>{scholarship.deadline}</strong>
         </p>
-        <button
-          className="view-btn"
-          style={{
-            backgroundColor: '#f97316',
-            color: '#fff',
-            border: 'none',
-            padding: '0.5rem 1rem',
-            borderRadius: '0.5rem',
-            fontWeight: 'bold',
-            cursor: 'pointer',
-            transition: 'all 0.3s',
-          }}
-        >
-          View Detail
-        </button>
+        <a href={scholarship.link}>
+          <button
+            className="view-btn"
+            style={{
+              backgroundColor: '#f97316',
+              color: '#fff',
+              border: 'none',
+              padding: '0.5rem 1rem',
+              borderRadius: '0.5rem',
+              fontWeight: 'bold',
+              cursor: 'pointer',
+              transition: 'all 0.3s',
+            }}
+          >
+            View Detail
+          </button>
+        </a>
       </div>
     ))}
   </div>
 </section>
+
 <section style={{ backgroundColor: '#f9f9f9', padding: '3rem 1rem' }}>
   <h2 style={{ textAlign: 'center', fontSize: '2rem', fontWeight: '600', marginBottom: '2.5rem' }}>
     Steps To Follow For Getting <strong style={{ color: '#000' }}>A SCHOLARSHIP</strong>
@@ -686,7 +703,6 @@ export default function HomePage() {
     </div>
   </div>
 </section>
-
 
 
 <section style={{ backgroundColor: '#fff', padding: '3rem 2rem' }}>
