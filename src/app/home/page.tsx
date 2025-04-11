@@ -689,7 +689,6 @@ export default function HomePage() {
 
 
 
-{/* Meet Our Scholars Section */}
 <section style={{ backgroundColor: '#fff', padding: '3rem 2rem' }}>
   <h2 style={{ textAlign: 'center', fontSize: '2rem', color: '#003366', marginBottom: '2rem' }}>
     Meet <strong>Our Scholars</strong>
@@ -710,12 +709,11 @@ export default function HomePage() {
   >
     <style jsx>{`
       .scholar-card {
-        flex: 0 0 260px;
+        flex: 0 0 300px;
         background-color: #f0f8ff;
         border-radius: 1rem;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
         padding: 1.5rem;
-        text-align: center;
         transition: transform 0.3s ease, background-color 0.3s;
       }
 
@@ -731,118 +729,112 @@ export default function HomePage() {
       .scroll-container::-webkit-scrollbar-thumb {
         background: rgba(0, 0, 0, 0.2);
         border-radius: 3px;
-        transition: opacity 0.3s;
       }
 
       .scroll-container::-webkit-scrollbar-track {
-        background: transparent;
-      }
-
-      .scroll-container.hide-scrollbar::-webkit-scrollbar-thumb {
         background: transparent;
       }
     `}</style>
 
     {[
       {
-        name: 'Riya Sharma',
-        course: 'B.Tech Computer Science',
-        university: 'IIT Delhi',
-        photo: '/boyimage.jpg',
+        name: "Somaraju Hemanth Abhiram",
+        scholarship: "SBIF Asha Scholarship",
+        amount: "10,000",
+        education: "Class 12",
+        aspiration: "To become a Software Engineer",
+        story:
+          "Growing up with limited financial resources and basic educational facilities wasn't easy.",
       },
       {
-        name: 'Arjun Mehta',
-        course: 'MBBS',
-        university: 'AIIMS Delhi',
-        photo: '/boyimage.jpg',
+        name: "Divyaben Patel",
+        scholarship: "Corteva Agriscience Scholarship",
+        amount: "50,000",
+        education: "PhD",
+        aspiration: "To become a Plant Breeder",
+        story:
+          "Navigating the complexities of pursuing a PhD while relying on agricultural income has been my reality.",
       },
       {
-        name: 'Meena Patel',
-        course: 'BA Economics',
-        university: 'Delhi University',
-        photo: '/boyimage.jpg',
+        name: "Sumita Mondal",
+        scholarship: "LIC HFL Vidyadhan Scholarship",
+        amount: "25,000",
+        education: "B.A. in History",
+        aspiration: "To become a Teacher",
+        story:
+          "For years, our farm has endured the onslaught of scorching sun and erratic rainfall.",
       },
       {
-        name: 'Sahil Khan',
-        course: 'B.Sc Physics',
-        university: 'IISc Bangalore',
-        photo: '/boyimage.jpg',
+        name: "Arpita Negi",
+        scholarship: "OakNorth STEM Scholarship",
+        amount: "30,000",
+        education: "BSc",
+        aspiration: "To become a Data Scientist",
+        story:
+          "Growing up, I've witnessed the hard work my father puts into managing a small general store.",
       },
       {
-        name: 'Nikita Roy',
-        course: 'MCA',
-        university: 'NIT Trichy',
-        photo: '/boyimage.jpg',
-      }
+        name: "Soubhagini Sahoo",
+        scholarship: "PARAS Scholarship Programme",
+        amount: "15,000",
+        education: "B.Sc. in Physics (Hons.)",
+        aspiration: "To become a Teacher",
+        story:
+          "My family of six relies on my father's income from our small farm.",
+      },
+      {
+        name: "Neelakshi",
+        scholarship: "U-Go Scholarship Program",
+        amount: "40,000",
+        education: "B.Sc.",
+        aspiration: "To become a Nursing Officer",
+        story:
+          "At the tender age of three, I endured the devastating loss of my father.",
+      },
+      {
+        name: "Tanishka Vinodiya",
+        scholarship: "Kotak Junior Scholarship",
+        amount: "36,000",
+        education: "Class 12",
+        aspiration: "To become a Data Scientist",
+        story:
+          "Squeezed into a one-bedroom apartment with seven other family members.",
+      },
+      {
+        name: "Rahul Kumar",
+        scholarship: "Nikon Scholarship Program",
+        amount: "1,00,000",
+        education: "B.Sc. in Film and TV Production",
+        aspiration: "To become a Cinematographer",
+        story:
+          "The world has always mesmerised me with its captivating beauty.",
+      },
+      {
+        name: "Pranjal Kesarwani",
+        scholarship: "Piaggio Shiksha Se Samriddhi",
+        amount: "13,144",
+        education: "BA (English) Honors",
+        aspiration: "To secure a Government Job",
+        story:
+          "Pranjal's world crumbled in 2020 when his mother succumbed to a brain hemorrhage.",
+      },
+      {
+        name: "Yashna Nathwani",
+        scholarship: "Kotak Shiksha Nidhi Scholarship",
+        amount: "7,50,000",
+        education: "MBA Tech",
+        aspiration: "To become a Business Manager",
+        story:
+          "A tragedy struck my family like a thunderbolt in 2021 when my father succumbed to COVID-19.",
+      },
     ].map((scholar, index) => (
       <div key={index} className="scholar-card">
-        <img
-          src={scholar.photo}
-          alt={scholar.name}
-          style={{
-            width: '80px',
-            height: '80px',
-            borderRadius: '50%',
-            objectFit: 'cover',
-            marginBottom: '1rem',
-            border: '2px solid #0070f3',
-          }}
-        />
         <h3 style={{ fontSize: '1.1rem', color: '#003366', marginBottom: '0.5rem' }}>{scholar.name}</h3>
-        <p style={{ fontSize: '0.95rem', color: '#444', marginBottom: '0.25rem' }}>{scholar.course}</p>
-        <p style={{ fontSize: '0.85rem', color: '#666' }}>{scholar.university}</p>
-      </div>
-    ))}
-
-    {/* Add cloned items for seamless looping */}
-    {[
-      {
-        name: 'Riya Sharma',
-        course: 'B.Tech Computer Science',
-        university: 'IIT Delhi',
-        photo: '/boyimage.jpg',
-      },
-      {
-        name: 'Arjun Mehta',
-        course: 'MBBS',
-        university: 'AIIMS Delhi',
-        photo: '/boyimage.jpg',
-      },
-      {
-        name: 'Meena Patel',
-        course: 'BA Economics',
-        university: 'Delhi University',
-        photo: '/boyimage.jpg',
-      },
-      {
-        name: 'Sahil Khan',
-        course: 'B.Sc Physics',
-        university: 'IISc Bangalore',
-        photo: '/boyimage.jpg',
-      },
-      {
-        name: 'Nikita Roy',
-        course: 'MCA',
-        university: 'NIT Trichy',
-        photo: '/boyimage.jpg',
-      }
-    ].map((scholar, index) => (
-      <div key={`clone-${index}`} className="scholar-card">
-        <img
-          src={scholar.photo}
-          alt={scholar.name}
-          style={{
-            width: '80px',
-            height: '80px',
-            borderRadius: '50%',
-            objectFit: 'cover',
-            marginBottom: '1rem',
-            border: '2px solid #0070f3',
-          }}
-        />
-        <h3 style={{ fontSize: '1.1rem', color: '#003366', marginBottom: '0.5rem' }}>{scholar.name}</h3>
-        <p style={{ fontSize: '0.95rem', color: '#444', marginBottom: '0.25rem' }}>{scholar.course}</p>
-        <p style={{ fontSize: '0.85rem', color: '#666' }}>{scholar.university}</p>
+        <p style={{ fontSize: '0.95rem', color: '#444', marginBottom: '0.25rem' }}><strong>Scholarship:</strong> {scholar.scholarship}</p>
+        <p style={{ fontSize: '0.95rem', color: '#444', marginBottom: '0.25rem' }}><strong>Amount:</strong> ₹{scholar.amount}</p>
+        <p style={{ fontSize: '0.95rem', color: '#444', marginBottom: '0.25rem' }}><strong>Education:</strong> {scholar.education}</p>
+        <p style={{ fontSize: '0.95rem', color: '#444', marginBottom: '0.25rem' }}><strong>Aspiration:</strong> {scholar.aspiration}</p>
+        <p style={{ fontSize: '0.85rem', color: '#666', marginTop: '1rem' }}>{scholar.story}</p>
       </div>
     ))}
   </div>
