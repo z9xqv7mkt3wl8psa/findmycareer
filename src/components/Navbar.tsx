@@ -1,127 +1,156 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
+// Types
+type NavSubItem = {
+  label: string;
+  path: string;
+  subItems?: NavSubItem[];
+};
+
+type NavItem = {
+  label: string;
+  path: string;
+  subItems?: NavSubItem[];
+};
 
 export default function Navbar() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [hoveredSubItem, setHoveredSubItem] = useState<string | null>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-  const navItems = [
+  // Handle mobile detection on resize
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize(); // set on mount
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const navItems: NavItem[] = [
     {
       label: 'Scholarship',
       path: '/scholarship',
       subItems: [
-        'Top Scholarship for Class 10',
-        'Top Scholarship for Class 11',
-        'Top Scholarship for Class 12',
-        'Top Scholarship for ITI',
-        'Top Scholarship for Diploma',
-        'Top Scholarship for Bachelors',
-        'Top Scholarship for Engineering',
-        'Top Scholarship for Medical',
-        'Top Scholarship for Masters',
-        'Top Scholarship for Professional Course',
-        'Top Scholarship for PhD',
-        'Top Scholarship for Post Doctoral',
-        'Top Abroad Scholarships'
-      ].map(title => ({
-        label: title,
-        path: `/scholarship/${title.toLowerCase().replace(/\s+/g, '-')}`
-      }))
+        { label: 'All Scholarships', path: '/scholarship' },
+        ...[
+          'Top Scholarship for Class 10',
+          'Top Scholarship for Class 11',
+          'Top Scholarship for Class 12',
+          'Top Scholarship for ITI',
+          'Top Scholarship for Diploma',
+          'Top Scholarship for Bachelors',
+          'Top Scholarship for Engineering',
+          'Top Scholarship for Medical',
+          'Top Scholarship for Masters',
+          'Top Scholarship for Professional Course',
+          'Top Scholarship for PhD',
+          'Top Scholarship for Post Doctoral',
+          'Top Abroad Scholarships'
+        ].map(title => ({
+          label: title,
+          path: `/scholarship/${title.toLowerCase().replace(/\s+/g, '-')}`
+        }))
+      ]
     },
     {
       label: 'Internship',
       path: '/internship',
       subItems: [
-        'Top Internships for Engineering',
-        'Top Internships for Bachelors',
-        'Top Internships for Masters',
-      ].map(title => ({
-        label: title,
-        path: `/internship/${title.toLowerCase().replace(/\s+/g, '-')}`
-      }))
+        { label: 'All Internships', path: '/internship' },
+        ...[
+          'Top Internships for Engineering',
+          'Top Internships for Bachelors',
+          'Top Internships for Masters',
+        ].map(title => ({
+          label: title,
+          path: `/internship/${title.toLowerCase().replace(/\s+/g, '-')}`
+        }))
+      ]
     },
     {
       label: 'Educational Loan',
       path: '/loan',
       subItems: [
-        'Top Educational Loan for Engineering',
-        'Top Educational Loan for Bachelors',
-        'Top Educational Loan for Masters',
-      ].map(title => ({
-        label: title,
-        path: `/loan/${title.toLowerCase().replace(/\s+/g, '-')}`
-      }))
+        { label: 'All Loans', path: '/loan' },
+        ...[
+          'Top Educational Loan for Engineering',
+          'Top Educational Loan for Bachelors',
+          'Top Educational Loan for Masters',
+        ].map(title => ({
+          label: title,
+          path: `/loan/${title.toLowerCase().replace(/\s+/g, '-')}`
+        }))
+      ]
     },
     {
-      label: 'Courses',
-      path: '/courses',
-      subItems: [
-        {
-          label: 'Top Courses for Engineering',
-          path: '/courses/top-courses-for-engineering',
-          subItems: [
-            {
-              label: 'DSA',
-              path: '/courses/top-courses-for-engineering/dsa'
-            },
-            {
-              label: 'Core Courses',
-              path: '/courses/top-courses-for-engineering/core-courses'
-            }
-          ]
-        },
-        {
-          label: 'Top Courses for Bachelors',
-          path: '/courses/top-courses-for-bachelors'
-        },
-        {
-          label: 'Top Courses for Masters',
-          path: '/courses/top-courses-for-masters'
-        }
-      ]
+      label: 'Sarkari Naukri',
+      path: '/sarkari-naukri'
     },
     {
       label: 'Competition',
       path: '/competition',
       subItems: [
-        'Hackathon',
-        'Quizes',
-      ].map(title => ({
-        label: title,
-        path: `/competition/${title.toLowerCase().replace(/\s+/g, '-')}`
-      }))
+        { label: 'All Competitions', path: '/competition' },
+        ...['Hackathon', 'Quizes'].map(title => ({
+          label: title,
+          path: `/competition/${title.toLowerCase()}`
+        }))
+      ]
     },
-    { label: 'Careers', path: '/careers' },
     {
       label: 'Colleges',
       path: '/colleges',
       subItems: [
-        'National Colleges',
-        'Abroad Colleges',
-      ].map(title => ({
-        label: title,
-        path: `/colleges/${title.toLowerCase().replace(/\s+/g, '-')}`
-      }))
+        { label: 'All Colleges', path: '/colleges' },
+        ...['National Colleges', 'Abroad Colleges'].map(title => ({
+          label: title,
+          path: `/colleges/${title.toLowerCase().replace(/\s+/g, '-')}`
+        }))
+      ]
     },
   ];
 
   return (
     <nav style={styles.nav}>
       <Link href="/" style={styles.logo}>Student Grow</Link>
-      <ul style={styles.menu}>
+
+      {/* Hamburger Button */}
+      <button
+        onClick={() => setMenuOpen(!menuOpen)}
+        className="hamburger"
+      >
+        ☰
+      </button>
+
+      <ul style={{ ...styles.menu, display: menuOpen || !isMobile ? 'flex' : 'none' }} className="menu-list">
         {navItems.map(({ label, path, subItems }) => (
           <li
             key={path}
             style={styles.menuItem}
-            onMouseEnter={() => setActiveMenu(path)}
-            onMouseLeave={(e) => {
-              const related = e.relatedTarget as HTMLElement;
-              if (!e.currentTarget.contains(related)) setActiveMenu(null);
-            }}
+            onMouseEnter={() => !isMobile && setActiveMenu(path)}
+            onMouseLeave={() => !isMobile && setActiveMenu(null)}
           >
-            <Link href={path} style={styles.link}>{label}</Link>
+            {subItems ? (
+              <span
+                onClick={(e) => {
+                  if (isMobile) {
+                    e.preventDefault();
+                    setActiveMenu(activeMenu === path ? null : path);
+                  } else {
+                    window.location.href = path;
+                  }
+                }}
+                style={{ ...styles.link, cursor: 'pointer' }}
+              >
+                {label}
+              </span>
+            ) : (
+              <Link href={path} style={styles.link}>{label}</Link>
+            )}
 
             {subItems && activeMenu === path && (
               <ul style={{
@@ -131,17 +160,14 @@ export default function Navbar() {
               }}>
                 {subItems.map((sub) => (
                   <li
-                    key={sub.path || sub.label}
+                    key={sub.path}
                     style={{ position: 'relative' }}
-                    onMouseEnter={() => setHoveredSubItem(sub.label)}
-                    onMouseLeave={() => setHoveredSubItem(null)}
+                    onMouseEnter={() => !isMobile && setHoveredSubItem(sub.label)}
+                    onMouseLeave={() => !isMobile && setHoveredSubItem(null)}
                   >
-                    <Link href={sub.path} style={styles.submenuItem}>
-                      {sub.label}
-                    </Link>
+                    <Link href={sub.path} style={styles.submenuItem}>{sub.label}</Link>
 
-                    {/* Show nested submenu only when hovered */}
-                    {sub.subItems && hoveredSubItem === sub.label && (
+                    {sub.subItems?.length && hoveredSubItem === sub.label && (
                       <ul style={{ ...styles.submenu, top: 0, left: '100%' }}>
                         {sub.subItems.map((nested) => (
                           <li key={nested.path}>
@@ -160,8 +186,30 @@ export default function Navbar() {
         ))}
       </ul>
 
-      {/* Global style for hover effect */}
       <style jsx global>{`
+        .hamburger {
+          display: none;
+          background: none;
+          border: none;
+          font-size: 1.5rem;
+          cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+          .hamburger {
+            display: block;
+          }
+
+          .menu-list {
+            flex-direction: column;
+            width: 100%;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+          }
+        }
+
         a:hover {
           background-color: #f5f5f5 !important;
         }
@@ -195,6 +243,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     gap: '2rem',
     margin: 0,
     padding: 0,
+    alignItems: 'center'
   },
   menuItem: {
     position: 'relative',
