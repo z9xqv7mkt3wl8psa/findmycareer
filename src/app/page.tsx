@@ -4,13 +4,17 @@ import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/footer';
-import { allItems, Item } from './data/page';
+import MNCCareersSection from '@/components/MNCCareersSection';
+import ScholarshipCategories from '@/components/ScholarshipCategories';
+import MoreOpportunities from '@/components/MoreOpportunities';
 
+
+
+  
 export default function HomePage() {
-  const scrollRef = useRef(null);
+  const scrollRef = useRef(null); //
   const images = ['/img1.jpg', '/img2.jpg', '/img3.jpg'];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [query, setQuery] = useState('');
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -18,11 +22,6 @@ export default function HomePage() {
     }, 3000);
     return () => clearInterval(interval);
   }, []);
-
-  const filteredResults = allItems.filter((item: Item) =>
-    item.title.toLowerCase().includes(query.toLowerCase()) ||
-    item.description.toLowerCase().includes(query.toLowerCase())
-  );
 
   return (
     <>
@@ -80,7 +79,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 🔍 Search Section */}
+      {/* Search Section */}
       <section
         style={{
           padding: '3rem 2rem',
@@ -93,9 +92,7 @@ export default function HomePage() {
         </h2>
         <input
           type="text"
-          placeholder="Search scholarships, internships, loans..."
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search scholarships..."
           style={{
             marginTop: '1rem',
             padding: '0.75rem 1rem',
@@ -107,227 +104,114 @@ export default function HomePage() {
         />
       </section>
 
-      {/* 📋 Search Results Section */}
-      {query && (
-        <section
-          style={{
-            padding: '2rem',
-            backgroundColor: '#f9f9f9',
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '1.5rem',
-          }}
-        >
-          {filteredResults.length > 0 ? (
-            filteredResults.map((item, index) => (
-              <div
-                key={index}
-                style={{
-                  background: '#fff',
-                  borderRadius: '1rem',
-                  padding: '1.5rem',
-                  boxShadow: '0 4px 12px rgba(0,0,0,0.06)',
-                }}
-              >
-                <h3 style={{ marginBottom: '0.5rem' }}>{item.title}</h3>
-                <p style={{ marginBottom: '0.75rem' }}>{item.description}</p>
+      
+      <ScholarshipCategories />
 
-                {/* Type Specific Fields */}
-                {item.type === 'Internship' && 'duration' in item && 'stipend' in item && (
-                  <>
-                    <p><strong>Duration:</strong> {item.duration}</p>
-                    <p><strong>Stipend:</strong> {item.stipend}</p>
-                    <p><strong>Remote:</strong> {item.isRemote ? 'Yes' : 'No'}</p>
-                  </>
-                )}
-
-                {item.type === 'Loan' && 'amount' in item && 'interestRate' in item && (
-                  <>
-                    <p><strong>Amount:</strong> {item.amount}</p>
-                    <p><strong>Interest Rate:</strong> {item.interestRate}</p>
-                    <p><strong>Eligibility:</strong> {item.eligibility}</p>
-                  </>
-                )}
-
-                {item.type === 'Scholarship' && 'amount' in item && (
-                  <>
-                    <p><strong>Amount:</strong> {item.amount}</p>
-                  </>
-                )}
-
-                <p style={{ marginTop: '0.5rem' }}><strong>Last Date:</strong> {item.lastDate}</p>
-
-                <a
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: 'inline-block',
-                    marginTop: '1rem',
-                    padding: '0.5rem 1rem',
-                    backgroundColor: '#0070f3',
-                    color: '#fff',
-                    borderRadius: '0.5rem',
-                    textDecoration: 'none',
-                  }}
-                >
-                  View Details →</a>
-              </div>
-            ))
-          ) : (
-            <p style={{ textAlign: 'center', padding: '2rem' }}>No results found.</p>
-          )}
-        </section>
-      )}
-
-      {/* Stats Section */}
-      <section
-        style={{
-          backgroundColor: '#f9f9f9',
-          padding: '2rem',
-          display: 'flex',
-          justifyContent: 'space-around',
-          flexWrap: 'wrap',
-          textAlign: 'center',
-        }}
-      >
-        {[
-          { label: 'Scholarships', value: '15,000+' },
-          { label: 'Students', value: '9,762,739+' },
-          { label: 'Students Helped', value: '94,861+' },
-          { label: 'Fund Managed', value: '₹349Cr' },
-        ].map((stat, index) => (
-          <div key={index} style={{ margin: '1rem' }}>
-            <h3 style={{ fontSize: '2rem', color: '#003366' }}>{stat.value}</h3>
-            <p style={{ fontSize: '1rem', color: '#666' }}>{stat.label}</p>
-          </div>
-        ))}
-      </section>
-
-  
-
-{/* Categories Section */}
-<section style={{ backgroundColor: '#eef6ff', padding: '2rem' }}>
-  <h2 style={{ textAlign: 'center', fontSize: '1.8rem', marginBottom: '1.5rem', color: '#003366' }}>
-    Popular Scholarship <strong>Categories</strong>
-  </h2>
-  <div
-    style={{
-      display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
-      gap: '1rem',
-      maxWidth: '900px',
-      margin: '0 auto',
-      minHeight: '50vh',
-    }}
-  >
-    {[
-      { label: 'For Girls', path: '/categories/for-girls' },
-      { label: 'Sports Talent', path: '/categories/sports-talent' },
-      { label: 'College Level', path: '/categories/college-level' },
-      { label: 'SC/ST/OBC/DNT', path: '/categories/reserved' },
-      { label: 'International', path: '/categories/international' },
-      { label: 'Talent Based', path: '/categories/talent-based' },
-      { label: 'Minorities', path: '/categories/minorities' },
-      { label: 'Merit Based', path: '/categories/merit-based' },
-      { label: 'School Level', path: '/categories/school-level' },
-    ].map((category, index) => (
-      <Link key={index} href={category.path} style={{ textDecoration: 'none', color: 'inherit' }}>
-        <div
-          style={{
-            backgroundColor: '#fff',
-            padding: '1rem',
-            borderRadius: '0.75rem',
-            textAlign: 'center',
-            
-            fontWeight: '500',
-            cursor: 'pointer',
-            
-          }}
-          onMouseEnter={e => {
-            e.currentTarget.style.transform = 'scale(1.05)';
-           
-          }}
-          onMouseLeave={e => {
-            e.currentTarget.style.transform = 'scale(1)';
-           
-          }}
-        >
-          {category.label}
-        </div>
-      </Link>
-    ))}
-  </div>
-</section>
-
-
-
-{/* More Opportunities Section */}
+{/* Sarkari Naukri Section */}
 <section
   style={{
-    backgroundImage: 'url("/oppurtunitiesbackground2.jpg")', // make sure the image is inside your public folder
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    padding: '2rem',
-    minHeight: '80vh',
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    gap: '2rem',
+    padding: '3rem 2rem',
+    backgroundColor: '#fff',
   }}
 >
-<div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.5rem' }}>
-  <h2
-    style={{
-      fontSize: '2rem',
-      fontWeight: 'bold',
-      color: '#fff',
-      background: 'linear-gradient(90deg, #e91e63, #2196f3)',
-      padding: '0.6rem 1.2rem',
-      borderRadius: '12px',
-      boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
-    }}
-  >
-    More Opportunities
-  </h2>
-</div>
+  {/* Left Side - Image */}
+  <div style={{ flex: '1', minWidth: '280px', textAlign: 'center' }}>
+    <img
+      src="/sarkari-naukri.webp" // 👉 Replace with actual path to your image
+      alt="Sarkari Naukri"
+      style={{
+        maxWidth: '100%',
+        borderRadius: '1rem',
+        color: '#eef6ff',
+        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
+      }}
+    />
+    {/* Click Here Button */}
+    <a
+      href="#"
+      style={{
+        display: 'inline-block',
+        marginTop: '1rem',
+        padding: '0.5rem 1.5rem',
+        backgroundColor: '#eef6ff',
+        color: '#eef6ff',
+        borderRadius: '0.5rem',
+        fontWeight: 'bold',
+        textDecoration: 'none',
+        transition: 'background-color 0.3s',
+      }}
+      onMouseEnter={(e) => {
+        const target = e.target as HTMLAnchorElement; // Typecasting the event target to HTMLAnchorElement
+        target.style.backgroundColor = '#e07b00';
+      }}
+      onMouseLeave={(e) => {
+        const target = e.target as HTMLAnchorElement; // Typecasting the event target to HTMLAnchorElement
+        target.style.backgroundColor = '#ff8c00';
+      }}
+    >
+      Click Here
+    </a>
+  </div>
 
-
-  <div
-    style={{
-      display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-      gap: '1rem',
-      maxWidth: '1000px',
-      margin: '0 auto',
-    }}
-  >
-    {[
-      { label: 'Education Loan', path: '/opportunities/education-loan' },
-      { label: 'Student Funding Solution', path: '/opportunities/student-funding' },
-      { label: 'Expert Talk Series', path: '/opportunities/expert-talk' },
-      { label: 'Career Guidance', path: '/opportunities/career-guidance' },
-      { label: 'Online Degree', path: '/opportunities/online-degree' },
-      { label: 'Scholarship Services', path: '/opportunities/scholarship-services' },
-      { label: 'College Board', path: '/opportunities/college-board' },
-      { label: 'Scholarship Bulletins', path: '/opportunities/scholarship-bulletins' },
-    ].map((item, index) => (
-      <Link key={index} href={item.path}>
-        <div
-          style={{
-            padding: '1rem',
-            backgroundColor: '#ffffffcc',
-            borderRadius: '8px',
-            textAlign: 'center',
-            cursor: 'pointer',
-            fontWeight: 'bold',
-          }}
-        >
-          {item.label}
-        </div>
-      </Link>
-    ))}
+  {/* Right Side - Content */}
+  <div style={{ flex: '1', minWidth: '280px' }}>
+    <h2 style={{ fontSize: '2rem', color: '#c26d00', marginBottom: '1rem' }}>
+      Explore <strong>Sarkari Naukri</strong> Opportunities
+    </h2>
+    <p style={{ fontSize: '1.1rem', color: '#444', marginBottom: '1.5rem', maxWidth: '500px' }}>
+      Get the latest updates on government job openings across India. Start your journey toward a secure and prestigious career in the public sector.
+    </p>
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+        gap: '1rem',
+      }}
+    >
+      {[
+        { title: 'UPSC Civil Services', path: '/sarkari/upsc' },
+        { title: 'SSC CHSL Exam', path: '/sarkari/ssc-chsl' },
+        { title: 'IBPS Bank PO', path: '/sarkari/ibps-po' },
+        { title: 'Railway Group D', path: '/sarkari/railway-group-d' },
+        { title: 'Delhi Police Constable', path: '/sarkari/delhi-police' },
+        { title: 'DRDO Scientist-B', path: '/sarkari/drdo' },
+      ].map((job, index) => (
+        <Link key={index} href={job.path}>
+          <div
+            style={{
+              backgroundColor: '#fff',
+              padding: '0.75rem',
+              borderRadius: '0.5rem',
+              fontWeight: '500',
+              textAlign: 'center',
+              cursor: 'pointer',
+              boxShadow: '0 2px 6px rgba(0,0,0,0.05)',
+              transition: 'transform 0.3s',
+            }}
+            onMouseEnter={(e) => {
+              const target = e.target as HTMLDivElement; // Typecasting the event target to HTMLDivElement
+              target.style.transform = 'scale(1.05)';
+            }}
+            onMouseLeave={(e) => {
+              const target = e.target as HTMLDivElement; // Typecasting the event target to HTMLDivElement
+              target.style.transform = 'scale(1)';
+            }}
+          >
+            {job.title}
+          </div>
+        </Link>
+      ))}
+    </div>
   </div>
 </section>
-
-
+ 
+<MNCCareersSection />
+<MoreOpportunities />
 
 
       {/* Partners Section */}
@@ -464,7 +348,7 @@ export default function HomePage() {
 
     {[
       {
-        logo: '/scholarshipietkindcircle.png',
+        logo: '/scholarshipkindcircle.png',
         title: 'KIND CIRCLE SCHOLARSHIP FOR MERITORIOUS STUDENTS ',
         deadline: '31-Dec-2025',
         link: '/featurescholarship/KINDCIRCLE'
@@ -541,7 +425,7 @@ export default function HomePage() {
     {/* Cloned items for seamless loop */}
     {[
       {
-        logo: '/scholarshipietkindcircle.png',
+        logo: '/scholarshipkindcircle.png',
         title: 'KIND CIRCLE SCHOLARSHIP FOR MERITORIOUS STUDENTS ',
         deadline: '31-Dec-2025',
         link: '/featurescholarship/KINDCIRCLE'
