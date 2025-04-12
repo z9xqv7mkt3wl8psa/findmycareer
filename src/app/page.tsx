@@ -7,7 +7,7 @@ import Footer from '@/components/footer';
 import MNCCareersSection from '@/components/MNCCareersSection';
 import ScholarshipCategories from '@/components/ScholarshipCategories';
 import MoreOpportunities from '@/components/MoreOpportunities';
-
+import { allItems, Item } from './data/page';
 
 
   
@@ -22,7 +22,10 @@ export default function HomePage() {
     }, 3000);
     return () => clearInterval(interval);
   }, []);
-
+const filteredResults = allItems.filter((item: Item) =>
+    item.title.toLowerCase().includes(query.toLowerCase()) ||
+    item.description.toLowerCase().includes(query.toLowerCase())
+  );
   return (
     <>
       <Navbar />
@@ -79,7 +82,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Search Section */}
+    {/* 🔍 Search Section */}
       <section
         style={{
           padding: '3rem 2rem',
@@ -92,7 +95,9 @@ export default function HomePage() {
         </h2>
         <input
           type="text"
-          placeholder="Search scholarships..."
+          placeholder="Search scholarships, internships, loans..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
           style={{
             marginTop: '1rem',
             padding: '0.75rem 1rem',
@@ -104,7 +109,78 @@ export default function HomePage() {
         />
       </section>
 
-      
+      {/* 📋 Search Results Section */}
+      {query && (
+        <section
+          style={{
+            padding: '2rem',
+            backgroundColor: '#f9f9f9',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gap: '1.5rem',
+          }}
+        >
+          {filteredResults.length > 0 ? (
+            filteredResults.map((item, index) => (
+              <div
+                key={index}
+                style={{
+                  background: '#fff',
+                  borderRadius: '1rem',
+                  padding: '1.5rem',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.06)',
+                }}
+              >
+                <h3 style={{ marginBottom: '0.5rem' }}>{item.title}</h3>
+                <p style={{ marginBottom: '0.75rem' }}>{item.description}</p>
+
+                {/* Type Specific Fields */}
+                {item.type === 'Internship' && 'duration' in item && 'stipend' in item && (
+                  <>
+                    <p><strong>Duration:</strong> {item.duration}</p>
+                    <p><strong>Stipend:</strong> {item.stipend}</p>
+                    <p><strong>Remote:</strong> {item.isRemote ? 'Yes' : 'No'}</p>
+                  </>
+                )}
+
+                {item.type === 'Loan' && 'amount' in item && 'interestRate' in item && (
+                  <>
+                    <p><strong>Amount:</strong> {item.amount}</p>
+                    <p><strong>Interest Rate:</strong> {item.interestRate}</p>
+                    <p><strong>Eligibility:</strong> {item.eligibility}</p>
+                  </>
+                )}
+
+                {item.type === 'Scholarship' && 'amount' in item && (
+                  <>
+                    <p><strong>Amount:</strong> {item.amount}</p>
+                  </>
+                )}
+
+                <p style={{ marginTop: '0.5rem' }}><strong>Last Date:</strong> {item.lastDate}</p>
+
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-block',
+                    marginTop: '1rem',
+                    padding: '0.5rem 1rem',
+                    backgroundColor: '#0070f3',
+                    color: '#fff',
+                    borderRadius: '0.5rem',
+                    textDecoration: 'none',
+                  }}
+                >
+                  View Details →</a>
+              </div>
+            ))
+          ) : (
+            <p style={{ textAlign: 'center', padding: '2rem' }}>No results found.</p>
+          )}
+        </section>
+      )}
       <ScholarshipCategories />
 
 {/* Sarkari Naukri Section */}
