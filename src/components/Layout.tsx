@@ -38,16 +38,16 @@ export default function Layout({ children }: Props) {
               alignItems: 'center',
               gap: '0.5rem'
             }}>
-              <span>🔗</span> Quick Links
+              <span></span> Quick Links
             </h3>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {[
-                { label: 'Home', icon: '🏠' },
-                { label: 'Scholarships', icon: '🎓' },
-                { label: 'Courses', icon: '📚' },
-                { label: 'Education Loans', icon: '💰' },
-                { label: 'Competitions', icon: '🏆' },
-                { label: 'About Us', icon: 'ℹ️' }
+                { label: 'Home', icon: '' },
+                { label: 'Scholarships', icon: '' },
+                { label: 'Courses', icon: '' },
+                { label: 'Education Loans', icon: '' },
+                { label: 'Competitions', icon: '' },
+                { label: 'About Us', icon: '' }
               ].map((item, i) => (
                 <li key={i} style={{ margin: '0.8rem 0' }}>
                   <Link href="/" style={{ 
@@ -76,15 +76,15 @@ export default function Layout({ children }: Props) {
               alignItems: 'center',
               gap: '0.5rem'
             }}>
-              <span>📂</span> Resources
+              <span></span> Resources
             </h3>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {[
-                { label: 'Blog', icon: '✍️' },
-                { label: 'FAQs', icon: '❓' },
-                { label: 'Testimonials', icon: '🌟' },
-                { label: 'Success Stories', icon: '🏅' },
-                { label: 'Application Tips', icon: '💡' }
+                { label: 'Blog', icon: '' },
+                { label: 'FAQs', icon: '' },
+                { label: 'Testimonials', icon: '' },
+                { label: 'Success Stories', icon: '' },
+                { label: 'Application Tips', icon: '' }
               ].map((item, i) => (
                 <li key={i} style={{ margin: '0.8rem 0' }}>
                   <Link href="/" style={{ 
@@ -113,15 +113,15 @@ export default function Layout({ children }: Props) {
               alignItems: 'center',
               gap: '0.5rem'
             }}>
-              <span>⚖️</span> Legal
+              <span></span> Legal
             </h3>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {[
-                { label: 'Privacy Policy', icon: '🔒' },
-                { label: 'Terms & Conditions', icon: '📝' },
-                { label: 'Disclaimer', icon: '⚠️' },
-                { label: 'Refund Policy', icon: '↩️' },
-                { label: 'Sitemap', icon: '🗺️' }
+                { label: 'Privacy Policy', icon: '' },
+                { label: 'Terms & Conditions', icon: '' },
+                { label: 'Disclaimer', icon: '' },
+                { label: 'Refund Policy', icon: '' },
+                { label: 'Sitemap', icon: '' }
               ].map((item, i) => (
                 <li key={i} style={{ margin: '0.8rem 0' }}>
                   <Link href="/" style={{ 
@@ -150,17 +150,17 @@ export default function Layout({ children }: Props) {
               alignItems: 'center',
               gap: '0.5rem'
             }}>
-              <span>📞</span> Contact Us
+              <span></span> Contact Us
             </h3>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               <li style={{ margin: '0.8rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span>📧</span> support@prasunet.com
+                <span></span> support@prasunet.com
               </li>
               <li style={{ margin: '0.8rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span>🌐</span> www.prasunet.com
+                <span></span> www.prasunet.com
               </li>
               <li style={{ margin: '0.8rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span>🏢</span> Prasunet Pvt. Ltd. Co.
+                <span></span> Prasunet Pvt. Ltd. Co.
               </li>
             </ul>
 
@@ -173,7 +173,7 @@ export default function Layout({ children }: Props) {
               alignItems: 'center',
               gap: '0.5rem'
             }}>
-              <span>👥</span> Follow Us
+              <span></span> Follow Us
             </h3>
             <div style={{ 
               display: 'flex', 
@@ -181,11 +181,11 @@ export default function Layout({ children }: Props) {
               flexWrap: 'wrap'
             }}>
               {[
-                { name: 'Facebook', icon: '👍', color: '#4267B2' },
-                { name: 'Twitter', icon: '🐦', color: '#1DA1F2' },
-                { name: 'Instagram', icon: '📷', color: '#E1306C' },
-                { name: 'LinkedIn', icon: '💼', color: '#0077B5' },
-                { name: 'YouTube', icon: '▶️', color: '#FF0000' }
+                { name: 'Facebook', icon: '', color: '#4267B2' },
+                { name: 'Twitter', icon: '', color: '#1DA1F2' },
+                { name: 'Instagram', icon: '', color: '#E1306C' },
+                { name: 'LinkedIn', icon: '', color: '#0077B5' },
+                { name: 'YouTube', icon: '', color: '#FF0000' }
               ].map((social, i) => (
                 <Link 
                   key={i} 
