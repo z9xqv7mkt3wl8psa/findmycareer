@@ -65,7 +65,7 @@ const MNCCareersSection = () => {
       {/* Right Image with CTA */}
       <div style={{ flex: 1, minWidth: '300px', textAlign: 'center' }}>
         <img
-          src="/carrergirl2.webp" // Make sure this image exists in /public
+          src="/carrerimg.jpg" // Make sure this image exists in /public
           alt="Multinational Companies Jobs"
           style={{
             width: '100%',
