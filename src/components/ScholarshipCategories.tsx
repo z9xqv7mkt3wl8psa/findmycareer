@@ -33,7 +33,7 @@ const ScholarshipCategories = () => {
       {/* Left Image */}
       <div style={{ flex: 1, minWidth: '300px', textAlign: 'center' }}>
         <img
-          src="/scholarshipgirl.jpeg" // Use your uploaded image in /public
+          src="/scholarshipgirl1.jpg" // Use your uploaded image in /public
           alt="Scholarship Opportunities"
           style={{
             width: '100%',
