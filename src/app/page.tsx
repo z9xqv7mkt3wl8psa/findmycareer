@@ -327,7 +327,7 @@ const filteredResults = allItems.filter((item: Item) =>
 '/Partnerforcemotors.png',
 '/Partnerflipkart.jpg',
 '/Partnerclovia.png',
-'/Partnerbyjus.png',
+
 '/Partnerbob.jpg',
 '/Partnerairindia.jpg',
 
