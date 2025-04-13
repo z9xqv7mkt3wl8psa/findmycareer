@@ -7,7 +7,7 @@ import Footer from '@/components/footer';
 import MNCCareersSection from '@/components/MNCCareersSection';
 import ScholarshipCategories from '@/components/ScholarshipCategories';
 import MoreOpportunities from '@/components/MoreOpportunities';
-import { allItems, Item } from './data/page';
+import { allItems, Item } from './data/item';
 
 
   

@@ -1,87 +1,78 @@
-// src/app/data/item.ts
+// src/app/data/page.tsx
 
-export type ItemType = 'Scholarship' | 'Internship' | 'Loan';
+import { useState } from 'react';
+import { allItems, Item } from './item'; // Import Item here
 
-export interface BaseItem {
-  title: string;
-  description: string;
-  lastDate: string;
-  link: string;
-  type: ItemType;
-}
+const Page = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedType, setSelectedType] = useState<'Scholarship' | 'Internship' | 'Loan' | ''>('');
 
-export interface InternshipItem extends BaseItem {
-  duration: string;
-  stipend: string;
-  isRemote: boolean;
-}
+  // Filter the items based on search term and selected type
+  const filteredItems: Item[] = allItems.filter((item: Item) => {
+    const matchesSearch =
+      item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.description.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesType = selectedType ? item.type === selectedType : true;
+    return matchesSearch && matchesType;
+  });
 
-export interface LoanItem extends BaseItem {
-  amount: string;
-  interestRate: string;
-  eligibility: string;
-}
+  return (
+    <div style={{ padding: '2rem' }}>
+      <h1>Available Opportunities</h1>
 
-export interface ScholarshipItem extends BaseItem {
-  amount: string;
-}
+      {/* Search Bar */}
+      <div style={{ margin: '1.5rem 0' }}>
+        <input
+          type="text"
+          placeholder="Search..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          style={{ padding: '0.5rem', fontSize: '1rem', borderRadius: '4px', border: '1px solid #ccc', width: '200px' }}
+        />
+      </div>
 
-export type Item = InternshipItem | LoanItem | ScholarshipItem;
+      {/* Filter by Type */}
+      <div style={{ marginBottom: '1.5rem' }}>
+        <select
+          onChange={(e) => setSelectedType(e.target.value as 'Scholarship' | 'Internship' | 'Loan' | '')}
+          value={selectedType}
+          style={{ padding: '0.5rem', fontSize: '1rem', borderRadius: '4px', border: '1px solid #ccc' }}
+        >
+          <option value="">All Types</option>
+          <option value="Internship">Internships</option>
+          <option value="Loan">Loans</option>
+          <option value="Scholarship">Scholarships</option>
+        </select>
+      </div>
 
-// ----------------------------
-// 🧩 Internships
-// ----------------------------
+      {/* Display Items */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '1.5rem' }}>
+        {filteredItems.length > 0 ? (
+          filteredItems.map((item, index) => (
+            <div
+              key={index}
+              style={{
+                background: '#fff',
+                padding: '1rem',
+                borderRadius: '8px',
+                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+              }}
+            >
+              <h3 style={{ marginBottom: '0.5rem' }}>{item.title}</h3>
+              <p style={{ marginBottom: '1rem' }}>{item.description}</p>
+              <p><strong>Last Date:</strong> {item.lastDate}</p>
+              <p><strong>Type:</strong> {item.type}</p>
+              <a href={item.link} target="_blank" rel="noopener noreferrer" style={{ color: '#0070f3' }}>
+                View More →
+              </a>
+            </div>
+          ))
+        ) : (
+          <p>No items found.</p>
+        )}
+      </div>
+    </div>
+  );
+};
 
-export const internships: InternshipItem[] = [
-  {
-    title: 'Software Engineering Intern - Google',
-    description: 'As a Software Engineering Intern at Google, you’ll work on challenging projects that impact millions of users worldwide.',
-    duration: '12 weeks',
-    stipend: '₹80,000/month',
-    lastDate: 'May 31, 2025',
-    link: 'https://careers.google.com/jobs/results/12345678-software-engineering-intern/',
-    type: 'Internship',
-    isRemote: true,
-  },
-  // Add other internships...
-];
-
-// ----------------------------
-// 🧩 Loans
-// ----------------------------
-
-export const loans: LoanItem[] = [
-  {
-    title: 'SBI Education Loan - Engineering',
-    description: 'State Bank of India offers loans for engineering students with flexible repayment terms and competitive interest rates.',
-    amount: 'Up to ₹20 lakhs',
-    interestRate: '8.5% p.a.',
-    eligibility: 'Indian students, Engineering courses',
-    lastDate: 'Open throughout the year',
-    link: 'https://www.sbi.co.in/web/personal-banking/education-loan',
-    type: 'Loan',
-  },
-  // Add other loans...
-];
-
-// ----------------------------
-// 🧩 Scholarships
-// ----------------------------
-
-export const scholarships: ScholarshipItem[] = [
-  {
-    title: 'AICTE Pragati',
-    description: 'Scholarship for girls in technical education.',
-    amount: '₹50,000/year',
-    lastDate: 'October 31, 2025',
-    link: 'https://www.aicte-india.org/',
-    type: 'Scholarship',
-  },
-  // Add other scholarships...
-];
-
-// ----------------------------
-// 🔄 Combined List for Search
-// ----------------------------
-
-export const allItems: Item[] = [...internships, ...loans, ...scholarships];
+export default Page;
