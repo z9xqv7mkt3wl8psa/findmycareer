@@ -1,4 +1,4 @@
-// src/app/data/item.ts
+// src/data.ts
 
 export type ItemType = 'Scholarship' | 'Internship' | 'Loan';
 
@@ -43,7 +43,7 @@ export const internships: InternshipItem[] = [
     type: 'Internship',
     isRemote: true,
   },
-  // Add other internships...
+  // ... other internships
 ];
 
 // ----------------------------
@@ -61,7 +61,7 @@ export const loans: LoanItem[] = [
     link: 'https://www.sbi.co.in/web/personal-banking/education-loan',
     type: 'Loan',
   },
-  // Add other loans...
+  // ... other loans
 ];
 
 // ----------------------------
@@ -77,7 +77,7 @@ export const scholarships: ScholarshipItem[] = [
     link: 'https://www.aicte-india.org/',
     type: 'Scholarship',
   },
-  // Add other scholarships...
+  // ... other scholarships
 ];
 
 // ----------------------------
