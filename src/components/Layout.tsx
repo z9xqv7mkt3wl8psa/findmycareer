@@ -154,7 +154,7 @@ export default function Layout({ children }: Props) {
             </h3>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               <li style={{ margin: '0.8rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span></span> support@prasunet.com
+                <span></span> prasunetcompany@gmail.com
               </li>
               <li style={{ margin: '0.8rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <span></span> www.prasunet.com

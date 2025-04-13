@@ -59,7 +59,7 @@ export default function Footer() {
         <div>
           <h3 style={headingStyle}>Contact Us</h3>
           <ul style={listStyle}>
-            <li style={itemStyle}>support@prasunet.com</li>
+            <li style={itemStyle}>prasunetcompany@gmail.com</li>
             <li style={itemStyle}>www.prasunet.com</li>
             <li style={itemStyle}>Prasunet Pvt. Ltd. Co.</li>
           </ul>
