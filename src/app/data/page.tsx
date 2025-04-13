@@ -1,5 +1,7 @@
 // src/app/data/page.tsx
 
+"use client"; // Add this at the top of the file
+
 import { useState } from 'react';
 import { allItems, Item } from './item'; // Import Item here
 
