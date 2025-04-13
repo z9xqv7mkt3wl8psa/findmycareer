@@ -15,6 +15,7 @@ export default function HomePage() {
   const scrollRef = useRef(null); //
   const images = ['/img1.jpg', '/img2.jpg', '/img3.jpg'];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [query, setQuery] = useState('');
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -22,6 +23,7 @@ export default function HomePage() {
     }, 3000);
     return () => clearInterval(interval);
   }, []);
+  
 const filteredResults = allItems.filter((item: Item) =>
     item.title.toLowerCase().includes(query.toLowerCase()) ||
     item.description.toLowerCase().includes(query.toLowerCase())
