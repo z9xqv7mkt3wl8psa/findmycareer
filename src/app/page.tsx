@@ -15,7 +15,8 @@ export default function HomePage() {
   const scrollRef = useRef(null); //
   const images = ['/img1.jpg', '/img2.jpg', '/img3.jpg'];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
+  const [query, setQuery] = useState('');
+  
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
