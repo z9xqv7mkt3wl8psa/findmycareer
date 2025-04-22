@@ -7,65 +7,1362 @@ import { useState } from 'react';
 
 const scholarships = [
   {
-    title: 'PMSSS (Prime Minister’s Special Scholarship Scheme)',
-    description: 'Aimed at ITI students who belong to Jammu & Kashmir and are pursuing diploma/degree courses in various fields.',
-    amount: '₹30,000/year',
-    lastDate: 'July 31, 2025',
-    link: 'https://www.aicte-india.org/schemes/pmsss',
+    name: "NHPC Sports Scholarship 2025",
+    provider: "National Hydroelectric Power Corporation (NHPC)",
+    deadline: "26 March",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
   },
   {
-    title: 'National Apprenticeship Promotion Scheme (NAPS)',
-    description: 'Scholarship for ITI students pursuing apprenticeship training across various industries.',
-    amount: 'Varies (Based on employer)',
-    lastDate: 'Ongoing',
-    link: 'https://www.apprenticeship.gov.in/',
+    name: "BOC Scholarship 2025",
+    provider: "Government Of Odisha",
+    deadline: "15 March",
+    amount: "Click on \"View Details\"",
+    eligibility: "ITI, Diploma",
+    link: "https://gform"
   },
   {
-    title: 'Sitaram Jindal Foundation Scholarship',
-    description: 'Scholarship for economically disadvantaged students pursuing ITI courses in various trades.',
-    amount: '₹20,000/year',
-    lastDate: 'August 31, 2025',
-    link: 'http://www.sitaramjindalfoundation.org/',
+    name: "Maharashtra Post Matric Scholarship For Persons With Disability",
+    provider: "Government Of Maharashtra",
+    deadline: "31 March",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
   },
   {
-    title: 'ITI Scholarships - National Handicapped Finance and Development Corporation (NHFDC)',
-    description: 'For differently-abled students pursuing ITI courses, providing financial assistance for education.',
-    amount: 'Varies (Based on need)',
-    lastDate: 'June 30, 2025',
-    link: 'https://nhfdc.nic.in/',
+    name: "Godabarisha Vidyarthi Protsahana Yojana",
+    provider: "Government Of Odisha",
+    deadline: "02 March",
+    amount: "Click on \"View Details\"",
+    eligibility: "Class 11, Class 12, ITI, Diploma",
+    link: "https://gform"
   },
   {
-    title: 'Fellowship for ITI Students - Ministry of Skill Development and Entrepreneurship',
-    description: 'Supports ITI students from economically weaker backgrounds who are pursuing courses in trades related to industry growth.',
-    amount: '₹15,000/year',
-    lastDate: 'July 15, 2025',
-    link: 'https://www.msde.gov.in/',
+    name: "Vocational Education Maintenance Allowance Scholarship 2025",
+    provider: "Government Of Maharashtra",
+    deadline: "31 March",
+    amount: "Click on \"View Details\"",
+    eligibility: "ITI, Diploma",
+    link: "https://gform"
   },
   {
-    title: 'Narotam Sekhsaria Foundation Scholarship',
-    description: 'For ITI students with outstanding skills and financial need, primarily for those in specialized trades.',
-    amount: '₹25,000/year',
-    lastDate: 'August 31, 2025',
-    link: 'https://www.nsf.org.in/',
+    name: "Maharashtra Post Matric Scholarship 2025",
+    provider: "Government Of Maharashtra",
+    deadline: "31 March",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
   },
   {
-    title: 'Indian Oil Corporation Limited (IOCL) Scholarship',
-    description: 'Scholarships for ITI students pursuing trade courses in petroleum and energy sectors.',
-    amount: '₹10,000/year',
-    lastDate: 'August 15, 2025',
-    link: 'https://www.iocl.com/',
+    name: "Odisha BOC Scholarship",
+    provider: "Government Of Odisha",
+    deadline: "27 June",
+    amount: "Click on \"View Details\"",
+    eligibility: "ITI, Diploma",
+    link: "https://gform"
   },
   {
-    title: 'Shankar Bhatnagar Scholarship',
-    description: 'Provides scholarships to ITI students from financially underprivileged backgrounds to support their vocational education.',
-    amount: '₹15,000/year',
-    lastDate: 'July 31, 2025',
-    link: 'http://www.sbf.org.in/',
+    name: "E Kalyan Jharkhand Scholarship 2024 25",
+    provider: "Government Of Jharkhand",
+    deadline: "20 March",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
   },
+  {
+    name: "Government Vidyaniketan Scholarship 2025",
+    provider: "Government Of Maharashtra",
+    deadline: "31 March",
+    amount: "Click on \"View Details\"",
+    eligibility: "Class 11, Class 12, ITI, Diploma, Engineering, Bachelors, Masters",
+    link: "https://gform"
+  },
+  {
+    name: "JSW Umeed Scholarship 2025",
+    provider: "JSW Foundation",
+    deadline: "09 March",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "KBI Safalta Scholarship 2025",
+    provider: "Knorr Bremse India Pvt Ltd",
+    deadline: "05 March",
+    amount: "Click on \"View Details\"",
+    eligibility: "ITI, Diploma, Engineering, Bachelors, Masters",
+    link: "https://gform"
+  },
+  {
+    name: "Aikyashree Post Matric Fresh And Renewal Scholarship 2025",
+    provider: "Government Of West Bengal",
+    deadline: "28 February",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Abhyaas Scholarship Aptitude Test 2025",
+    provider: "Abhyaas",
+    deadline: "28 February",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "National Information Technology Exam 2025",
+    provider: "NICE Foundation",
+    deadline: "31 March",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Chhattisgarh Post Matric Scholarship 2025",
+    provider: "Government Of Chhattisgarh",
+    deadline: "17 February",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Shiksha Sahayog Scholarship 2025",
+    provider: "Government Of Chhattisgarh",
+    deadline: "31 January",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Vidvatta Scholarship 2025",
+    provider: "KC Pullaiah Foundation",
+    deadline: "28 February",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Karnataka Post Matric Scholarship 2025",
+    provider: "Government Of Karnataka",
+    deadline: "10 March",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Karnataka Labour Children Scholarship 2025",
+    provider: "Labour Welfare Board Karntaka",
+    deadline: "31 March",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Kanthari Scholarship For Social Change 2025",
+    provider: "Braille Without Borders Charitable Trust",
+    deadline: "10 January",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Rabiya Masood Foundation Scholarship 2025",
+    provider: "Rabiya Masood Foundation",
+    deadline: "31 March",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "VidyaSamunnathi Scholarship 2025",
+    provider: "Kerala State Welfare Corporation for Forward Communities Ltd",
+    deadline: "31 March",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Anjali Scholarship 2024 25",
+    provider: "Swabhiman Organization",
+    deadline: "10 March",
+    amount: "Click on \"View Details\"",
+    eligibility: "Class 11, Class 12, ITI, Diploma, Engineering, Medical, Bachelors",
+    link: "https://gform"
+  },
+  {
+    name: "Odisha Pre And Post Matric Scholarship 2025",
+    provider: "Government Of Odisha",
+    deadline: "15 March",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "KSTWWFB Scholarship And Laptop Scheme",
+    provider: "KSTWWFB, Govt. Of Kerala",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "LPU Scholarship 2025",
+    provider: "LPU University",
+    deadline: "25 January",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "LIC Golden Jubilee Scholarship 2024",
+    provider: "Golden Jubilee Foundation",
+    deadline: "22 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "Class 11, Class 12, ITI, Diploma, Engineering, Medical, Bachelors",
+    link: "https://gform"
+  },
+  {
+    name: "Karunyathinte Deepthi Zweet Scholarship 2024",
+    provider: "ZMART Foundation",
+    deadline: "15 January",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Vocational Training Fee Reimbursement Scholarship 2024",
+    provider: "Government Of Maharashtra",
+    deadline: "31 March",
+    amount: "Click on \"View Details\"",
+    eligibility: "ITI, Diploma",
+    link: "https://gform"
+  },
+  {
+    name: "Bhoomi IAS Scholarship 2024",
+    provider: "Bhoomi IAS",
+    deadline: "05 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Bhoomi IAS Scholarship 2024",
+    provider: "Bhoomi IAS",
+    deadline: "05 November",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "ITC And ITI Fee Reimbursement Scholarship 2024",
+    provider: "Government Of Kerala",
+    deadline: "16 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "ITI",
+    link: "https://gform"
+  },
+  {
+    name: "Patni Education Trust Scholarship 2024",
+    provider: "The Patni Education Trust",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Page Scholarship 2024",
+    provider: "Page Industries Limited",
+    deadline: "21 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "Class 11, Class 12, ITI, Diploma",
+    link: "https://gform"
+  },
+  {
+    name: "Jodhpur Association Scholarship 2024",
+    provider: "Jodhpur Association Mumbai",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Peace Of Mind Foundation Scholarship 2024",
+    provider: "Peace Of Mind Foundation",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Baal Vikas Foundation Scholarship 2024",
+    provider: "Baal Vikas Foundation",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Habeeb Educare Scholarship 2024",
+    provider: "MSF Kerala",
+    deadline: "15 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Renewal KBI Safalta Scholarship 2024",
+    provider: "Knorr-Bremse Group",
+    deadline: "30 November",
+    amount: "Click on \"View Details\"",
+    eligibility: "ITI, Diploma, Engineering, Medical, Masters",
+    link: "https://gform"
+  },
+  {
+    name: "SUHRID MLA Scholarship 2024",
+    provider: "Transformation & Development Department, Assam",
+    deadline: "15 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Lakshadweep Scholarship Scheme 2024",
+    provider: "Government of India",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "BrightMinds Scholarship Test 2024",
+    provider: "Lukmaan IAS",
+    deadline: "14 November",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Nishkam Sewa Bharti Trust Scholarship 2024",
+    provider: "Nishkam Sewa Bharti Trust",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "RICE Talent Scholarship Test 2024",
+    provider: "RiceSmart",
+    deadline: "14 November",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "UP Pre And Post Matric Scholarship 2024",
+    provider: "The Ministry of Social Welfare, Government of Uttar Pradesh",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Sujnananidhi Scholarship 2024",
+    provider: "Shri Kshetra Dharmasthala Rural Development Project, Dharmasthala",
+    deadline: "31 March",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Ruma Devi Gulab Ben Akshara Scholarship 2025",
+    provider: "Ruma Devi Foundation",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Shri Kushal Guru Jain Charitable Trust Scholarship 2024",
+    provider: "Shri Kushal Guru Jain Charitable Trust",
+    deadline: "20 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Guruji Education Foundation Scholarship 2024",
+    provider: "Guruji Education Foundation",
+    deadline: "30 November",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Schindler Igniting Minds Fresh And Renewal Scholarship 2024",
+    provider: "Schindler India PVT LTD",
+    deadline: "16 February",
+    amount: "Click on \"View Details\"",
+    eligibility: "ITI, Diploma, Engineering",
+    link: "https://gform"
+  },
+  {
+    name: "Muslim Education Foundation Scholarship 2024",
+    provider: "Muslim Education Foundation",
+    deadline: "30 November",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Mercy Cops Charitable Trust Scholarship 2024",
+    provider: "Mercy Cops Charitable Trust",
+    deadline: "30 November",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Avasar Foundation Post Matric Scholarship 2024",
+    provider: "Avasar Foundation",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Vijayalakshmi R L Jalappa Foundation Scholarship 2024",
+    provider: "Vijayalakshmi R L Jalappa Foundation",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "Class 11, Class 12, ITI, Diploma, Engineering, Medical, Bachelors",
+    link: "https://gform"
+  },
+  {
+    name: "Yuva Unstoppable Scholarship 2024",
+    provider: "Yuva Unstoppable",
+    deadline: "30 November",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Sachavi Charitable Trust Scholarship 2024",
+    provider: "Sachavi Charitable Trust",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Gagan Bharari Shiksha Yojana Scheme 2024",
+    provider: "Government Of Goa",
+    deadline: "15 October",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Sunny Vinayak Nimhan Scholarship 2024",
+    provider: "Sunny Vinayak Nimhan",
+    deadline: "15 October",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Saksham Fresh And Renewal Scholarship 2024",
+    provider: "PVH Arvind Fashions Pvt Limited",
+    deadline: "15 November",
+    amount: "Click on \"View Details\"",
+    eligibility: "ITI, Diploma, PG-Diploma, Engineering, Bachelors, Masters",
+    link: "https://gform"
+  },
+  {
+    name: "Arvind Foundation Fresh And Renewal Scholarship 2024",
+    provider: "Arvind Foundation",
+    deadline: "15 November",
+    amount: "Click on \"View Details\"",
+    eligibility: "Class 12, ITI, Diploma, Engineering, Bachelors, Masters",
+    link: "https://gform"
+  },
+  {
+    name: "Aalayam Foundation Scholarship 2024",
+    provider: "Aalayam Foundation",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Bhumi Cognizant Scholarship 2024",
+    provider: "Bhumi in collaboration with Cognizant Technology Solutions India Private Limited",
+    deadline: "15 October",
+    amount: "Click on \"View Details\"",
+    eligibility: "Class 11, Class 12, ITI, Diploma, Engineering, Bachelors",
+    link: "https://gform"
+  },
+  {
+    name: "Sage IT Scholarship 2024",
+    provider: "Sage IT",
+    deadline: "29 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "VI Scholarship For Teachers 2024",
+    provider: "Vodafone Idea Foundation",
+    deadline: "25 September",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "E Kalyan Pre And Post Matric Scholarship 2024",
+    provider: "Government Of Jharkhand",
+    deadline: "30 October",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Bharathi Cement Fresh And Renewal Scholarship 2024",
+    provider: "Bharathi Cement Corporation Private Limited (BCCPL)",
+    deadline: "15 October",
+    amount: "Click on \"View Details\"",
+    eligibility: "Class 10, Class 11, Class 12, ITI, Diploma, Bachelors, Masters",
+    link: "https://gform"
+  },
+  {
+    name: "JSW UDAAN Fresh And Renewal Scholarship 2024",
+    provider: "JSW UDAAN Foundation",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "ITI, Diploma, PG-Diploma, Engineering, Medical, Bachelors, Masters",
+    link: "https://gform"
+  },
+  {
+    name: "Pre And Post matric National Scholarship 2024",
+    provider: "Government Of India",
+    deadline: "31 October",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Post Matric Scholarship For Students Of The Wards Of Beedi LSDM Workers 2024",
+    provider: "The Ministry of Labour, Government Of India",
+    deadline: "15 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "Class 11, Class 12, ITI, Diploma, Engineering, Bachelors, Professional courses",
+    link: "https://gform"
+  },
+  {
+    name: "Kerala E Grantz Scholarship 2024",
+    provider: "E Grantz, Government Of Kerala",
+    deadline: "15 November",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Special Free Scholarship 2024",
+    provider: "Dr O. P. Bhalla Foundation",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Advaita Bodhi Foundation Scholarship 2024",
+    provider: "Advaita Bodhi Foundation",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "PM Yasasvi Pre And Post Matric Scholarship For Sikkim 2024",
+    provider: "Government Of India",
+    deadline: "10 October",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Karnataka State Post Matric Scholarship 2024",
+    provider: "Government Of Karnataka",
+    deadline: "01 January",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Karnataka Labour Children Scholarship 2024",
+    provider: "Labour Welfare Board Karntaka",
+    deadline: "05 January",
+    amount: "Click on \"View Details\"",
+    eligibility: "Class 7 to 9, Class 10, Class 11, Class 12, ITI, Engineering, Medical",
+    link: "https://gform"
+  },
+  {
+    name: "Nirman Shramik Kalyan Yojana Scholarship For Children Of Construction Workers 2024",
+    provider: "Government Of Odisha",
+    deadline: "30 September",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Goa Students With Disabilities Scholarship 2024",
+    provider: "The Department for Empowerment of Persons with Disabilities, Government of Goa",
+    deadline: "31 October",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "HLL Pratheeksha Scholarship 2024",
+    provider: "HLL Lifecare Limited’s Pratheeksha Charitable Society",
+    deadline: "24 August",
+    amount: "Click on \"View Details\"",
+    eligibility: "ITI, Diploma, Engineering, Medical",
+    link: "https://gform"
+  },
+  {
+    name: "Dr Ambedkar Post Matric Scholarship For EBC Students Andaman And Nicobar 2024",
+    provider: "Government Of Andaman Nicobar",
+    deadline: "31 October",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "PM Yasasvi Pre And Post Matric Scholarship For OBC Students Andaman And Nicobar 2024",
+    provider: "The Ministry of Social Justice & Empowerment, India",
+    deadline: "30 October",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Pre And Post Matric Scholarship For SC And ST Students Meghalaya",
+    provider: "The Department of Education, Government of Meghalaya.",
+    deadline: "31 October",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Post Matric Scholarship For SC And OBC Students Manipur 2024",
+    provider: "The Ministry of Social Justice & Empowerment, Govt. of India",
+    deadline: "31 October",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Post Matric Scholarship For SC Students Manipur 2024",
+    provider: "The Ministry of Social Justice & Empowerment, Govt. of India",
+    deadline: "31 October",
+    amount: "Click on \"View Details\"",
+    eligibility: "ITI, Diploma, Engineering, Medical, Bachelors, Masters, Professional courses",
+    link: "https://gform"
+  },
+  {
+    name: "Aikyashree West Bengal State Scholarship 2024",
+    provider: "The West Bengal Minorities’ Development & Finance Corporation",
+    deadline: "31 October",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "JK Lakshmi Vidya Fresh And Renewal Scholarship 2024",
+    provider: "JK Lakshmi Cement Limited",
+    deadline: "30 September",
+    amount: "Click on \"View Details\"",
+    eligibility: "Class 1 to 6, Class 7 to 9, Class 10, Class 11, Class 12, ITI, Engineering",
+    link: "https://gform"
+  },
+  {
+    name: "Vidyanidhi And Higher Education Scholarship 2024",
+    provider: "Gowd Saraswat Brahman Sabha, Mumbai",
+    deadline: "31 October",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Himachal Pradesh Scholarship For Disabled Students 2024",
+    provider: "Government Of Himachal Pradesh",
+    deadline: "31 August",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Help The Blind Foundation Scholarship 2024",
+    provider: "Help The Blind Foundation",
+    deadline: "31 October",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Jilla Merit Award 2024",
+    provider: "Government Of Kerala",
+    deadline: "26 July",
+    amount: "Click on \"View Details\"",
+    eligibility: "Class 11, Class 12, ITI, Diploma, Bachelors",
+    link: "https://gform"
+  },
+  {
+    name: "PM Yasasvi Post Matric Scholarship For EBC And OBC Students DNHDD 2024",
+    provider: "The Ministry of Social Justice & Empowerment, India",
+    deadline: "31 October",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Post Matric Scholarship To SC And ST Students DNHDD 2024",
+    provider: "The Ministry Of Social Justice and Empowerment, India.",
+    deadline: "31 October",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "PM YASASVI Post Matric Scholarship For OBC EBC And DNT Students Chandigarh 2024",
+    provider: "The Ministry of Social Justice & Empowerment, Government of India",
+    deadline: "15 November",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Post Matric Scholarship For Transgender Students Chandigarh 2024",
+    provider: "Government Of Chandigarh",
+    deadline: "31 October",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Post Matric Scholarship For SC Chandigarh 2024",
+    provider: "The Ministry of Social Justice and Empowerment, India",
+    deadline: "31 October",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Pre And Post Matric Scholarship To SC ST And OBC Students Assam 2024",
+    provider: "The Ministry of Tribal Affairs, India",
+    deadline: "31 October",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Post Matric Scholarship For ST Students Goa 2024",
+    provider: "The Department of Tribal Welfare, Govt. Of Goa",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Schaeffler India Social Innovator Fellowship 2024",
+    provider: "Schaeffler India",
+    deadline: "15 August",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Technical Education Scholarship Scheme For ITI Level 2024",
+    provider: "The Department of Technical Education, Himachal Pradesh",
+    deadline: "31 October",
+    amount: "Click on \"View Details\"",
+    eligibility: "ITI",
+    link: "https://gform"
+  },
+  {
+    name: "Post Matric Scholarship For OBC EBC And DNT Students 2024",
+    provider: "The Ministry Of Social Justice and Empowerment, Himachala Pradesh",
+    deadline: "31 October",
+    amount: "Click on \"View Details\"",
+    eligibility: "Class 11, Class 12, ITI, Engineering, Medical, Bachelors, Masters",
+    link: "https://gform"
+  },
+  {
+    name: "Swami Vivekananda Merit Cum Means Scholarship 2024",
+    provider: "Govenrment Of West Bengal",
+    deadline: "31 July",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Yashasvi Women Education And Skill Development Scheme Scholarship 2024",
+    provider: "JSP Foundation",
+    deadline: "31 August",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "ISKCON GITA SCHOLARSHIP TEST 2024",
+    provider: "ISKCON",
+    deadline: "02 August",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Pre And Post Matric Scholarship For Education To The Wards Of Beedi Cine IOMC LSDM Workers 2024",
+    provider: "The Department Of Labour & Employment, Govt. Of India",
+    deadline: "30 November",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Central Sector Scholarship Of Top Class Education For Post Matric Students 2024",
+    provider: "The Department Of Social Justice & Empowerment, Govt. Of India",
+    deadline: "31 October",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Top Class Education For Students With Disabilities 2024",
+    provider: "Department Of Empowerment Of Person With Disabilities, Govt. Of India",
+    deadline: "15 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Pre And Post Matric Scholarship For Person With Disabilities 2024",
+    provider: "Department Of Empowerment Of Person With Disabilities Govt. Of India",
+    deadline: "31 October",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Pre Matric And Simon Sing Horo Special Post Matric Scholarship 2024",
+    provider: "Tea Tribes and Adivasi Welfare Department Assam",
+    deadline: "15 August",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "WomensLeaders India Fellowship 2024",
+    provider: "Reliance Foundation",
+    deadline: "28 July",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Banishree Scholarship 2024",
+    provider: "Government Of Odisha",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Help A Child Scholarship 2024",
+    provider: "Somaiya Vidyavihar Trust & Godavari Biorefineries Ltd",
+    deadline: "18 July",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "WBZF Zakat Scholarship 2024",
+    provider: "West Bengal Zakat Fund",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "ITI, Engineering, Medical, Bachelors",
+    link: "https://gform"
+  },
+  {
+    name: "Samoon Foundation Scholarship",
+    provider: "Samoon Foundation",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "YRP Foundation Scholarship",
+    provider: "YRP Foundation",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "MESCO Trust Scholarship 2024",
+    provider: "MESCO Trust",
+    deadline: "15 July",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Shamanur Shivashankarappa Scholarship 2024",
+    provider: "Dr Shamanur Shivashankarappa Janakalyana Trust",
+    deadline: "31 July",
+    amount: "Click on \"View Details\"",
+    eligibility: "Class 11, Class 12, ITI, Diploma, Engineering, Medical, Bachelors",
+    link: "https://gform"
+  },
+  {
+    name: "Kerala Vidyakiranam Scholarship 2024",
+    provider: "Government Of Kerala",
+    deadline: "31 August",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "World Bunts Foundation Trust Education Scholarship 2024",
+    provider: "World Bunts Foundation Trust",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "ITI, Diploma, Engineering, Medical, Bachelors, Masters",
+    link: "https://gform"
+  },
+  {
+    name: "Keki Putlan Mehta Benevolent Trust Scholarship 2024",
+    provider: "Keki Putlan Mehta Benevolent Trust",
+    deadline: "31 October",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Arcelor Mittal Nippon Steel Beti Padhao Fresh And Renewal Scholarship 2024",
+    provider: "ArcelorMittal Nippon Steel India",
+    deadline: "31 January",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Aaghaz Foundation Scholarship",
+    provider: "Aaghaz Foundation",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Geethanand Foundation Scholarship",
+    provider: "Geethanand Foundation",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Dhrithi Foundation Fresh And Renewal Scholarship",
+    provider: "Dhrithi Foundation",
+    deadline: "31 October",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Post Matric Scholarship For Persons With Disability 2024",
+    provider: "Government Of Maharashtra",
+    deadline: "15 June",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Post Matric Scholarship To VJNT Students Scholarship 2024",
+    provider: "Government Of Maharashtra",
+    deadline: "31 March",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Sambhavam IAS Coaching Scholarship 2024",
+    provider: "Diya Delhi & Sood Charity Foundation",
+    deadline: "30 June",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Samuel Foundation Scholarship",
+    provider: "The Samuel Foundation",
+    deadline: "19 June",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Veda Foundation Scholarship",
+    provider: "Veda Foundation",
+    deadline: "31 July",
+    amount: "Click on \"View Details\"",
+    eligibility: "Class 11, Class 12, ITI, Diploma, Bachelors, Masters, Others",
+    link: "https://gform"
+  },
+  {
+    name: "Bhumi Cognizant Scholarship Program",
+    provider: "Bhumi NGO & Cognizant",
+    deadline: "14 May",
+    amount: "Click on \"View Details\"",
+    eligibility: "Class 11, Class 12, ITI, Diploma, Engineering, Bachelors",
+    link: "https://gform"
+  },
+  {
+    name: "Everest Scholarship",
+    provider: "Team Everest NGO",
+    deadline: "06 July",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "MahaDBT Scholarship",
+    provider: "Government of Maharashtra",
+    deadline: "15 June",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Virat Kohli Foundation Scholarship",
+    provider: "Virat Kohli Foundation",
+    deadline: "30 May",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Hand In Hand Indias Shiksha Mitra Scholarship 2024",
+    provider: "Hand in Hand India NGO",
+    deadline: "31 May",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "JK Tyre Shiksha Sarthi Scholarship",
+    provider: "JK Tyre",
+    deadline: "31 May",
+    amount: "Click on \"View Details\"",
+    eligibility: "ITI, Diploma, Engineering, Medical, Bachelors",
+    link: "https://gform"
+  },
+  {
+    name: "Sudha Opportunity Scholarship",
+    provider: "Pragati Foundation",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Zakat Scholarship",
+    provider: "West Bengal Zakat Fund",
+    deadline: "10 June",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "SAMBHAVAM IAS Coaching Scholarship",
+    provider: "Sood Charity Foundation",
+    deadline: "21 April",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Kiran Foundation Scholarship",
+    provider: "Kiran Foundation",
+    deadline: "30 April",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Jains India Trust Scholarship 2024",
+    provider: "Jains India Trust",
+    deadline: "31 October",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "IBF Scholarship",
+    provider: "Indiabulls Foundation",
+    deadline: "12 October",
+    amount: "Click on \"View Details\"",
+    eligibility: "ITI, Engineering, Medical, Bachelors",
+    link: "https://gform"
+  },
+  {
+    name: "Gomantak Maratha Samaj Scholarship",
+    provider: "Gomantak Maratha Samaj Goa",
+    deadline: "08 August",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Advaita Bodhi Foundation Scholarship",
+    provider: "Advaita Bodhi Foundation",
+    deadline: "31 July",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Amanat Foundation Trust Scholarship",
+    provider: "Amanat Foundation Trust",
+    deadline: "20 May",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Sewa Fellowship",
+    provider: "Sewa International",
+    deadline: "14 April",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Meet Charitable Trust Scholarship",
+    provider: "Meet Charitable Trust",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Nehru Sidhant Kender Trust Merit Scholarship",
+    provider: "NEHRU SIDHANT KENDER TRUST",
+    deadline: "31 August",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Chaitanya Charitable Trust Scholarship",
+    provider: "Chaitanya Charitable Trust",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Arya Vysya Charitable And Education Foundation Scholarship",
+    provider: "Arya Vysya Charitable And Education Foundation",
+    deadline: "13 November",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Success Educational Trust Scholarship",
+    provider: "Success Educational Trust",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "HWA Scholarship",
+    provider: "HWA Charitable Foundation",
+    deadline: "31 August",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "iQuanta CAT Scholarship Test",
+    provider: "Indrajeet’s Iquanta EDU Services PVT LTD",
+    deadline: "31 July",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Suman Ramesh Tulsiani Charitable Trust Scholarship",
+    provider: "Suman Ramesh Tulsiani Charitable Trust",
+    deadline: "31 August",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Goonj Setu Fellowship",
+    provider: "Goonj NGO Trust",
+    deadline: "22 April",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Trust Suvas Scholarship",
+    provider: "Suvas Charitable Trust",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Hand In Hand Indias Shiksha Mitra Scholarship",
+    provider: "Hand in Hand India NGO",
+    deadline: "18 April",
+    amount: "Click on \"View Details\"",
+    eligibility: "Class 11, Class 12, ITI, Diploma, PG-Diploma, Engineering, Medical",
+    link: "https://gform"
+  },
+  {
+    name: "Bhumi X Cognizant Foundation Scholarship",
+    provider: "Bhumi X Cognizant Foundation",
+    deadline: "26 June",
+    amount: "Click on \"View Details\"",
+    eligibility: "ITI, Diploma, Engineering, Bachelors",
+    link: "https://gform"
+  },
+  {
+    name: "MBRDI Education Scholarship",
+    provider: "Mercedes Benz Research & Development India",
+    deadline: "22 October",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Vocational Education Fee Reimbursement Scholarship",
+    provider: "Government Of Maharashtra",
+    deadline: "30 April",
+    amount: "Click on \"View Details\"",
+    eligibility: "ITI",
+    link: "https://gform"
+  },
+  {
+    name: "New Vardhaman Educational Trust Scholarship",
+    provider: "Vardhaman Educational Trust",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Mirae Asset Foundation Scholarship",
+    provider: "Mirae Asset Foundation",
+    deadline: "26 June",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Deepam Scholarship",
+    provider: "Deepam Trust",
+    deadline: "05 January",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "JK Tyre Sarthi Scholarship",
+    provider: "JK Tyre",
+    deadline: "17 April",
+    amount: "Click on \"View Details\"",
+    eligibility: "ITI, Diploma, Engineering, Medical, Bachelors",
+    link: "https://gform"
+  },
+  {
+    name: "VidyaSamunnathi Scholarship",
+    provider: "Kerala State Welfare Corporation for Forward Communities Ltd",
+    deadline: "07 June",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Sanskriti Madhobi Chatterji Memorial Fellowship",
+    provider: "Sanskriti Foundation",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "S J Foundation Scholarship",
+    provider: "Sitaram Jindal Foundation",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "NC Parikh Family Charitable Trust Gujarati Scholarship",
+    provider: "Green Acres Academy",
+    deadline: "31 July",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Lalit Kala Akademi Scholarship",
+    provider: "Lalit Kala Akademy",
+    deadline: "15 April",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Anjum Chopra Scholarship",
+    provider: "Push Sports",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "JC Bose Fellowship",
+    provider: "Science & Engineering Research Board",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  },
+  {
+    name: "Sitaram Jindal Foundation Scholarship",
+    provider: "Sitaram Jindal Foundation",
+    deadline: "31 December",
+    amount: "Click on \"View Details\"",
+    eligibility: "All",
+    link: "https://gform"
+  }
 ];
 
+
 export default function ITIScholarships() {
-  const [visibleCount, setVisibleCount] = useState(5); // Initial scholarships shown (5)
+  const [visibleCount, setVisibleCount] = useState(6); // Initial scholarships shown (5)
   const [filterCriteria, setFilterCriteria] = useState('');
   const [filteredScholarships, setFilteredScholarships] = useState(scholarships);
 
@@ -80,14 +1377,14 @@ export default function ITIScholarships() {
         return bAmount - aAmount;
       })]);
     } else if (value === 'date') {
-      setFilteredScholarships([ ...filteredScholarships.sort((a, b) => new Date(a.lastDate).getTime() - new Date(b.lastDate).getTime()) ]);
+      setFilteredScholarships([ ...filteredScholarships.sort((a, b) => new Date(a.deadline).getTime() - new Date(b.deadline).getTime()) ]);
     } else {
       setFilteredScholarships(scholarships); // Reset to original order
     }
   };
 
   const loadMore = () => {
-    setVisibleCount((prev) => prev + 3); // Load 3 more scholarships at a time
+    setVisibleCount((prev) => prev + 12); // Load 3 more scholarships at a time
   };
 
   const shouldShowLoadMore = scholarships.length > visibleCount;
@@ -163,16 +1460,19 @@ export default function ITIScholarships() {
               onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')}
             >
               <h3 style={{ fontSize: '1.3rem', marginBottom: '0.7rem', fontWeight: '600', color: '#1a1a1a' }}>
-                {scholarship.title}
+                {scholarship.name}
               </h3>
-              <p style={{ fontSize: '1rem', marginBottom: '1rem', lineHeight: '1.5', color: '#444' }}>
-                {scholarship.description}
+              <p style={{ fontSize: '1rem', marginBottom: '0.5rem', color: '#555' }}>
+                <strong>Provider:</strong> {scholarship.provider}
+              </p>
+              <p style={{ fontSize: '0.95rem', marginBottom: '0.5rem', color: '#555' }}>
+                <strong>Eligibility:</strong> {scholarship.eligibility}
               </p>
               <p style={{ fontSize: '0.95rem', marginBottom: '0.4rem', color: '#0070f3' }}>
                 <strong>Amount:</strong> {scholarship.amount}
               </p>
               <p style={{ fontSize: '0.9rem', marginBottom: '1rem', color: '#333' }}>
-                <strong>Last Date:</strong> {scholarship.lastDate}
+                <strong>Last Date:</strong> {scholarship.deadline}
               </p>
               <Link
                 href={scholarship.link}

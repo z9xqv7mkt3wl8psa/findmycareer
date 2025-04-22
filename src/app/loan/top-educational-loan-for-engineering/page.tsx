@@ -6,91 +6,982 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const engineeringLoans = [
-  {
-    title: 'HDFC Education Loan for Engineering',
-    description: 'HDFC offers loans with competitive interest rates for engineering students in India. Covers tuition fees, exam fees, and more.',
-    loanAmount: 'Up to ₹10,00,000',
-    interestRate: '10.5% - 12.5% p.a.',
-    repaymentPeriod: 'Up to 15 years',
-    eligibility: 'Indian citizens, age between 16-35 years',
-    link: 'https://www.hdfc.com/education-loans',
-  },
-  {
-    title: 'SBI Scholar Loan for Engineering',
-    description: 'The SBI Scholar loan is designed for students pursuing higher education in engineering, offering easy processing and repayment options.',
-    loanAmount: 'Up to ₹30,00,000',
-    interestRate: '9.9% - 11% p.a.',
-    repaymentPeriod: 'Up to 15 years',
-    eligibility: 'Indian citizens, age between 18-35 years',
-    link: 'https://www.sbi.co.in/education-loan/scholar-loan',
-  },
-  {
-    title: 'ICICI Bank Education Loan for Engineering',
-    description: 'ICICI offers education loans to engineering students with a quick approval process and attractive interest rates.',
-    loanAmount: 'Up to ₹20,00,000',
-    interestRate: '10.25% - 12.75% p.a.',
-    repaymentPeriod: 'Up to 15 years',
-    eligibility: 'Indian citizens, age between 18-35 years',
-    link: 'https://www.icicibank.com/education-loan/engineering',
-  },
-  {
-    title: 'Axis Bank Education Loan for Engineering',
-    description: 'Axis Bank provides educational loans for engineering students with competitive rates and flexible repayment options.',
-    loanAmount: 'Up to ₹25,00,000',
-    interestRate: '10.5% - 12% p.a.',
-    repaymentPeriod: 'Up to 15 years',
-    eligibility: 'Indian citizens, age between 18-35 years',
-    link: 'https://www.axisbank.com/education-loan',
-  },
-  {
-    title: 'Axis Bank Education Loan for Engineering',
-    description: 'Axis Bank provides educational loans for engineering students with competitive rates and flexible repayment options.',
-    loanAmount: 'Up to ₹25,00,000',
-    interestRate: '10.5% - 12% p.a.',
-    repaymentPeriod: 'Up to 15 years',
-    eligibility: 'Indian citizens, age between 18-35 years',
-    link: 'https://www.axisbank.com/education-loan',
-  },
-  {
-    title: 'Axis Bank Education Loan for Engineering',
-    description: 'Axis Bank provides educational loans for engineering students with competitive rates and flexible repayment options.',
-    loanAmount: 'Up to ₹25,00,000',
-    interestRate: '10.5% - 12% p.a.',
-    repaymentPeriod: 'Up to 15 years',
-    eligibility: 'Indian citizens, age between 18-35 years',
-    link: 'https://www.axisbank.com/education-loan',
-  },
-  {
-    title: 'Axis Bank Education Loan for Engineering',
-    description: 'Axis Bank provides educational loans for engineering students with competitive rates and flexible repayment options.',
-    loanAmount: 'Up to ₹25,00,000',
-    interestRate: '10.5% - 12% p.a.',
-    repaymentPeriod: 'Up to 15 years',
-    eligibility: 'Indian citizens, age between 18-35 years',
-    link: 'https://www.axisbank.com/education-loan',
-  },
-  {
-    title: 'Punjab National Bank (PNB) Education Loan for Engineering',
-    description: 'PNB offers education loans for students pursuing engineering with low interest rates and easy documentation.',
-    loanAmount: 'Up to ₹15,00,000',
-    interestRate: '9.65% - 10.75% p.a.',
-    repaymentPeriod: 'Up to 15 years',
-    eligibility: 'Indian citizens, age between 18-35 years',
-    link: 'https://www.pnbindia.in/education-loans.html',
-  },
-  {
-    title: 'Bank of Baroda Education Loan for Engineering',
-    description: 'Bank of Baroda provides flexible education loans for engineering students with competitive interest rates and quick processing.',
-    loanAmount: 'Up to ₹20,00,000',
-    interestRate: '9.50% - 11.50% p.a.',
-    repaymentPeriod: 'Up to 15 years',
-    eligibility: 'Indian citizens, age between 18-35 years',
-    link: 'https://www.bankofbaroda.in/education-loan',
-  },
-];
+ 
+    {
+      "name": "Propelld Domestic Education Loan 2025",
+      "provider": "Propelld",
+      "deadline": "10 April",
+      "eligibility": "Engineering, Bachelors, Masters",
+      "features": "Domestic",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Goa Interest Free Education Loan",
+      "provider": "Goa Education Development Corporation (GEDC)",
+      "deadline": "28 February",
+      "eligibility": "All",
+      "features": "Interest Free",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Bunts Sangha Interest Free Loan 2024",
+      "provider": "Bunts’ Sangha Bangalore",
+      "deadline": "31 December",
+      "eligibility": "Diploma, Engineering, Bachelors, Others",
+      "features": "Interest Free",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Rotary Club Of Mulund Interest Free Loan 2024",
+      "provider": "The Rotary Club Of Mulund",
+      "deadline": "25 August",
+      "eligibility": "ITI, Diploma, Engineering, Medical, Bachelors, Masters",
+      "features": "Interest Free",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "KMDC Foreign University Higher Education Loan 2024",
+      "provider": "Karnataka Minorities Development Corporation Limited",
+      "deadline": "31 August",
+      "eligibility": "Engineering, Masters, PHD, Post Doctoral",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Zeenam Charitable Trust Education Loan",
+      "provider": "Zeenam Charitable Trust",
+      "deadline": "19 July",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Arivu Vidyabhyasa Education Loan 2024",
+      "provider": "Karnataka Minorities Development Corporation Limited",
+      "deadline": "31 October",
+      "eligibility": "Engineering, Medical, Bachelors, Masters",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Name Of the Scholarship",
+      "provider": "1",
+      "deadline": "22 May",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "testing nikhil",
+      "provider": "Mukhyamantri Kanya Utthan Yojana",
+      "deadline": "23 May",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "World Bunts Foundation Trust Education Loan",
+      "provider": "World Bunts Foundation Trust",
+      "deadline": "31 December",
+      "eligibility": "Engineering, Medical, Bachelors, Masters",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "We Make Scholars Education Loan",
+      "provider": "We Make Scholars",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Unsecured or without collateral loan for the USA",
+      "provider": "WeMakeScholars",
+      "deadline": "31 December",
+      "eligibility": "Engineering, Bachelors, Masters, PHD, PG-Diploma",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Unsecured Education Loan for Australia",
+      "provider": "WeMakeScholars",
+      "deadline": "31 December",
+      "eligibility": "Engineering, Bachelors, Masters, PG-Diploma",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Dhanlaxmi Bank Education Loan Schemes for studies in India",
+      "provider": "Dhanlaxmi Bank",
+      "deadline": "31 December",
+      "eligibility": "Engineering, Bachelors, Masters",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "HSBC Bank Higher Education Loan India",
+      "provider": "HSBC Bank",
+      "deadline": "31 December",
+      "eligibility": "Engineering, Bachelors, Masters",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Unsecured Education Loan for Canada",
+      "provider": "WeMakeScholars",
+      "deadline": "31 December",
+      "eligibility": "Engineering, Bachelors, Masters, PHD, PG-Diploma",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "UCO Premier Education Loan Scheme to Study Abroad",
+      "provider": "UCO Bank",
+      "deadline": "31 December",
+      "eligibility": "Engineering, Bachelors, Masters, PHD, PG-Diploma",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "UCO Education Loan Scheme to Study Abroad",
+      "provider": "UCO Bank",
+      "deadline": "31 December",
+      "eligibility": "Engineering, Bachelors, Masters, PHD, PG-Diploma",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Bank of India Star Education Loan Studies Abroad",
+      "provider": "Bank of India",
+      "deadline": "31 December",
+      "eligibility": "Engineering, Bachelors, Masters, PHD, PG-Diploma",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Karur Vysya Bank Education Loan",
+      "provider": "Karur Vysya Bank",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Incred Education Loan product for Studies in India",
+      "provider": "Incred",
+      "deadline": "31 December",
+      "eligibility": "Engineering, Bachelors, Masters, PHD, PG-Diploma",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Incred Education Loan product for Abroad",
+      "provider": "Incred",
+      "deadline": "31 December",
+      "eligibility": "Engineering, Bachelors, Masters, PHD, PG-Diploma",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Incred Education Loan Schemes for Canada",
+      "provider": "Incred",
+      "deadline": "31 December",
+      "eligibility": "Engineering, Bachelors, Masters, PHD, PG-Diploma",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Incred Education Loan Schemes for US",
+      "provider": "Incred",
+      "deadline": "31 December",
+      "eligibility": "Engineering, Bachelors, Masters",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Indian Bank Education Loan Scheme for Study Abroad",
+      "provider": "Indian Bank",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "ICICI bank Abroad Education Loan",
+      "provider": "ICICI bank",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Avanse Education Loan For MBA",
+      "provider": "Avanse financial services ltd",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Avanse Education Loan to Study In Germany",
+      "provider": "Avanse financial services ltd",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Avanse Education Loan to Study In Australia",
+      "provider": "Avanse financial services ltd",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Avanse Education Loan to Study In the UK Canada",
+      "provider": "Avanse financial services ltd",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Avanse Education Loan to Study In the USA",
+      "provider": "Avanse financial services ltd",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Vidya Sagar Scheme Education Loan Scheme by Canara bank",
+      "provider": "Canara bank",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "HDFC Credila Higher Studies in Abroad Education Loan",
+      "provider": "HDFC Credila",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "HDFC Credila Studies in the USA Education Loan",
+      "provider": "HDFC Credila",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Central government Interest Subsidy Scheme by Dhanlaxmi bank",
+      "provider": "Dhanlaxmi bank",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "SBI Skill Loan Scheme For Study in India",
+      "provider": "SBI",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "SBI Global ED VANATGE Scheme Education Loan For Study Abroad",
+      "provider": "SBI",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Federal Bank Special Vidya Loan for Abroad studies",
+      "provider": "Federal Bank",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Federal Bank Federal Career Solution Education Loan Schemes for Abroad studies",
+      "provider": "Federal Bank",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Syndicate Bank Education Loan",
+      "provider": "Syndicate Bank",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "United Bank Education Loan",
+      "provider": "United Bank of India",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Oriental Bank of Commerce Education Loan",
+      "provider": "Oriental Bank of Commerce",
+      "deadline": "31 December",
+      "eligibility": "Engineering, Bachelors, Masters, PHD, PG-Diploma",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Dena Bank Education Loan",
+      "provider": "Dena Bank",
+      "deadline": "18 April",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Vijaya Bank Education Loan",
+      "provider": "Vijaya Bank",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Andhra Bank Education Loan",
+      "provider": "Andhra Bank",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Federal Bank Education Loan Schemes for Abroad studies",
+      "provider": "Federal Bank",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Aditya Birla Education Loan Scheme to Study in Abroad",
+      "provider": "Aditya Birla",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "City Union Bank Education Loan Schemes to study in India",
+      "provider": "City Union Bank",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "City Union Bank Education Loan Scheme for Abroad Studies",
+      "provider": "City Union Bank",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "CSB Excellence Education Loan",
+      "provider": "Catholic Syrian bank",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Catholic Syrian Bank Education Loan",
+      "provider": "Catholic Syrian bank",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Catholic Syrian Bank Education Loan Schemes for Abroad studies",
+      "provider": "Catholic Syrian bank",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Union Education Skill Development Loan",
+      "provider": "Union Bank",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Union Education India Abroad NRI Student",
+      "provider": "Union Bank",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "IDBI Skill Loan Scheme",
+      "provider": "IDBI Bank",
+      "deadline": "31 December",
+      "eligibility": "Engineering, Bachelors, Masters, PG-Diploma",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "IDBI Education loan for Studies abroad",
+      "provider": "IDBI Bank",
+      "deadline": "31 December",
+      "eligibility": "Engineering, Bachelors, Masters, PHD, PG-Diploma",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Aditya Birla Education Loan",
+      "provider": "Aditya Birla Group",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "DCB Bank Education Loan Schemes for Studies in India",
+      "provider": "DCB Bank",
+      "deadline": "31 December",
+      "eligibility": "Engineering, Bachelors, Masters, PHD, PG-Diploma",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "DBS Bank Education Loan to Study in India",
+      "provider": "DBS Bank",
+      "deadline": "31 December",
+      "eligibility": "Medical, Engineering, Bachelors, Masters",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "DBS Bank Education Loan to Study Abroad",
+      "provider": "DBS Bank",
+      "deadline": "31 December",
+      "eligibility": "Engineering, Bachelors, Masters",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Abhyudaya Vidya Vardhini Educational loan Scheme",
+      "provider": "Abhyudaya Bank",
+      "deadline": "31 December",
+      "eligibility": "Engineering, Bachelors, Masters, PHD, PG-Diploma",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Abhyudaya Bank Education Loan for Vocational Courses",
+      "provider": "Abhyudaya Bank",
+      "deadline": "31 December",
+      "eligibility": "Engineering, Bachelors, Masters, PHD, PG-Diploma",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "KBL Vidyanidhi Education Loan",
+      "provider": "Karnataka Bank",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Skilling Education Loan",
+      "provider": "Karnataka Bank",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Star Pradhanmantri Kaushal Rin Yojana",
+      "provider": "Bank of India",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Nainital Bank Gyani Education Loan scheme to study in India",
+      "provider": "Nainital Bank",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Nainital Bank Education Loan schemes to study Abroad",
+      "provider": "Nainital Bank",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Alliance University Education Loan",
+      "provider": "Alliance University",
+      "deadline": "31 December",
+      "eligibility": "Medical, Engineering, Bachelors, Masters, PHD",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "South Indian Bank Education Loan Schemes for India SIB Edsum",
+      "provider": "South Indian Bank",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Special Vidya Education Loan",
+      "provider": "Federal Bank",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Mahila Samriddhi Yojana For SC",
+      "provider": "Ministry of Social justice and Empowerment for Women",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Bandhan Bank Education Loan for India",
+      "provider": "Bandhan Bank",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Bandhan Bank Education Loan for Abroad",
+      "provider": "Bandhan Bank",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Abhyudaya Cooperative Bank Education Loan",
+      "provider": "Abhyudaya Cooperative Bank",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "SBI Scholar Loan For IIT",
+      "provider": "State Bank Of India",
+      "deadline": "31 December",
+      "eligibility": "Engineering, Masters, PHD, PG-Diploma, Post Doctoral",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Auxilo Skill Education Loan",
+      "provider": "AUXILO",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "UCO Education Loan",
+      "provider": "UCO Bank",
+      "deadline": "31 December",
+      "eligibility": "Medical, Engineering, Bachelors, Masters, PHD, PG-Diploma, Post Doctoral",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Auxilo Study Abroad Loan",
+      "provider": "AUXILO",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Model Educational Loan by Vikaspedia",
+      "provider": "Vikaspedia",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Education Loan by Jain Finance",
+      "provider": "Jain Finance",
+      "deadline": "31 December",
+      "eligibility": "Engineering, Bachelors, Masters, PG-Diploma",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Central Government Interest Subsidy Scheme Education Loan",
+      "provider": "The Ministry of HRD",
+      "deadline": "31 December",
+      "eligibility": "Engineering, Bachelors, Masters",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "IBA Model Educational Loan Scheme",
+      "provider": "Canara Bank",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Vidya Shakthi Education Loan",
+      "provider": "Canara Bank",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Axis Bank Education Loan",
+      "provider": "Axis Bank",
+      "deadline": "31 December",
+      "eligibility": "Medical, Engineering, Bachelors, Masters, PHD, PG-Diploma",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "LIDCOM Education Loan",
+      "provider": "The Leather Industries Development Corporation (LIDCOM), Govt. of Maharashtra.",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Skill Education Loan",
+      "provider": "National Skill Qualification Framework (NSQF)",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Short Term Education Loan",
+      "provider": "The Goa State Scheduled Tribes Finance and Development Corporation Limited",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "National Backward classes Finance Education Loan",
+      "provider": "National backward classes finance and development corporation",
+      "deadline": "31 December",
+      "eligibility": "Medical, Engineering, Bachelors, Masters, PHD, PHARMD, PG-Diploma",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Central Bank of India Education Loan",
+      "provider": "Central Bank of India",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "SBI Scholar Loans",
+      "provider": "SBI",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "SBI Take over of Education Loans",
+      "provider": "SBI",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "SBI Studies Abroad loan",
+      "provider": "SBI",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Bank Of Baroda Education Loan 2025",
+      "provider": "Bank Of Baroda",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "IDBI Education Loan",
+      "provider": "IDBI Bank",
+      "deadline": "12 June",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "SBI student loan",
+      "provider": "SBI",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "Avanse Education Loans",
+      "provider": "Avanse",
+      "deadline": "31 December",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    },
+    {
+      "name": "West Bengal Term Loan",
+      "provider": "West Bengal Minority Development and Finance Corporation",
+      "deadline": "31 October",
+      "eligibility": "All",
+      "features": "Standard",
+      "amount": "Click on \"View Details\"",
+      "interestRate": "Click on \"View Details",
+      "link": "Click on \"View Details\""
+    }
+  ];
+  
 
 export default function EngineeringLoans() {
-  const [visibleCount, setVisibleCount] = useState(6); // Initial loans shown (5)
+  const [visibleCount, setVisibleCount] = useState(12); // Initial loans shown (5)
   const [filterAmount, setFilterAmount] = useState(''); // Loan Amount filter
   const [filterInterest, setFilterInterest] = useState(''); // Interest Rate filter
   const [filteredLoans, setFilteredLoans] = useState(engineeringLoans);
@@ -116,8 +1007,8 @@ export default function EngineeringLoans() {
     if (amount) {
       const [min, max] = amount.split('-').map(Number);
       filtered = filtered.filter((loan) => {
-        const loanAmount = parseInt(loan.loanAmount.replace(/[^\d]/g, '')) || 0;
-        return loanAmount >= min && loanAmount <= max;
+        const amount = parseInt(loan.amount.replace(/[^\d]/g, '')) || 0;
+        return amount >= min && amount <= max;
       });
     }
 
@@ -134,7 +1025,7 @@ export default function EngineeringLoans() {
   };
 
   const loadMore = () => {
-    setVisibleCount((prev) => prev + 3); // Load 3 more loans at a time
+    setVisibleCount((prev) => prev + 12); // Load 3 more loans at a time
   };
 
   const shouldShowLoadMore = engineeringLoans.length > visibleCount;
@@ -173,17 +1064,26 @@ export default function EngineeringLoans() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
           {filteredLoans.slice(0, visibleCount).map((loan, index) => (
             <div key={index} style={cardStyle}>
-              <h3 style={cardTitle}>{loan.title}</h3>
-              <p style={cardDescription}>{loan.description}</p>
+              <h3 style={cardname}>{loan.name}</h3>
+              
               <p style={cardDetail}>
-                <strong>Loan Amount:</strong> {loan.loanAmount}
+                <strong>Loan Amount:</strong> {loan.amount}
+              </p>
+              <p style={cardDetail}>
+                <strong>Provider:</strong> {loan.provider}
+              </p>
+
+              <p style={cardDetail}>
+                <strong>Deadline:</strong> {loan.deadline}
+
               </p>
               <p style={cardDetail}>
                 <strong>Interest Rate:</strong> {loan.interestRate}
               </p>
               <p style={cardDetail}>
-                <strong>Repayment Period:</strong> {loan.repaymentPeriod}
+                <strong>Features:</strong> {loan.features}
               </p>
+              
               <p style={cardDetail}>
                 <strong>Eligibility:</strong> {loan.eligibility}
               </p>
@@ -249,7 +1149,7 @@ const cardStyle = {
   transition: 'transform 0.3s ease',
 };
 
-const cardTitle = {
+const cardname = {
   fontSize: '1.3rem',
   marginBottom: '0.7rem',
   fontWeight: '600',

@@ -7,85 +7,1095 @@ import { useState } from 'react';
 
 const internships = [
   {
-    title: 'Software Engineering Intern - Google',
-    description: 'As a Software Engineering Intern at Google, you’ll work on challenging projects that impact millions of users worldwide.',
-    duration: '12 weeks',
-    stipend: '₹80,000/month',
-    lastDate: 'May 31, 2025',
-    link: 'https://careers.google.com/jobs/results/12345678-software-engineering-intern/',
-    type: 'Full-Time',
-    isRemote: true,
-  },
-  {
-    title: 'Data Science Intern - Microsoft',
-    description: 'Join Microsoft’s Data Science team and help solve real-world problems using data-driven insights.',
-    duration: '6 months',
-    stipend: '₹60,000/month',
-    lastDate: 'April 30, 2025',
-    link: 'https://careers.microsoft.com/us/en/job/123456789/data-science-intern',
-    type: 'Full-Time',
+    title: "Flight Physics Learning gamification Internship By Airbus India Pvt Ltd - Airbus India Pvt Ltd",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
     isRemote: false,
+    eligibility: "Engineering, Aviation",
+    stipend: "Click on \"View Details\"",
+    lastDate: "05-May",
+    type: "New"
   },
   {
-    title: 'Product Management Intern - Meta',
-    description: 'Work on Meta’s flagship products and contribute to their product strategy and development.',
-    duration: '10 weeks',
-    stipend: '₹70,000/month',
-    lastDate: 'June 15, 2025',
-    link: 'https://www.metacareers.com/job/12345678/product-management-intern/',
-    type: 'Full-Time',
-    isRemote: true,
-  },
-  {
-    title: 'UX Design Intern - Apple',
-    description: 'Join Apple’s UX design team to help create intuitive, user-friendly designs for innovative products.',
-    duration: '3 months',
-    stipend: '₹50,000/month',
-    lastDate: 'May 20, 2025',
-    link: 'https://jobs.apple.com/us/en-us/details/12345678/ux-design-intern',
-    type: 'Full-Time',
+    title: "Cybersecurity Internship By Airbus India Pvt Ltd - Airbus India Pvt Ltd",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
     isRemote: false,
+    eligibility: "Engineering, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "New"
   },
   {
-    title: 'Business Development Intern - Amazon',
-    description: 'Help Amazon expand its customer base by analyzing market trends and supporting the business development team.',
-    duration: '3 months',
-    stipend: '₹40,000/month',
-    lastDate: 'May 5, 2025',
-    link: 'https://www.amazon.jobs/en/jobs/12345678/business-development-intern',
-    type: 'Part-Time',
-    isRemote: true,
+    title: "Technical IT Internship By Synopsys - Synopsys",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Diploma, Engineering",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "New"
   },
   {
-    title: 'Business Development Intern - Amazon',
-    description: 'Help Amazon expand its customer base by analyzing market trends and supporting the business development team.',
-    duration: '3 months',
-    stipend: '₹40,000/month',
-    lastDate: 'May 5, 2025',
-    link: 'https://www.amazon.jobs/en/jobs/12345678/business-development-intern',
-    type: 'Part-Time',
-    isRemote: true,
+    title: "Google Network Operations Residency Internship - Google",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "New"
   },
   {
-    title: 'Business Development Intern - Amazon',
-    description: 'Help Amazon expand its customer base by analyzing market trends and supporting the business development team.',
-    duration: '3 months',
-    stipend: '₹40,000/month',
-    lastDate: 'May 5, 2025',
-    link: 'https://www.amazon.jobs/en/jobs/12345678/business-development-intern',
-    type: 'Part-Time',
-    isRemote: true,
+    title: "Graduate Apprenticeship By Volvo India - Volvo India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "New"
   },
   {
-    title: 'Marketing Intern - Deloitte',
-    description: 'Assist Deloitte’s marketing team in research, strategy development, and campaign execution.',
-    duration: '4 months',
-    stipend: '₹35,000/month',
-    lastDate: 'June 10, 2025',
-    link: 'https://www2.deloitte.com/us/en/pages/careers/jobs/marketing-internship.html',
-    type: 'Part-Time',
-    isRemote: true,
+    title: "Apprenticeship By IIM Lucknow - IIM Lucknow",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "23-Apr",
+    type: "New"
   },
+  {
+    title: "IndicWiki Project Summer Internship 2025 - IIIT Hyderabad",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "New"
+  },
+  {
+    title: "Data Science Internship By ALLEN Digital - ALLEN Digital",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Grad Internship By Walmart Global Tech India - Walmart Global Tech India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Data Analyst Internship By Dun And Bradstreet - Dun And Bradstreet",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Internship By Infineon Technologies India - Infineon Technologies India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Procurement Operations Internship By Guidewire - Guidewire",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Business Development Internship By Harman Technology - Harman Technology",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "N/A"
+  },
+  {
+    title: "UI And UX Development Internship By Airbus India Pvt Ltd - Airbus India Pvt Ltd",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Internships By ALLEN Digital - ALLEN Digital",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "10-May",
+    type: "N/A"
+  },
+  {
+    title: "Talent Acquisition Apprenticeship By Innovaccer Analytics India - Innovaccer Analytics India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Events Marketing Internship By Innovaccer Analytics India - Innovaccer Analytics India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Platform Engineering Apprenticeship By Innovaccer Analytics India - Innovaccer Analytics India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Hardware Engineer Internship By Micron Technology - Micron Technology",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Nestle Internship 2025 - Nestle India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Management Internship By Siemens India - Siemens India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Summer Internship By ABV IIITM Gwalior - ABV IIITM Gwalior",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Class 12",
+    stipend: "Click on \"View Details\"",
+    lastDate: "15-Apr",
+    type: "4 day"
+  },
+  {
+    title: "Communications And Content Writing Internship By Guidewire - Guidewire",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Embedded Software Internship By Texas Instruments - Texas Instruments",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Synthesis Software Development Internship By Synopsys - Synopsys",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Systems In Service Engineering Internship By Airbus India Pvt Ltd - Airbus India Pvt Ltd",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "N/A"
+  },
+  {
+    title: "AI Internship By HP India - HP India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Masters, PHD",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Social Media Marketing Internship By Cactus India - Cactus India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "23-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Automation Engineer Internship By Guidewire Software - Guidewire Software",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "23-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Structural Analyst Internship By Intel India - Intel India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "23-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Summer Internship By NIT Warangal - NIT Warangal",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "11-Apr",
+    type: "Today"
+  },
+  {
+    title: "Internship By Walmart India - Walmart India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "23-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Summer Internship By IIT Goa - IIT Goa",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "15-Apr",
+    type: "4 day"
+  },
+  {
+    title: "Internships By EXLY India - EXLY India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Information Technology Internship By Hilton India - Hilton India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering",
+    stipend: "Click on \"View Details\"",
+    lastDate: "20-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Interim Engineering Internship By Qualcomm India Pvt Ltd - Qualcomm India Pvt Ltd",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "20-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Aircraft Structure Repair Engineer Internship By Airbus India Pvt Ltd - Airbus India Pvt Ltd",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Aviation",
+    stipend: "Click on \"View Details\"",
+    lastDate: "20-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Performance PNP Internship By Intel India - Intel India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "20-Apr",
+    type: "N/A"
+  },
+  {
+    title: "IDRBT Summer Internship 2025 - IDRBT",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "15-Apr",
+    type: "4 day"
+  },
+  {
+    title: "Internships By Micron Technology 2025 - Micron Technology",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Recruiter Internship By Firebolt - Firebolt",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Investment Banking Internship By Plutus Business Advisory - Plutus Business Advisory",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "N/A"
+  },
+  {
+    title: "CS Internship By Parallel Wireless - Parallel Wireless",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "N/A"
+  },
+  {
+    title: "AI Research Internship By General Electric - General Electric",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Masters, PHD",
+    stipend: "Click on \"View Details\"",
+    lastDate: "20-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Student Internship By Intel India - Intel India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Satyendra Nath Bose Summer Internship 2025 - NIT Silchar",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "15-Apr",
+    type: "4 day"
+  },
+  {
+    title: "Design Student Internship By Cannon Design India - Cannon Design India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "20-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Data Science Internship By Henkal - Henkal",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "20-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Data Analyst Internship By IQVIA - IQVIA",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering",
+    stipend: "Click on \"View Details\"",
+    lastDate: "20-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Internship By Bahwan CyberTek Group - Bahwan CyberTek Group",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "20-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Summer Internship By Baxter - Baxter",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering",
+    stipend: "Click on \"View Details\"",
+    lastDate: "20-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Tuberculosis Internship By PTAH India - PTAH India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "20-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Data Scientist Internship By SATSURE India - SATSURE India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "20-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Software Engineer Internship By Fortanix - Fortanix",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "20-Apr",
+    type: "N/A"
+  },
+  {
+    title: "TA Internship By OML Entertainment - OML Entertainment",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "20-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Coordinator Internship By Heart it Out - Heart it Out",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "19-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Design Internship By Fortanix - Fortanix",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "20-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Finance Internship By ACCA - ACCA",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "20-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Engineering Internship By LAM Research - LAM Research",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering",
+    stipend: "Click on \"View Details\"",
+    lastDate: "20-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Market Research Internship By Dun And Bradstreet - Dun And Bradstreet",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "20-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Sports Authority Of India Internship 2025 - Sports Authority of India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "31-Dec",
+    type: "N/A"
+  },
+  {
+    title: "National Museum Internship Programme 2025 - National Museum Delhi",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "10-Oct",
+    type: "N/A"
+  },
+  {
+    title: "Internship By Ministry Of Women And Child Development - The Ministry Of Women And Child Development, India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "10-Jun",
+    type: "N/A"
+  },
+  {
+    title: "PM Internship Scheme 2025 - Government Of India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Diploma, Bachelors, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "15 AprilExtended Date",
+    type: "4 day"
+  },
+  {
+    title: "Data Analyst Internship By Arrise India - Arrise India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "22-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Internships By Brand 4 Brands 2025 - Brand 4 Brands",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "31-May",
+    type: "N/A"
+  },
+  {
+    title: "Structural Engineer Internship By Walter P Moore - Walter P Moore",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "31-May",
+    type: "N/A"
+  },
+  {
+    title: "Water Resources Engineering Internship By Walter P Moore - Walter P Moore",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering",
+    stipend: "Click on \"View Details\"",
+    lastDate: "31-May",
+    type: "N/A"
+  },
+  {
+    title: "Diagnostics Engineering Internship By Walter P Moore - Walter P Moore",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "31-May",
+    type: "N/A"
+  },
+  {
+    title: "Google Program Manager Internship - Google",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "31-May",
+    type: "N/A"
+  },
+  {
+    title: "Summer Internship By IIT Indore - IIT Indore",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "N/A"
+  },
+  {
+    title: "ISRO Internship 2025 - The Indian Space Research Organisation (ISRO), India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors, Masters, PHD",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Internships By Frost And Sullivan - Frost And Sullivan",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "25-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Business Development Representative Internship By Siemens India - Siemens India Pvt Ltd",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Internships By SySpree Digital Pvt Ltd - SySpree Digital Pvt Ltd",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "31-May",
+    type: "N/A"
+  },
+  {
+    title: "Apprenticeships By Citi India - Citi India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Diploma, Bachelors, Professional courses",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Electronics Engineering Internship By SatSure India - SatSure India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Ethics And Compliance Internship By PhonePe India - PhonePe India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "20-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Operations Associate Apprenticeship By Stripe India - Stripe India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "31-May",
+    type: "N/A"
+  },
+  {
+    title: "Internships By SatSure Analytics India - SatSure Analytics India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "07-May",
+    type: "N/A"
+  },
+  {
+    title: "Internships By AICTE India - All India Council for Technical Education (AICTE)",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "All",
+    stipend: "Click on \"View Details\"",
+    lastDate: "31-Dec",
+    type: "N/A"
+  },
+  {
+    title: "Student Internships By Oracle India - Oracle India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "31-Aug",
+    type: "N/A"
+  },
+  {
+    title: "TCS Research Internship - Tata Consultancy Services India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Masters, PHD",
+    stipend: "Click on \"View Details\"",
+    lastDate: "31-Dec",
+    type: "N/A"
+  },
+  {
+    title: "Psychology Internship By Heart It Out - Heart It Out",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "15-Apr",
+    type: "4 day"
+  },
+  {
+    title: "Internships By Lamborghini 2025 - Lamborghini",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "15-Apr",
+    type: "4 day"
+  },
+  {
+    title: "Internship By Ministry Of Panchayati Raj India - The Ministry Of Panchayati Raj India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors, Masters, PHD",
+    stipend: "Click on \"View Details\"",
+    lastDate: "31-Mar",
+    type: "N/A"
+  },
+  {
+    title: "Internships By Greenpeace India - Greenpeace India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "31-Dec",
+    type: "N/A"
+  },
+  {
+    title: "Computational Designer Internship By Walter P Moore - Walter P Moore",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "31-May",
+    type: "N/A"
+  },
+  {
+    title: "Application Developer Internship By Walter P Moore - Walter P Moore",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "31-May",
+    type: "N/A"
+  },
+  {
+    title: "Internships By CITIC CLSA India - CITIC CLSA India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Internships By Digital Folks - Digital Folks",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "31-Dec",
+    type: "N/A"
+  },
+  {
+    title: "Internships By Marriott - Marriott",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "31-May",
+    type: "N/A"
+  },
+  {
+    title: "ER Research Internship By Adobe Technology - Adobe Technology",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "PHD",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Jun",
+    type: "N/A"
+  },
+  {
+    title: "Internship By ShopClues - ShopClues",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering",
+    stipend: "Click on \"View Details\"",
+    lastDate: "31-Dec",
+    type: "N/A"
+  },
+  {
+    title: "Internships By Razorpay - Razorpay Careers",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "30-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Internships By Meragi Events - Meragi Events Careers",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "N/A",
+    type: "N/A"
+  },
+  {
+    title: "Internships By Eye Mantra - Eye Mantra",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Medical, Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "31-Dec",
+    type: "N/A"
+  },
+  {
+    title: "Internships By EY India PVT LTD - EY India PVT LTD",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "31-Dec",
+    type: "N/A"
+  },
+  {
+    title: "Internships By Testbook - Testbook",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "All",
+    stipend: "Click on \"View Details\"",
+    lastDate: "31-Dec",
+    type: "N/A"
+  },
+  {
+    title: "SECI Internship 2025 - Solar Energy Corporation of India (SECI)",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Masters, PHD",
+    stipend: "Click on \"View Details\"",
+    lastDate: "31-Dec",
+    type: "N/A"
+  },
+  {
+    title: "Internships By Analytics Vidhya - Analytics Vidhya",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "31-Jul",
+    type: "N/A"
+  },
+  {
+    title: "Internships By NASA - National Aeronautics And Space Administration (NASA)",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Medical, Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "16-May",
+    type: "N/A"
+  },
+  {
+    title: "Internships By Amazon - Amazon",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors, Masters, PHD",
+    stipend: "Click on \"View Details\"",
+    lastDate: "10-May",
+    type: "N/A"
+  },
+  {
+    title: "Internship By WWF India - WWF India",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Bachelors, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "31-Dec",
+    type: "N/A"
+  },
+  {
+    title: "Internships By Unbox Robotics - Unbox Robotics",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "31-Dec",
+    type: "N/A"
+  },
+  {
+    title: "Internship By NITI Aayog - NITI Aayog",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors, Masters, PHD",
+    stipend: "Click on \"View Details\"",
+    lastDate: "31-Dec",
+    type: "N/A"
+  },
+  {
+    title: "Hyundai Motor India Internship - Hyundai",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors, Masters",
+    stipend: "Click on \"View Details\"",
+    lastDate: "31-Dec",
+    type: "N/A"
+  },
+  {
+    title: "Internships By Synopsys - Synopsys",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors, Professional courses",
+    stipend: "Click on \"View Details\"",
+    lastDate: "25-Apr",
+    type: "N/A"
+  },
+  {
+    title: "Internships By EyeROV Technologies - EyeROV (IROV Technologies)",
+    link: "https://forms.gle/EXAMPLE",
+    duration: "Click on \"View Details\"",
+    isRemote: false,
+    eligibility: "Engineering, Bachelors",
+    stipend: "Click on \"View Details\"",
+    lastDate: "31-Aug",
+    type: "N/A"
+  }
 ];
 
 const internshipCategories = [
@@ -98,7 +1108,7 @@ export default function InternshipHub() {
   const [searchTerm, setSearchTerm] = useState('');
   const [durationFilter, setDurationFilter] = useState('');
   const [remoteFilter, setRemoteFilter] = useState('');
-  const [visibleCount, setVisibleCount] = useState(6);
+  const [visibleCount, setVisibleCount] = useState(12);
 
   const filteredInternships = internships.filter((internship) => {
     const matchesSearchTerm = internship.title.toLowerCase().includes(searchTerm.toLowerCase());
@@ -109,7 +1119,7 @@ export default function InternshipHub() {
   });
 
   const loadMore = () => {
-    setVisibleCount((prev) => prev + 5);
+    setVisibleCount((prev) => prev + 12);
   };
 
   const shouldShowLoadMore = filteredInternships.length > visibleCount;
@@ -203,8 +1213,11 @@ export default function InternshipHub() {
               <h3 style={{ fontSize: '1.3rem', marginBottom: '0.7rem', fontWeight: '600', color: '#1a1a1a' }}>
                 {internship.title}
               </h3>
-              <p style={{ fontSize: '1rem', marginBottom: '1rem', lineHeight: '1.5', color: '#444' }}>
+               {/* <p style={{ fontSize: '1rem', marginBottom: '1rem', lineHeight: '1.5', color: '#444' }}>
                 {internship.description}
+              </p> */}
+              <p style={{ fontSize: '0.95rem', marginBottom: '0.4rem', color: '#0070f3' }}>
+                <strong>eligibility:</strong> {internship.eligibility}
               </p>
               <p style={{ fontSize: '0.95rem', marginBottom: '0.4rem', color: '#0070f3' }}>
                 <strong>Stipend:</strong> {internship.stipend}
