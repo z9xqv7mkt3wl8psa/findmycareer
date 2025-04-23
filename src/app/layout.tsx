@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Student Grows | Discover Scholarships & Opportunities",
+  title: "StudentGrow | Discover Scholarships & Opportunities",
   description: "Empower your academic journey with personalized scholarships, curated career guides, educational loans, internships, Sarkari Naukri, and global learning programs.",
   keywords: [
     "student scholarships",
