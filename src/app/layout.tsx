@@ -14,7 +14,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "StudentGrow | Discover Scholarships & Opportunities",
-  description: "Empower your academic journey with personalized scholarships, curated career guides, educational loans, internships, Sarkari Naukri, and global learning programs.",
+  description:
+    "Empower your academic journey with personalized scholarships, curated career guides, educational loans, internships, Sarkari Naukri, and global learning programs.",
   keywords: [
     "student scholarships",
     "internships India",
@@ -25,14 +26,15 @@ export const metadata: Metadata = {
     "Student Grows",
     "scholarships after 12th",
     "career options",
-    "global education programs"
+    "global education programs",
   ],
   icons: {
     icon: "/favicon.ico",
   },
   openGraph: {
     title: "Student Grows | Discover Scholarships & Career Opportunities",
-    description: "Explore scholarships, internships, loans, Sarkari jobs, and global education paths — all in one place for students across India.",
+    description:
+      "Explore scholarships, internships, loans, Sarkari jobs, and global education paths — all in one place for students across India.",
     url: "https://studentgrow.prasunet.com",
     siteName: "Student Grows",
     type: "website",
@@ -48,7 +50,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Student Grows | Scholarships, Internships & Government Jobs",
-    description: "Empowering Indian students through scholarships, internships, education loans, and career support.",
+    description:
+      "Empowering Indian students through scholarships, internships, education loans, and career support.",
     images: ["/og-image.png"],
     creator: "@StudentGrows",
   },
@@ -61,6 +64,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* ✅ AdSense Script */}
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4153515799458258"
+     crossorigin="anonymous"></script>
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
       </body>
