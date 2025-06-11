@@ -213,7 +213,7 @@ const filteredResults = allItems.filter((item: Item) =>
     />
     {/* Click Here Button */}
     <a
-      href="/src/app/sarkari-naukri/page.tsx"
+      href="/sarkari-naukri"
       style={{
         display: 'inline-block',
         marginTop: '1rem',
