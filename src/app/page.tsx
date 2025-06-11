@@ -695,20 +695,60 @@ const filteredResults = allItems.filter((item: Item) =>
     <div style={{ padding: '1.5rem 2rem', maxHeight: '260px', overflowY: 'auto' }}>
       {[
         {
-          date: '31 May, 2025',
-          text: 'Apply now for the prestigious Institution of Engineering and Technology (IET) India Scholarship Awards 2025 – empowering future engineers with merit-based financial support.',
-          link: 'https://www.buddy4study.com/scholarship/iet-india-scholarship-awards',
-        },
-        {
-          date: '4 May, 2025',
-          text: "Applications are open for Alstom India Scholarship 2024–25: Phase-III. Students pursuing ITI/Diploma, general graduation, or professional graduation in STEM can apply by May 4, 2025!",
-          link: 'https://www.buddy4study.com/page/alstom-india-scholarship',
-        },
-        {
-          date: '16 April, 2025',
-          text: "Applications are open for Flipkart Foundation Scholarship 2024–25! Children of Kirana Store Owners pursuing 1st-year UG STEM at government colleges in India can apply by 16 April 2025.",
-          link: 'https://www.buddy4study.com/page/flipkart-foundation-scholarship',
-        },
+  date: '31 July, 2025',
+  text: 'Apply now for Bharti Airtel Scholarship Program 2025-26 – 100% fee support for 1st-year Tech & Engineering students from top 50 NIRF-ranked colleges.',
+  link: 'https://www.buddy4study.com/scholarship/bharti-airtel-scholarship-program'
+},
+{
+  date: '20 August, 2025',
+  text: 'Participate in the Global Scholar Challenge – Powered by TOEFL (3rd Edition) and win total prize money worth ₹1.3 lakh. Open to final-year students and professionals with 2 years’ experience.',
+  link: 'https://www.buddy4study.com/scholarship/global-scholar-challenge-powered-by-toefl'
+},
+{
+  date: '30 June, 2025',
+  text: 'Apply for Mirae Asset Scholarship Program 2025 – Get up to ₹50,000 financial support for UG and PG studies. Deadline approaching soon!',
+  link: 'https://www.buddy4study.com/page/mirae-asset-scholarship-program'
+},
+{
+  date: '30 June, 2025',
+  text: 'Get 90% fee waiver with nurtr Nurturing Minds with Chess Program – for school or college students aged 5 to 25.',
+  link: 'https://www.buddy4study.com/scholarship/nurtr-nurturing-minds-with-chess-program-90-fee-waiver'
+},
+{
+  date: '30 June, 2025',
+  text: 'Apply for Buddy4Study Psychometric Test – Get a detailed career report and certificate. Open for Class 10 passouts and above.',
+  link: 'https://www.buddy4study.com/scholarship/buddy4study-psychometric-test'
+},
+{
+  date: '30 June, 2025',
+  text: 'Buddy4Study Scholarship Support Programme 2025–26 is live – win up to ₹1,00,000 per annum. For students from Class 10 to 1st-year UG.',
+  link: 'https://www.buddy4study.com/scholarship/buddy4study-scholarship-support-programme'
+},
+{
+  date: '30 June, 2025',
+  text: 'Apply for NIIT University Scholarship-cum-Admission Seat Programme 2025–26 – Get up to 100% tuition fee waiver. For Class 12 passed students.',
+  link: 'https://www.buddy4study.com/scholarship/niit-university-scholarship-cum-admission-seat-programme'
+},
+{
+  date: '15 July, 2025',
+  text: 'Mohan T Advani Centennial Scholarship 2025–26 is open – Engineering & Architecture students can win up to ₹1,00,000.',
+  link: 'https://www.buddy4study.com/scholarship/mohan-t-advani-centennial-scholarship-programme-engineering-architecture'
+},
+{
+  date: '15 July, 2025',
+  text: 'Mohan T Advani Centennial Scholarship 2025–26 for Diploma Students – Get ₹40,000 or 90% of annual fees.',
+  link: 'https://www.buddy4study.com/scholarship/mohan-t-advani-centennial-scholarship-programme-diploma'
+},
+{
+  date: '31 July, 2025',
+  text: 'Satya Scholarship Program 2025 – 100% tuition fee coverage for 1st-year UG/integrated masters students from Ludhiana district.',
+  link: 'https://www.buddy4study.com/scholarship/satya-scholarship-program'
+},
+{
+  date: '31 July, 2025',
+  text: 'Raman Kant Munjal Scholarship 2025-26 – Get up to ₹5.5 lakh for finance-related undergraduate courses.',
+  link: 'https://www.buddy4study.com/scholarship/raman-kant-munjal-scholarship'
+},
       ].map((notice, index) => (
         <div key={index} style={{ marginBottom: '1.5rem' }}>
           {/* Date + Icon */}
