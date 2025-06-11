@@ -504,42 +504,38 @@ const filteredResults = allItems.filter((item: Item) =>
 
     {/* Cloned items for seamless loop */}
     {[
-      {
-        logo: '/scholarshipkindcircle.png',
-        title: 'KIND CIRCLE SCHOLARSHIP FOR MERITORIOUS STUDENTS ',
-        deadline: '31-Dec-2025',
-        link: '/featurescholarship/KINDCIRCLE'
-      },
-      {
-        logo: '/scholarshipcollegeboard.jpg',
-        title: 'COLLEGE BOARD 90% FEE WAIVER PROGRAM',
-        deadline: '16-Apr-2025',
-        link: '/featurescholarship/Collegeboard'
-      },
-      {
-        logo: '/scholarshipiet.png',
-        title: 'Institution of Engineering and Technology (IET) India Scholarship  ',
-        deadline: '31-May-2025',
-        link: '/featurescholarship/IET'
-      },
-      {
-        logo: '/scholarshipsbi.jpg',
-        title: 'SBIF Asha Scholarship Program for Overseas Education ',
-        deadline: '30-Apr-2025',
-        link: '/featurescholarship/SBIFAshaScholarship'
-      },
-      {
-        logo: '/scholarshipflipkart.jpg',
-        title: 'FLIPKART FOUNDATION SCHOLARSHIP PROGRAM ',
-        deadline: '16-Apr-2025',
-        link: '/featurescholarship/FLIPKARTFOUNDATION'
-      },
-      {
-        logo: '/scholarshipalstom.jpg',
-        title: 'Alstom India Scholarship Award 2024-25',
-        deadline: '04-May-2025',
-        link: '/featurescholarship/Alstom'
-      }
+      {{
+  logo: 'https://static.buddy4study.com/static/scholarship_logo/Bharti_Airtel_Scholarship.jpg',
+  title: 'Bharti Airtel Scholarship Program 2025-26',
+  deadline: '31-Jul-2025',
+  link: '/featurescholarship/BhartiAirtelScholarship'
+},
+{
+  logo: 'https://www.ets.org/etc.clientlibs/ets-web/clientlibs/clientlib-base/resources/images/ets-logo.svg',
+  title: 'Global Scholar Challenge – Powered by TOEFL (3rd Edition)',
+  deadline: '20-Aug-2025',
+  link: '/featurescholarship/TOEFLGlobalChallenge'
+},
+
+{
+  logo: 'https://www.leeds-art.ac.uk/media/images/LDA_logo_360x360.original.png',
+  title: 'Leeds Arts University GREAT Scholarships 2025',
+  deadline: '—',
+  link: '/featurescholarship/LeedsArtsGREAT'
+},
+{
+  logo: 'https://ladakh.nic.in/wp-content/themes/district-theme/images/ladakh-logo.png',
+  title: 'Lt. Governor Student Support (REWA) Scholarship 2025',
+  deadline: '—',
+  link: '/featurescholarship/LadakhREWA'
+},
+{
+  logo: 'https://www.tcd.ie/brand-assets/logos/assets/downloads/TCD_Mark_1_RGB.svg',
+  title: 'Trinity Business School Global Excellence Postgraduate Scholarships 2025',
+  deadline: '—',
+  link: '/featurescholarship/TrinityExcellencePG'
+}
+
     ].map((scholarship, index) => (
       <div
         key={`clone-${index}`}
