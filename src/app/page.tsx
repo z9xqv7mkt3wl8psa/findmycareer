@@ -427,51 +427,7 @@ const filteredResults = allItems.filter((item: Item) =>
     `}</style>
 
     {[
-     {
-    title: 'Bharti Airtel Scholarship Program 2025-26',
-    deadline: '31-Jul-2025',
-    link: 'https://www.buddy4study.com/page/bharti-airtel-scholarship?cuid=fb_BHRSP1_20240716_1'
-  },
-  {
-    title: 'Global Scholar Challenge – Powered by TOEFL (3rd Edition)',
-    deadline: '20-Aug-2025',
-    link: 'https://www.buddy4study.com/page/toefl-global-scholar-challenge'
-  },
-  {
-    title: 'RAU Sports Scholarships 2025-26',
-    deadline: '11-Jun-2025',
-    link: 'https://admission.buddy4study.com/scholarship/rau-sports-scholarships'
-  },
-  {
-    title: 'AYUSH Scholarship Scheme 2025-26',
-    deadline: '16-Jun-2025',
-    link: 'https://www.buddy4study.com/scholarship/ayush-scholarship-scheme'
-  },
-  {
-    title: 'MTCP Scholarship 2025',
-    deadline: '18-Jun-2025',
-    link: 'https://www.buddy4study.com/scholarship/mtcp-scholarship'
-  },
-  {
-    title: 'Mirae Asset Foundation Scholarship Program (UG & PG)',
-    deadline: '30-Jun-2025',
-    link: 'https://www.buddy4study.com/page/mirae-asset-foundation-scholarship-program'
-  },
-  {
-    title: 'National Overseas Scholarship Scheme for ST Students 2025-26',
-    deadline: '30-Jun-2025',
-    link: 'https://admission.buddy4study.com/scholarship/national-overseas-scholarship-for-st-students'
-  },
-  {
-    title: 'National Overseas Scholarship Scheme for SC Students 2025-26',
-    deadline: '30-Jun-2025',
-    link: 'https://www.buddy4study.com/scholarship/national-overseas-scholarship-scheme-for-sc'
-  },
-  {
-    title: 'Foundation for Excellence (FFE) Scholarship 2025',
-    deadline: '31-Jan-2025',
-    link: 'https://www.buddy4study.com/article/ffe-scholarship'
-  }
+    
     ].map((scholarship, index) => (
       <div
         key={index}
