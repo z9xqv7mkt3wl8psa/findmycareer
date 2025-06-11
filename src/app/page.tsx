@@ -504,7 +504,7 @@ const filteredResults = allItems.filter((item: Item) =>
 
     {/* Cloned items for seamless loop */}
     {[
-      {{
+      {
   logo: 'https://static.buddy4study.com/static/scholarship_logo/Bharti_Airtel_Scholarship.jpg',
   title: 'Bharti Airtel Scholarship Program 2025-26',
   deadline: '31-Jul-2025',
