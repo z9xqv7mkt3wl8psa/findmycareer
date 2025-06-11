@@ -505,36 +505,60 @@ const filteredResults = allItems.filter((item: Item) =>
     {/* Cloned items for seamless loop */}
     {[
       {
-  logo: 'https://static.buddy4study.com/static/scholarship_logo/Bharti_Airtel_Scholarship.jpg',
+  logo: 'https://www.buddy4study.com/page/bharti-airtel-scholarship?cuid=fb_BHRSP1_20240716_1',
   title: 'Bharti Airtel Scholarship Program 2025-26',
   deadline: '31-Jul-2025',
   link: '/featurescholarship/BhartiAirtelScholarship'
 },
 {
-  logo: 'https://www.ets.org/etc.clientlibs/ets-web/clientlibs/clientlib-base/resources/images/ets-logo.svg',
+  logo: 'https://www.buddy4study.com/page/toefl-global-scholar-challenge',
   title: 'Global Scholar Challenge – Powered by TOEFL (3rd Edition)',
   deadline: '20-Aug-2025',
   link: '/featurescholarship/TOEFLGlobalChallenge'
 },
-
 {
-  logo: 'https://www.leeds-art.ac.uk/media/images/LDA_logo_360x360.original.png',
-  title: 'Leeds Arts University GREAT Scholarships 2025',
-  deadline: '—',
-  link: '/featurescholarship/LeedsArtsGREAT'
+  logo: 'https://admission.buddy4study.com/scholarship/rau-sports-scholarships',
+  title: 'RAU Sports Scholarships 2025-26',
+  deadline: '11-Jun-2025',
+  link: '/featurescholarship/RAUSports'
 },
 {
-  logo: 'https://ladakh.nic.in/wp-content/themes/district-theme/images/ladakh-logo.png',
-  title: 'Lt. Governor Student Support (REWA) Scholarship 2025',
-  deadline: '—',
-  link: '/featurescholarship/LadakhREWA'
+  logo: 'https://www.buddy4study.com/scholarship/ayush-scholarship-scheme',
+  title: 'AYUSH Scholarship Scheme 2025-26',
+  deadline: '16-Jun-2025',
+  link: '/featurescholarship/AYUSHScholarship'
 },
 {
-  logo: 'https://www.tcd.ie/brand-assets/logos/assets/downloads/TCD_Mark_1_RGB.svg',
-  title: 'Trinity Business School Global Excellence Postgraduate Scholarships 2025',
-  deadline: '—',
-  link: '/featurescholarship/TrinityExcellencePG'
+  logo: 'https://www.buddy4study.com/scholarship/mtcp-scholarship',
+  title: 'MTCP Scholarship 2025',
+  deadline: '18-Jun-2025',
+  link: '/featurescholarship/MTCPScholarship'
+},
+{
+  logo: 'https://www.buddy4study.com/page/mirae-asset-foundation-scholarship-program',
+  title: 'Mirae Asset Scholarship Program (UG & PG)',
+  deadline: '30-Jun-2025',
+  link: '/featurescholarship/MiraeAssetScholarshipUGPG'
+},
+{
+  logo: 'https://admission.buddy4study.com/scholarship/national-overseas-scholarship-for-st-students',
+  title: 'National Overseas Scholarship Scheme for ST Students 2025-26',
+  deadline: '30-Jun-2025',
+  link: '/featurescholarship/NOS_ST'
+},
+{
+  logo: 'https://www.buddy4study.com/scholarship/national-overseas-scholarship-scheme-for-sc',
+  title: 'National Overseas Scholarship Scheme for SC Students 2025-26',
+  deadline: '30-Jun-2025',
+  link: '/featurescholarship/NOS_SC'
+},
+{
+  logo: 'https://www.buddy4study.com/article/ffe-scholarship',
+  title: 'Foundation for Excellence (FFE) Scholarship 2025',
+  deadline: '31-Jan-2025',
+  link: '/featurescholarship/FFEScholarship'
 }
+
 
     ].map((scholarship, index) => (
       <div
