@@ -426,60 +426,68 @@ const filteredResults = allItems.filter((item: Item) =>
       }
     `}</style>
 
-    {[ {
-  logo: '',
-  title: 'Bharti Airtel Scholarship Program 2025-26',
-  deadline: '31-Jul-2025',
-  link: '/featurescholarship/BhartiAirtelScholarship'
-},
-{
-  logo: '',
-  title: 'Global Scholar Challenge – Powered by TOEFL (3rd Edition)',
-  deadline: '20-Aug-2025',
-  link: '/featurescholarship/TOEFLGlobalChallenge'
-},
-{
-  logo: '',
-  title: 'RAU Sports Scholarships 2025-26',
-  deadline: '11-Jun-2025',
-  link: '/featurescholarship/RAUSports'
-},
-{
-  logo: '',
-  title: 'AYUSH Scholarship Scheme 2025-26',
-  deadline: '16-Jun-2025',
-  link: '/featurescholarship/AYUSHScholarship'
-},
-{
-  logo: '',
-  title: 'MTCP Scholarship 2025',
-  deadline: '18-Jun-2025',
-  link: '/featurescholarship/MTCPScholarship'
-},
-{
-  logo: '',
-  title: 'Mirae Asset Scholarship Program (UG & PG)',
-  deadline: '30-Jun-2025',
-  link: '/featurescholarship/MiraeAssetScholarshipUGPG'
-},
-{
-  logo: '',
-  title: 'National Overseas Scholarship Scheme for ST Students 2025-26',
-  deadline: '30-Jun-2025',
-  link: '/featurescholarship/NOS_ST'
-},
-{
-  logo: '',
-  title: 'National Overseas Scholarship Scheme for SC Students 2025-26',
-  deadline: '30-Jun-2025',
-  link: '/featurescholarship/NOS_SC'
-},
-{
-  logo: '',
-  title: 'Foundation for Excellence (FFE) Scholarship 2025',
-  deadline: '31-Jan-2025',
-  link: '/featurescholarship/FFEScholarship'
-}
+    {[ 
+  {
+    title: 'Global Scholar Challenge – Powered by TOEFL (3rd Edition)',
+    deadline: '20-Aug-2025',
+    link: 'https://www.buddy4study.com/scholarship/global-scholar-challenge-powered-by-toefl',
+    logo: 'toefl.jpg'
+  },
+  {
+    title: 'RAU Sports Scholarships 2025-26',
+    deadline: '11-Jun-2025',
+    link: 'https://www.buddy4study.com/scholarship/rau-sports-scholarships',
+    logo: 'rau.png'
+  },
+  {
+    title: 'Mirae Asset Foundation Scholarship 2025',
+    deadline: '15-Aug-2025',
+    link: 'https://www.buddy4study.com/scholarship/mirae-asset-foundation-scholarship',
+    logo: 'mirrae.jpg'
+  },
+  {
+    title: 'Campus France Charpak Scholarship Program 2025',
+    deadline: '30-Jun-2025',
+    link: 'https://www.buddy4study.com/scholarship/charpak-scholarship',
+    logo: 'campus france.png'
+  },
+  {
+    title: 'Trinity College Dublin India Undergraduate Scholarships',
+    deadline: '15-Jul-2025',
+    link: 'https://www.buddy4study.com/scholarship/trinity-college-dublin-scholarship',
+    logo: 'trinity.jpeg'
+  },
+  {
+    title: 'Leeds Arts University International Scholarships 2025',
+    deadline: '10-Jul-2025',
+    link: 'https://www.buddy4study.com/scholarship/leeds-arts-university-scholarship',
+    logo: 'leeds.png'
+  },
+  {
+    title: 'ICCR Scholarships for Indian Culture 2025-26',
+    deadline: '31-Jul-2025',
+    link: 'https://www.buddy4study.com/scholarship/iccr-scholarships',
+    logo: 'ayush.png'
+  },
+  {
+    title: 'Ladakh Rewa Scholarship Scheme 2025',
+    deadline: '25-Jun-2025',
+    link: 'https://www.buddy4study.com/scholarship/ladakh-rewa-scholarship',
+    logo: 'rewa.png'
+  },
+  {
+    title: 'Royal Agricultural University – International Student Scholarships',
+    deadline: '05-Aug-2025',
+    link: 'https://www.buddy4study.com/scholarship/royal-agricultural-university-scholarships',
+    logo: 'rau.png'
+  },
+  {
+    title: 'AYUSH Scholarship Scheme by ICCR 2025',
+    deadline: '30-Jun-2025',
+    link: 'https://www.buddy4study.com/scholarship/ayush-scholarship-scheme',
+    logo: 'ayush.png'
+  }
+
 
     
     ].map((scholarship, index) => (
@@ -523,66 +531,66 @@ const filteredResults = allItems.filter((item: Item) =>
 
     {/* Cloned items for seamless loop */}
     {[
-     {
-  logo: 'https://www.buddy4study.com/page/bharti-airtel-scholarship?cuid=fb_BHRSP1_20240716_1',
-  title: 'Bharti Airtel Scholarship Program 2025-26',
-  deadline: '31-Jul-2025',
-  link: '/featurescholarship/BhartiAirtelScholarship'
-},
-{
-  logo: 'https://www.buddy4study.com/page/toefl-global-scholar-challenge',
-  title: 'Global Scholar Challenge – Powered by TOEFL (3rd Edition)',
-  deadline: '20-Aug-2025',
-  link: '/featurescholarship/TOEFLGlobalChallenge'
-},
-{
-  logo: 'https://admission.buddy4study.com/scholarship/rau-sports-scholarships',
-  title: 'RAU Sports Scholarships 2025-26',
-  deadline: '11-Jun-2025',
-  link: '/featurescholarship/RAUSports'
-},
-{
-  logo: 'https://www.buddy4study.com/scholarship/ayush-scholarship-scheme',
-  title: 'AYUSH Scholarship Scheme 2025-26',
-  deadline: '16-Jun-2025',
-  link: '/featurescholarship/AYUSHScholarship'
-},
-{
-  logo: 'https://www.buddy4study.com/scholarship/mtcp-scholarship',
-  title: 'MTCP Scholarship 2025',
-  deadline: '18-Jun-2025',
-  link: '/featurescholarship/MTCPScholarship'
-},
-{
-  logo: 'https://www.buddy4study.com/page/mirae-asset-foundation-scholarship-program',
-  title: 'Mirae Asset Scholarship Program (UG & PG)',
-  deadline: '30-Jun-2025',
-  link: '/featurescholarship/MiraeAssetScholarshipUGPG'
-},
-{
-  logo: 'https://admission.buddy4study.com/scholarship/national-overseas-scholarship-for-st-students',
-  title: 'National Overseas Scholarship Scheme for ST Students 2025-26',
-  deadline: '30-Jun-2025',
-  link: '/featurescholarship/NOS_ST'
-},
-{
-  logo: 'https://www.buddy4study.com/scholarship/national-overseas-scholarship-scheme-for-sc',
-  title: 'National Overseas Scholarship Scheme for SC Students 2025-26',
-  deadline: '30-Jun-2025',
-  link: '/featurescholarship/NOS_SC'
-},
-{
-  logo: 'https://www.buddy4study.com/article/ffe-scholarship',
-  title: 'Foundation for Excellence (FFE) Scholarship 2025',
-  deadline: '31-Jan-2025',
-  link: '/featurescholarship/FFEScholarship'
-},
-{
-  logo: 'https://www.buddy4study.com/article/dma-scholarship',
-  title: 'DMA Scholarship 2025',
-  deadline: '—',
-  link: '/featurescholarship/DMAScholarship'
-}
+    {
+    title: 'Global Scholar Challenge – Powered by TOEFL (3rd Edition)',
+    deadline: '20-Aug-2025',
+    link: 'https://www.buddy4study.com/scholarship/global-scholar-challenge-powered-by-toefl',
+    logo: 'toefl.jpg'
+  },
+  {
+    title: 'RAU Sports Scholarships 2025-26',
+    deadline: '11-Jun-2025',
+    link: 'https://www.buddy4study.com/scholarship/rau-sports-scholarships',
+    logo: 'rau.png'
+  },
+  {
+    title: 'Mirae Asset Foundation Scholarship 2025',
+    deadline: '15-Aug-2025',
+    link: 'https://www.buddy4study.com/scholarship/mirae-asset-foundation-scholarship',
+    logo: 'mirrae.jpg'
+  },
+  {
+    title: 'Campus France Charpak Scholarship Program 2025',
+    deadline: '30-Jun-2025',
+    link: 'https://www.buddy4study.com/scholarship/charpak-scholarship',
+    logo: 'campus france.png'
+  },
+  {
+    title: 'Trinity College Dublin India Undergraduate Scholarships',
+    deadline: '15-Jul-2025',
+    link: 'https://www.buddy4study.com/scholarship/trinity-college-dublin-scholarship',
+    logo: 'trinity.jpeg'
+  },
+  {
+    title: 'Leeds Arts University International Scholarships 2025',
+    deadline: '10-Jul-2025',
+    link: 'https://www.buddy4study.com/scholarship/leeds-arts-university-scholarship',
+    logo: 'leeds.png'
+  },
+  {
+    title: 'ICCR Scholarships for Indian Culture 2025-26',
+    deadline: '31-Jul-2025',
+    link: 'https://www.buddy4study.com/scholarship/iccr-scholarships',
+    logo: 'ayush.png'
+  },
+  {
+    title: 'Ladakh Rewa Scholarship Scheme 2025',
+    deadline: '25-Jun-2025',
+    link: 'https://www.buddy4study.com/scholarship/ladakh-rewa-scholarship',
+    logo: 'rewa.png'
+  },
+  {
+    title: 'Royal Agricultural University – International Student Scholarships',
+    deadline: '05-Aug-2025',
+    link: 'https://www.buddy4study.com/scholarship/royal-agricultural-university-scholarships',
+    logo: 'rau.png'
+  },
+  {
+    title: 'AYUSH Scholarship Scheme by ICCR 2025',
+    deadline: '30-Jun-2025',
+    link: 'https://www.buddy4study.com/scholarship/ayush-scholarship-scheme',
+    logo: 'ayush.png'
+  }
 
 
     ].map((scholarship, index) => (
